@@ -1,0 +1,12 @@
+Package: LendingClub
+Type: Package
+Title: Wrapper to access the Lending Club API
+Version: 0.1.0
+Author: Ryan Kuhn
+Maintainer: Ryan Kuhn, CPA <kuhnrl30@gmail.com>
+Description: Functions to access Lending Club's API
+License: MIT
+LazyData: TRUE
+Suggests: knitr
+VignetteBuilder: knitr
+RoxygenNote: 5.0.1

@@ -1,0 +1,40 @@
+---
+title: "Using the Lending Club API"
+author: "Ryan Kuhn"
+output: rmarkdown::html_vignette
+layout: post
+htmlwidgets: false
+comments: true
+tags: [R]
+vignette: >
+    %\VignetteIndexEntry{LabCorp Location Data Workflow}
+    %\VignetteEngine{knitr::rmarkdown}
+    \usepackage[utf8]{inputenc}
+---
+
+### User credentials 
+You'll need to supply the investor's account number and API key. You can find the account number from the account Summary page.  You'll find the API key at the bottom of the Account Settings page. Here, I've loaded them from a .Renviron file but you can use whatever process yo are comfortable to pass them to the MakeCredential function. 
+
+The MakeCredential() function uses the investorID and APIkey inputs and creates the <code>LC_CRED</code> variable in the global environment. The other functions in this package will look for this variable to process the respective API calls.
+
+```{r}
+library(LendingClub)
+
+investorID<- Sys.getenv("id")
+APIkey<- Sys.getenv("key")
+
+MakeCredential(investorID, APIkey)
+```
+
+### Other Functions
+Here are examples of other functions in the package. As mentioned above, all other functions in this package will look for the LC_CRED variable before processing the respective API calls.
+```{r}
+Cash<- AvailableCash()
+Cash
+```
+
+
+```{r}
+Notes<- NotesOwned()
+names(Notes)
+```
