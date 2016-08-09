@@ -3,5 +3,8 @@
 export(AvailableCash)
 export(MakeCredential)
 export(NotesOwned)
+export(PortfoliosOwned)
+export(TransferFunds)
+export(valiDate)
 importFrom(httr,"GET")
 importFrom(httr,"content")

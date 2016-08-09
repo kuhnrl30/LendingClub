@@ -17,8 +17,7 @@ AvailableCash<- function(){
     searchURL<- paste0(base,LC_CRED$investorID,"/availablecash")
 
 
-    r<- httr::GET(searchURL,
-            httr::add_headers("Authorization"= LC_CRED$key))
-    httr::content(r)$availableCash
+    r<- LC_GET(searchURL, LC_CRED$key)
+    r$availableCash
 
     }

@@ -6,11 +6,8 @@
 NotesOwned<- function(){
     LC_CRED<-CheckCred()
 
-    base<-"https://api.lendingclub.com/api/investor/v1/accounts/"
-    searchURL<- paste0(base,LC_CRED$investorID,"/notes")
+    searchURL<- MakeURL(LC_CRED$investorID,"notes")
 
-    response<- httr::GET(searchURL,
-                         httr::add_headers("Authorization"= LC_CRED$key))
-    dat<- httr::content(response)
-    CleanNoteData(dat)
+    r<- LC_GET(searchURL, LC_CRED$key)
+    CleanData(r,14)
 }
