@@ -6,13 +6,8 @@
 \usage{
 AvailableCash()
 }
-\arguments{
-\item{investorID}{Investor's ID number from the Account Summary page}
-
-\item{key}{Investor's API key. See the Account Settings page}
-}
 \description{
 Uses Lending Club's API to access the user's account and return the available
- cash.
+cash.
 }
 

@@ -4,5 +4,5 @@
 
 MakeURL<- function(investorID, append){
     base<-"https://api.lendingclub.com/api/investor/v1/accounts/"
-    paste0(base,investorID,"/",append,"/")
+    paste0(base,investorID,"/",append)
     }

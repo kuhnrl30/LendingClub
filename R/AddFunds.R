@@ -1,4 +1,4 @@
-#' Setup a funds transfer
+#' Add funds to account
 #'
 #' Sets up a recurring or one-time funds transfer. The investor must
 #' already have setup the account from which the funds are transferred.
@@ -6,11 +6,11 @@
 #' @param amount amount to be transferred
 #' @param freq frequency of transfers. Optional.  If a value is not
 #' supplied, then the transfer will be processed immediately.
-#' @param start date formatted as YYYY/MM/DD. If a date is not
+#' @param start date formatted as YYYY/MM/DD.
 #' @param end date formatted as YYYY/MM/DD
 #' @export
 #'
-TransferFunds<- function(amount, freq= NULL, start=NULL, end=NULL){
+AddFunds<- function(amount, freq= NULL, start=NULL, end=NULL){
     # Error checking and data validation
     if(!is.numeric(amount)){
         stop("amount must be numeric")
@@ -48,9 +48,8 @@ TransferFunds<- function(amount, freq= NULL, start=NULL, end=NULL){
 
     postURL<- MakeURL(LC_CRED$investorID, "funds/add")
 
-    params<- list("investorId"=LC_CRED$investorID,
+    params<- list("transferFrequency"=freq,
                   "amount"=amount,
-                  "transferFrequency"=freq,
                   "startDate"= start,
                   "endDate"= end)
 

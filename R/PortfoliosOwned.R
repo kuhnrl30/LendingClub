@@ -10,5 +10,5 @@ PortfoliosOwned<- function(){
 
     r<- LC_GET(searchURL, LC_CRED$key)
 
-    CleanData(r,3)
+    CleanData(r$myPortfolios)
     }
