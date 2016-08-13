@@ -9,6 +9,7 @@
 #' @export
 
 SubmitOrder<- function(loanId, amount, portfolioId){
+
     LC_CRED<-CheckCred()
 
     postURL<- MakeURL(LC_CRED$investorID,"orders")

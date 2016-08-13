@@ -4,8 +4,9 @@
 #' @param searchURL URL passed to the Lending Club API
 #' @param auth API key
 
-LC_GET<- function(searchURL, auth){
+LC_GET<- function(searchURL, auth, query=NULL){
     r<- httr::GET(searchURL,
+                  query=query,
                   httr::user_agent("http://www.github.com/kuhnrl30/LendingClub"),
                   httr::add_headers("Authorization"= auth))
 
@@ -16,4 +17,5 @@ LC_GET<- function(searchURL, auth){
 
 
     httr::content(r)
+
     }

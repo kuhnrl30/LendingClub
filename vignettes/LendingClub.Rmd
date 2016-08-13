@@ -29,12 +29,6 @@ MakeCredential(investorID, APIkey)
 ### Other Functions
 Here are examples of other functions in the package. As mentioned above, all other functions in this package will look for the LC_CRED variable before processing the respective API calls.
 ```{r}
-Cash<- AvailableCash()
-Cash
-```
-
-
-```{r}
-Notes<- NotesOwned()
-names(Notes)
+Loans<- ListedLoans()
+dim(Loans)
 ```

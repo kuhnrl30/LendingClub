@@ -4,7 +4,7 @@
 \alias{LC_GET}
 \title{Wrapper for GET}
 \usage{
-LC_GET(searchURL, auth)
+LC_GET(searchURL, auth, query = NULL)
 }
 \arguments{
 \item{searchURL}{URL passed to the Lending Club API}

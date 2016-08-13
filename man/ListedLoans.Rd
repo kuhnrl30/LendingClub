@@ -4,7 +4,12 @@
 \alias{ListedLoans}
 \title{Loan Listing}
 \usage{
-ListedLoans()
+ListedLoans(showAll = TRUE)
+}
+\arguments{
+\item{showAll}{logical, indicate whether all loans should be retured.
+Use false to limit the results to those loans listed in the most recent
+listing period.}
 }
 \description{
 Uses Lending Club's API to return all current listed loans
