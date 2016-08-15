@@ -11,6 +11,7 @@ AvailableCash<- function(){
 
     searchURL<- MakeURL(LC_CRED$investorID, "availablecash")
 
-    r<- LC_GET(searchURL, LC_CRED$key)
-    r$availableCash
+    LC_GET(searchURL, LC_CRED$key, margin=T)
+
+
     }

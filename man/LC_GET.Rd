@@ -4,12 +4,15 @@
 \alias{LC_GET}
 \title{Wrapper for GET}
 \usage{
-LC_GET(searchURL, auth, query = NULL)
+LC_GET(searchURL, auth, query = NULL, margin = T)
 }
 \arguments{
 \item{searchURL}{URL passed to the Lending Club API}
 
 \item{auth}{API key}
+}
+\value{
+object with raw content from the API call and the GET response
 }
 \description{
 A wrapper for the GET function to pull the needed data

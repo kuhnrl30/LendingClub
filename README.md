@@ -4,15 +4,15 @@
 
 *Available Functions:*
 
+- AccountSummary
 - AvailableCash
+- CreatePortfolio
+- DetailNotesOwned
+- ListedLoans
 - NotesOwned
+- PendingTransfers
 - PortfoliosOwned
 - TransferFunds
-- AccountSummary
-- PendingTransfers
-- DetailNotesOwned
-- CreatePortfolio
-- ListedLoans
 - WithdrawFunds
 
 *Planned Functions:*

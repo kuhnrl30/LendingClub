@@ -4,7 +4,7 @@
 \alias{CleanData}
 \title{Convert the list to dataframe}
 \usage{
-CleanData(x)
+CleanData(x, margin = T)
 }
 \arguments{
 \item{x}{list to be cleaned}

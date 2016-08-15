@@ -7,6 +7,10 @@
 #' @author Ryan Kuhn, CPA
 #' @importFrom httr "GET"
 #' @importFrom httr "content"
+#' @importFrom httr "user_agent"
+#' @importFrom httr "add_headers"
+#' @importFrom httr "status_code"
+#' @import httr
 #' @usage
 #' vignette("LendingClub")
 #'

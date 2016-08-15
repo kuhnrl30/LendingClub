@@ -8,7 +8,5 @@ NotesOwned<- function(){
 
     searchURL<- MakeURL(LC_CRED$investorID,"notes")
 
-    r<- LC_GET(searchURL, LC_CRED$key)
-
-    CleanData(r$myNotes)
-}
+    LC_GET(searchURL, LC_CRED$key, margin=F)
+    }

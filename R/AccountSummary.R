@@ -11,6 +11,6 @@ AccountSummary<- function(){
 
     searchURL<-MakeURL(LC_CRED$investorID, "summary")
 
-    LC_GET(searchURL, LC_CRED$key)
+    LC_GET(searchURL, LC_CRED$key, margin=T)
 
-}
+    }

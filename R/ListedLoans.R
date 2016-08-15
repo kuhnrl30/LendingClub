@@ -11,7 +11,11 @@ ListedLoans<- function(showAll=TRUE){
 
     searchURL<- "https://api.lendingclub.com/api/investor/v1/loans/listing"
 
-    r<- LC_GET(searchURL, LC_CRED$key,  query=list("showAll" = showAll))
+    x<-LC_GET(searchURL, LC_CRED$key,  query=list("showAll" = showAll), margin=NULL)
 
-    CleanData(r$loans)
+    y<- t(data.frame(do.call(cbind, x$content[[2]]), stringsAsFactors = F))
+    row.names(y)<-NULL
+    x$content<- data.frame(y)
+    x
+
 }
