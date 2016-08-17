@@ -13,7 +13,7 @@
 <meta name="author" content="Ryan Kuhn" />
 
 
-<title>Using the Lending Club API</title>
+<title>Introducing the LendingClub Package</title>
 
 
 
@@ -67,15 +67,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 
 
-<h1 class="title toc-ignore">Using the Lending Club API</h1>
+<h1 class="title toc-ignore">Introducing the LendingClub Package</h1>
 <h4 class="author"><em>Ryan Kuhn</em></h4>
 
 
 
-<div id="user-credentials" class="section level3">
-<h3>User credentials</h3>
-<p>You’ll need to supply the investor’s account number and API key. You can find the account number from the account Summary page. You’ll find the API key at the bottom of the Account Settings page. Here, I’ve loaded them from a .Renviron file but you can use whatever process yo are comfortable to pass them to the MakeCredential function.</p>
-<p>The MakeCredential() function uses the investorID and APIkey inputs and creates the <code>LC_CRED</code> variable in the global environment. The other functions in this package will look for this variable to process the respective API calls.</p>
+<div id="introduction" class="section level3">
+<h3>Introduction</h3>
+<p>Lending Club is a peer-to-peer lending site. Peer-to-peer lending crowd-funds loans by matching borrowers with willing investors. This LendingClub library makes it easy for you to see your investor account data such as the amount of free cash or the details on which loans you own. This package is a convenience wrapper for the Lending Club API so that you get get the data into R. You can learn more about the API by reading <a href="https://www.lendingclub.com/developers/lc-api.action">Lending Club’s documentation</a></p>
+</div>
+<div id="getting-started" class="section level3">
+<h3>Getting Started</h3>
+<div id="creating-a-user-credential" class="section level4">
+<h4>Creating a User Credential</h4>
+<p>To get started, you’ll need to supply the investor’s account number and API key. You can find the account number from the Account Summary page the API key is located at the bottom of the Account Settings page. Here, I’ve loaded them from a .Renviron file but you can use whatever process you are comfortable to pass them to the MakeCredential function. If you are going to share your code, then I recommend doing something similar to what I’ve done here.</p>
+<p>The MakeCredential() function uses the investorID and APIkey inputs and creates a <code>LC_CRED</code> variable in the global environment. The other functions in this package will look for this variable to process the respective API calls.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(LendingClub)
 
 investorID&lt;-<span class="st"> </span><span class="kw">Sys.getenv</span>(<span class="st">&quot;id&quot;</span>)
@@ -83,19 +89,33 @@ APIkey&lt;-<span class="st"> </span><span class="kw">Sys.getenv</span>(<span cla
 
 <span class="kw">MakeCredential</span>(investorID, APIkey)</code></pre></div>
 </div>
-<div id="other-functions" class="section level3">
-<h3>Other Functions</h3>
-<p>Here are examples of other functions in the package. As mentioned above, all other functions in this package will look for the LC_CRED variable before processing the respective API calls.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Cash&lt;-<span class="st"> </span><span class="kw">AvailableCash</span>()
-Cash</code></pre></div>
-<pre><code>## [1] 3.19</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Notes&lt;-<span class="st"> </span><span class="kw">NotesOwned</span>()
-<span class="kw">names</span>(Notes)</code></pre></div>
-<pre><code>##  [1] &quot;loanId&quot;           &quot;noteId&quot;           &quot;orderId&quot;         
-##  [4] &quot;interestRate&quot;     &quot;loanLength&quot;       &quot;loanStatus&quot;      
-##  [7] &quot;grade&quot;            &quot;subGrade&quot;         &quot;loanAmount&quot;      
-## [10] &quot;noteAmount&quot;       &quot;paymentsReceived&quot; &quot;issueDate&quot;       
-## [13] &quot;orderDate&quot;        &quot;loanStatusDate&quot;</code></pre>
+<div id="a-few-more-function-examples" class="section level4">
+<h4>A Few More Function Examples</h4>
+<p>Here are examples of other functions in the package. As mentioned above, all other functions in this package will look for the <code>LC_CRED</code> variable before processing the respective API calls. You can see a dataframe of loans currently listed using the ListedLoans() function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Loans&lt;-<span class="st"> </span><span class="kw">ListedLoans</span>()
+<span class="kw">dim</span>(Loans$content)</code></pre></div>
+<pre><code>## [1] 146 103</code></pre>
+<p>Another useful function to start with is AccountSummary(). This returns key statistics such as the available cash, total number of notes owned, and all time total interest received. You don’t pass any inputs to the function but it will search the environment for the LC_CRED variable.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">AccountSummary</span>()</code></pre></div>
+<pre><code>## &lt;LendingClub API&gt;
+##                   Field       Value
+## 1            investorId 15900271.00
+## 2         availableCash        1.60
+## 3          accountTotal      350.01
+## 4       accruedInterest        1.95
+## 5      infundingBalance        0.00
+## 6      receivedInterest        9.17
+## 7     receivedPrincipal       25.12
+## 8      receivedLateFees        0.00
+## 9  outstandingPrincipal      348.41
+## 10           totalNotes       17.00
+## 11      totalPortfolios        2.00</code></pre>
+</div>
+</div>
+<div id="conclusion" class="section level3">
+<h3>Conclusion</h3>
+<p>I hope this package can be useful for R users that want to built complex filter queries or possibly use machine learning to predict default rates. I will be improving the package documentation as time progresses.</p>
+<p>Please feel free to leave a comment below or contact me at <a href="mailto:Kuhn30@mail.com">Kuhn30@mail.com</a> if you have question or comments about the package.</p>
 </div>
 
 

@@ -6,6 +6,11 @@
 \usage{
 CreatePortfolio(port_name, port_desc)
 }
+\arguments{
+\item{port_name}{Name of the new portfolio}
+
+\item{port_desc}{Portfolio description}
+}
 \description{
 Uses Lending Club's API to create a new portfolio
 }

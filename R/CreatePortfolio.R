@@ -1,6 +1,8 @@
 #' Create a new portfolio
 #'
 #' Uses Lending Club's API to create a new portfolio
+#' @param port_name Name of the new portfolio
+#' @param port_desc Portfolio description
 #' @export
 CreatePortfolio<- function(port_name, port_desc){
     LC_CRED<-CheckCred()

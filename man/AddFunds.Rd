@@ -10,15 +10,27 @@ AddFunds(amount, freq = NULL, start = NULL, end = NULL)
 \item{amount}{amount to be transferred}
 
 \item{freq}{frequency of transfers. Optional.  If a value is not
-supplied, then the transfer will be processed immediately.}
+supplied, then the transfer will be processed immediately. Defaults to NULL.}
 
-\item{start}{date formatted as YYYY/MM/DD.}
+\item{start}{date formatted as YYYY/MM/DD. Defaults to NULL}
 
-\item{end}{date formatted as YYYY/MM/DD}
+\item{end}{date formatted as YYYY/MM/DD. Defaults to NULL}
 }
 \description{
 Sets up a recurring or one-time funds transfer. The investor must
 already have setup the account from which the funds are transferred.
 Transfers can one-time or recurring.
+}
+\details{
+The API accepts specific values for the frequency. The time periods
+must be one of:
+\itemize{
+\item LOAD_NOW
+\item LOAD_ONCE
+\item LOAD_WEEKLY
+\item LOAD_BIWEEKLY
+\item LOAD_ON_DAY_1_AND_15
+\item LOAD_MONTHLY
+}
 }
 

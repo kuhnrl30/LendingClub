@@ -7,10 +7,9 @@ APIkey<- Sys.getenv("key")
 MakeCredential(investorID, APIkey)
 
 ## ------------------------------------------------------------------------
-Cash<- AvailableCash()
-Cash
+Loans<- ListedLoans()
+dim(Loans$content)
 
 ## ------------------------------------------------------------------------
-Notes<- NotesOwned()
-names(Notes)
+AccountSummary()
 

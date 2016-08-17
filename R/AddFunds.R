@@ -5,9 +5,19 @@
 #' Transfers can one-time or recurring.
 #' @param amount amount to be transferred
 #' @param freq frequency of transfers. Optional.  If a value is not
-#' supplied, then the transfer will be processed immediately.
-#' @param start date formatted as YYYY/MM/DD.
-#' @param end date formatted as YYYY/MM/DD
+#' supplied, then the transfer will be processed immediately. Defaults to NULL.
+#' @param start date formatted as YYYY/MM/DD. Defaults to NULL
+#' @param end date formatted as YYYY/MM/DD. Defaults to NULL
+#' @details The API accepts specific values for the frequency. The time periods
+#' must be one of:
+#' \itemize{
+#' \item LOAD_NOW
+#' \item LOAD_ONCE
+#' \item LOAD_WEEKLY
+#' \item LOAD_BIWEEKLY
+#' \item LOAD_ON_DAY_1_AND_15
+#' \item LOAD_MONTHLY
+#' }
 #' @export
 #'
 AddFunds<- function(amount, freq= NULL, start=NULL, end=NULL){
