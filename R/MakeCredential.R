@@ -6,8 +6,12 @@
 #' @param APIkey User's API key from the account settings page
 #' @export
 MakeCredential<- function(investorID, APIkey){
-    cred<- list("investorID"=investorID,
-                "key"=APIkey)
+
+    cred<- structure(
+        list("investorID"=investorID,
+             "key"=APIkey),
+        class = "LendingClub_credential")
 
     assign("LC_CRED",cred,envir=.GlobalEnv)
-}
+
+    }

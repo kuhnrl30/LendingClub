@@ -10,6 +10,7 @@
 #' @importFrom httr "user_agent"
 #' @importFrom httr "add_headers"
 #' @importFrom httr "status_code"
+#' @import RGtk2
 #' @import httr
 #' @usage
 #' vignette("LendingClub")
