@@ -7,6 +7,6 @@ Maintainer: Ryan Kuhn, CPA <kuhnrl30@gmail.com>
 Description: Functions to access Lending Club's API
 License: MIT
 LazyData: TRUE
-Suggests: knitr
+Suggests: knitr, shiny
 VignetteBuilder: knitr
 RoxygenNote: 5.0.1
