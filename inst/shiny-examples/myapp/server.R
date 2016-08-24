@@ -25,6 +25,11 @@ shinyServer(function(input,output, session){
                                                   options = list(lengthMenu = c(5, 25, 50),
                                                                  pageLength = 10),
                                                   selection='single')
+
+    output$oSecondary      <- DT::renderDataTable({FolioListing()},
+                                                  options = list(lengthMenu = c(5, 25, 50),
+                                                                 pageLength = 10),
+                                                  selection='single')
     })
 
 

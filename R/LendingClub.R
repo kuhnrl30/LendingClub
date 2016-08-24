@@ -10,6 +10,7 @@
 #' @importFrom httr "user_agent"
 #' @importFrom httr "add_headers"
 #' @importFrom httr "status_code"
+#' @importFrom httr "stop_for_status"
 #' @import RGtk2
 #' @import httr
 #' @usage

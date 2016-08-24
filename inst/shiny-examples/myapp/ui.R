@@ -14,8 +14,9 @@ shinyUI(navbarPage("Lending Club Access",
                 navbarMenu("Notes",
                            tabPanel("Primary Market",
                                     DT::dataTableOutput("oListedLoans")),
-                           tabPanel("Secondary Market")
-                           ),
+                           tabPanel("Secondary Market",
+                                    DT::dataTableOutput("oSecondary"))
+                            ),
                 navbarMenu("Transfers",
                            tabPanel("Add Funds"),
                            tabPanel("Withdraw")

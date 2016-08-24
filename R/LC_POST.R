@@ -10,6 +10,6 @@ LC_POST<- function(postURL, params, auth ){
     httr::POST(postURL,
                body=params,
                encode="json",
-               httr::add_headers("Authorization"= auth))
-
+               httr::add_headers("Authorization"= auth,
+                                 "Content-Type"="application/json"))
     }
