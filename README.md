@@ -19,6 +19,8 @@
 - SubmitOrder
 - CancelTransfers
 - FolioListing
+- FolioSell
+- FolioBuy
 
 
 
