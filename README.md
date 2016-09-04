@@ -1,9 +1,10 @@
 # Lending Club  
 
-## A work in progress being built to access the Lending Club API
+## A pakcage being built to access the Lending Club API
 
 *Available Functions:*
 
+- AddFunds
 - AccountSummary
 - AvailableCash
 - CreatePortfolio
@@ -14,10 +15,11 @@
 - PortfoliosOwned
 - TransferFunds
 - WithdrawFunds
+- CancelTransfers
 
 *Planned Functions:*
+
 - SubmitOrder
-- CancelTransfers
 - FolioListing
 - FolioSell
 - FolioBuy
@@ -35,3 +37,4 @@ the API key on the Account Settings page.
 MakeCredential(investorID, APIkey)
 ListedLoans()
 ```
+

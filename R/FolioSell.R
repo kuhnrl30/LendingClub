@@ -9,17 +9,17 @@
 #' @param askingPrice Price you wish to sell your loan for. Remember to consider
 #' the accrued interest in your offering.
 #' @export
-FolioSell<- function(loanId, orderId, noteId, expireDate=NULL, askingPrice){
+FolioSell<- function(loanId, orderId, noteId, expireDate= NULL, askingPrice){
 
     LC_CRED<-CheckCred()
 
     if(is.null(expireDate)){
-        expireDate<- as.character(as.Date(Sys.time())+5)
+        expireDate<- as.character(format(as.Date(Sys.time())+5,"%m/%d/%Y"))
         }
 
     postURL<- MakeURL(LC_CRED$investorID, "trades/sell")
 
-    params<- list("aid"=LC_CRED$investorID,
+    params<- list("Aid"=LC_CRED$investorID,
                   "expireDate"= expireDate,
                   "notes"=list(
                       "loanId"=loanId,

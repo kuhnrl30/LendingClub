@@ -8,7 +8,7 @@ CancelTransfer<- function(transferId){
 
     postURL<- MakeURL(LC_CRED$investorID,"funds/cancel")
 
-    params<- list("transferId" = transferId)
+    params<- list("transferIds" = list(transferId))
 
     LC_POST(postURL, params, LC_CRED$key)
 

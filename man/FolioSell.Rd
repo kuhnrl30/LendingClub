@@ -4,7 +4,7 @@
 \alias{FolioSell}
 \title{Sell notes}
 \usage{
-FolioSell(loanId, orderId, noteId, expireDate, askingPrice)
+FolioSell(loanId, orderId, noteId, expireDate = NULL, askingPrice)
 }
 \arguments{
 \item{loanId}{The loan ID}

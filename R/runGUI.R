@@ -9,8 +9,8 @@ runGUI <- function() {
         stop("Could not find example directory. Try re-installing `LendingClub`.", call. = FALSE)
     }
 
-    # shiny::runApp(appDir, display.mode = "normal")
-    shiny::runApp(appDir, host="127.0.0.1",port=5209, launch.browser = T, display.mode = "normal")
+    shiny::runApp(appDir, display.mode = "normal")
+    # shiny::runApp(appDir, host="127.0.0.1",port=5209, launch.browser = T, display.mode = "normal")
     }
 
 
