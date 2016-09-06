@@ -2,10 +2,18 @@ ResponseHandler<- function(r){
 
 
     if (http_error(r)) {
+        # if(status_code(r)=="400"){
+        #     msg<- jsonlite::fromJSON(content(r,"text"), simplifyVector = FALSE)
+        # } else {
+        #     msg<- NULL
+        # }
+
         stop(
             sprintf(
                 "LendingClub API request failed [%s]",
-                status_code(r)),
+                status_code(r)
+                # ,msg$errors$message
+            ),
             call. = FALSE
         )
         }

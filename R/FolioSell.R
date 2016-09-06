@@ -19,13 +19,14 @@ FolioSell<- function(loanId, orderId, noteId, expireDate= NULL, askingPrice){
 
     postURL<- MakeURL(LC_CRED$investorID, "trades/sell")
 
-    params<- list("Aid"=LC_CRED$investorID,
+    params<- list("aid"=LC_CRED$investorID,
                   "expireDate"= expireDate,
-                  "notes"=list(
+                  "notes"=data.frame(
                       "loanId"=loanId,
                       "orderId"= orderId,
                       "noteId"= noteId,
-                      "askingPrice"= askingPrice))
+                      "askingPrice"= askingPrice,
+                      stringsAsFactors = F))
 
     LC_POST(postURL,params, LC_CRED$key)
 

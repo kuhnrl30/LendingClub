@@ -16,13 +16,14 @@
 - TransferFunds
 - WithdrawFunds
 - CancelTransfers
+- FolioSell
+- FolioBuy
 
 *Planned Functions:*
 
 - SubmitOrder
 - FolioListing
-- FolioSell
-- FolioBuy
+
 
 
 

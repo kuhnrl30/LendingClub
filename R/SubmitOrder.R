@@ -8,7 +8,7 @@
 #' using the PortfoliosOwned() function.
 #' @export
 
-SubmitOrder<- function(loanId, amount, portfolioId){
+SubmitOrder<- function(loanId, amount, portfolioId=NULL){
 
     LC_CRED<-CheckCred()
 

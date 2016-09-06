@@ -4,7 +4,7 @@
 \alias{SubmitOrder}
 \title{Order a note}
 \usage{
-SubmitOrder(loanId, amount, portfolioId)
+SubmitOrder(loanId, amount, portfolioId = NULL)
 }
 \arguments{
 \item{loanId}{unique ID for loans. These can be found using the

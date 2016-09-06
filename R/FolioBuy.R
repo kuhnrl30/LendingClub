@@ -7,14 +7,13 @@ FolioBuy<- function(loanId, orderId, noteId, bidPrice){
     postURL<- MakeURL(LC_CRED$investorID, "trades/buy")
 
     params<- list("aid"=LC_CRED$investorID,
-                  "notes"=list(
-                      "loanId"=loanId,
+                  "notes"= data.frame(
+                      "loanId"= loanId,
                       "orderId"= orderId,
                       "noteId"= noteId,
-                      "bidPrice"= bidPrice))
+                      "bidPrice"= bidPrice,
+                      stringsAsFactors = F))
 
 
-    r<-LC_POST(postURL,params, LC_CRED$key)
-    httr::stop_for_status(r)
-    r
+    LC_POST(postURL,params, LC_CRED$key)
 }
