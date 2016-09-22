@@ -1,0 +1,27 @@
+---
+title: "LC Portfolio Summary"
+date: '`r format(Sys.time(),"%B %d, %Y")`'
+output: html_document
+---
+
+```{r, message=F, warning=F}
+library(LendingClub)
+library(httr)
+library(rvest)
+knitr::opts_chunk$set(message=F, warning = F, echo=T)
+```
+
+```{r}
+handle<- "https://www.lendingclub.com/account/login.action"
+pgsession<- html_session(handle)
+pgform<- html_form(pgsession)[[1]]
+
+filledform<- set_values(pgform,
+                        login_email="kuhnrl30@gmail.com",
+                        login_password="Mar162016")
+
+submit_form(pgsession,filledform)
+
+a<- AccountHistory("09/01/2016","09/14/2016")
+
+.po;.;o ;p```
