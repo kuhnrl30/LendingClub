@@ -4,12 +4,12 @@
 #' call. The API call returns a list of 2 elements: The first
 #' is the content from the call and the second element is the
 #' actual response.
-#' @param object an object of class LendingClub_api
+#' @param x an object of class LendingClub_api
+#' @param ... currently not in use
 #' @export
-#' @usage
-#' print(object)
-print.LendingClub_api <- function(object, ...) {
+
+print.LendingClub_api <- function(x, ...) {
     cat("<LendingClub API>\n")
-    print(object$content)
-    invisible(object)
+    print(x$content)
+    invisible(x)
 }

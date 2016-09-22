@@ -3,6 +3,8 @@
 #' A wrapper for the GET function to pull the needed data
 #' @param searchURL URL passed to the Lending Club API
 #' @param auth API key
+#' @param query parameters to be added to and encoded into the URL
+#' @param margin logical. Passed to CleanData function
 #' @return object with raw content from the API call and the GET response
 
 LC_GET<- function(searchURL, auth, query=NULL, margin=T){
@@ -23,7 +25,7 @@ LC_GET<- function(searchURL, auth, query=NULL, margin=T){
         stop(
             sprintf(
                 "LendingClub API request failed [%s]\n%s\n<%s>",
-                status_code(resp),
+                status_code(r),
                 parsed$message,
                 parsed$documentation_url
             ),

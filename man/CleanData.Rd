@@ -8,6 +8,8 @@ CleanData(x, margin = T)
 }
 \arguments{
 \item{x}{list to be cleaned}
+
+\item{margin}{logical- True for summary data, False for dataframe}
 }
 \description{
 Converts the list of notes from function NotesOwned to a dataframe

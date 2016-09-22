@@ -2,11 +2,6 @@ ResponseHandler<- function(r){
 
 
     if (http_error(r)) {
-        # if(status_code(r)=="400"){
-        #     msg<- jsonlite::fromJSON(content(r,"text"), simplifyVector = FALSE)
-        # } else {
-        #     msg<- NULL
-        # }
 
         stop(
             sprintf(

@@ -10,6 +10,10 @@ LC_GET(searchURL, auth, query = NULL, margin = T)
 \item{searchURL}{URL passed to the Lending Club API}
 
 \item{auth}{API key}
+
+\item{query}{parameters to be added to and encoded into the URL}
+
+\item{margin}{logical. Passed to CleanData function}
 }
 \value{
 object with raw content from the API call and the GET response

@@ -4,10 +4,12 @@
 \alias{print.LendingClub_api}
 \title{Print the Output from an API call}
 \usage{
-print(object)
+\method{print}{LendingClub_api}(x, ...)
 }
 \arguments{
-\item{object}{an object of class LendingClub_api}
+\item{x}{an object of class LendingClub_api}
+
+\item{...}{currently not in use}
 }
 \description{
 This is a general function to print the conent from an API

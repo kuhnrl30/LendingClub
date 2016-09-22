@@ -5,11 +5,13 @@
 \alias{LendingClub}
 \alias{LendingClub-package}
 \title{Lending Club}
-\usage{
-vignette("LendingClub")
-}
 \description{
-To create the tools for working with the Lending Club API.
+Providing the tools to work with the Lending Club API.
+Both the primary and secondary markets can be accessed
+with this package.
+To learn more about the LendingClub package, start with
+the vignette:
+\code{vignette("LendingClub")}
 }
 \author{
 Ryan Kuhn, CPA

@@ -6,6 +6,11 @@
 \usage{
 MakeURL(investorID, append)
 }
+\arguments{
+\item{investorID}{Investor ID which is the same as the account number}
+
+\item{append}{string to append at the end of the URL}
+}
 \description{
 Assembles the search URL from the invstor ID and the type of query
 }

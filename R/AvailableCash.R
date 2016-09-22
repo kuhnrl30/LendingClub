@@ -2,8 +2,6 @@
 #'
 #' Uses Lending Club's API to access the user's account and return the available
 #' cash.
-#' @importFrom httr "GET"
-#' @importFrom httr "content"
 #' @export
 AvailableCash<- function(){
 
