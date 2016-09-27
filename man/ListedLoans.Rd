@@ -4,12 +4,14 @@
 \alias{ListedLoans}
 \title{Loan Listing}
 \usage{
-ListedLoans(showAll = TRUE)
+ListedLoans(showAll = TRUE, LC_CRED = NULL)
 }
 \arguments{
 \item{showAll}{logical, indicate whether all loans should be retured.
 Use false to limit the results to those loans listed in the most recent
 listing period.}
+
+\item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
 }
 \description{
 Uses Lending Club's API to return all current listed loans

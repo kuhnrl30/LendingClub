@@ -4,10 +4,11 @@
 #' @param showAll logical, indicate whether all loans should be retured.
 #' Use false to limit the results to those loans listed in the most recent
 #' listing period.
+#' @inheritParams AccountSummary
 #' @export
-ListedLoans<- function(showAll=TRUE){
+ListedLoans<- function(showAll=TRUE, LC_CRED=NULL){
 
-    LC_CRED<-CheckCred()
+    LC_CRED<-CheckCred(LC_CRED)
 
     searchURL<- "https://api.lendingclub.com/api/investor/v1/loans/listing"
 

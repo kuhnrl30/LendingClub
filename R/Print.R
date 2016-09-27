@@ -5,11 +5,11 @@
 #' is the content from the call and the second element is the
 #' actual response.
 #' @param x an object of class LendingClub_api
-#' @param ... currently not in use
+#' @param ... To pass additional arguments to the generic print function
 #' @export
 
 print.LendingClub_api <- function(x, ...) {
     cat("<LendingClub API>\n")
-    print(x$content)
+    print(x$content,...)
     invisible(x)
 }

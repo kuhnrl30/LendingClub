@@ -6,11 +6,12 @@
 #' @param amount amount to be purchased
 #' @param portfolioId unique ID for the portfolio. It can be found
 #' using the PortfoliosOwned() function.
+#' @inheritParams AccountSummary
 #' @export
 
-SubmitOrder<- function(loanId, amount, portfolioId=NULL){
+SubmitOrder<- function(loanId, amount, portfolioId=NULL, LC_CRED=NULL){
 
-    LC_CRED<-CheckCred()
+    LC_CRED<-CheckCred(LC_CRED)
 
     postURL<- MakeURL(LC_CRED$investorID,"orders")
 

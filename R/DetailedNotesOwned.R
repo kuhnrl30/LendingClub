@@ -1,10 +1,12 @@
 #' Return detail on investor's loans
 #'
-#' Uses Lending Club's API to access the user's account and return
-#' detail on the notes owned by the investor
+#' Get a detailed listing of notes owned by the investor.
+#'
+#'
+#' @inheritParams AccountSummary
 #' @export
-DetailedNotesOwned<- function(){
-    LC_CRED<-CheckCred()
+DetailedNotesOwned<- function(LC_CRED=NULL){
+    LC_CRED<-CheckCred(LC_CRED)
 
     searchURL<- MakeURL(LC_CRED$investorID,"detailednotes")
 

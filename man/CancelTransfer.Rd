@@ -4,12 +4,16 @@
 \alias{CancelTransfer}
 \title{Cancel a transfer}
 \usage{
-CancelTransfer(transferId)
+CancelTransfer(transferId, LC_CRED = NULL)
 }
 \arguments{
 \item{transferId}{unique ID for the scheduled transfer}
+
+\item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
 }
 \description{
-Uses Lending Club's API to cancel a scheduled transfer.
+Cancel a scheduled transfer. You can get a listing of
+scheduled transfers by using the \code{PendingTransfers()}
+funciton.
 }
 

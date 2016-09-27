@@ -1,15 +1,17 @@
 ## ------------------------------------------------------------------------
-library(LendingClub)
-
-investorID<- Sys.getenv("id")
-APIkey<- Sys.getenv("key")
-
-MakeCredential(investorID, APIkey)
+knitr::opts_chunk$set(eval=F)
 
 ## ------------------------------------------------------------------------
-Loans<- ListedLoans()
-dim(Loans$content)
+#  library(LendingClub)
+#  
+#  investorID<- Sys.getenv("id")
+#  APIkey<- Sys.getenv("key")
+#  
+#  LC_CRED<- MakeCredential(investorID, APIkey)
 
 ## ------------------------------------------------------------------------
-AccountSummary()
+#  ListedLoans()
+
+## ------------------------------------------------------------------------
+#  AccountSummary()
 

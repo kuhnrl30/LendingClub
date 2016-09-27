@@ -4,10 +4,12 @@
 \alias{WithdrawFunds}
 \title{Withdraw funds}
 \usage{
-WithdrawFunds(amount)
+WithdrawFunds(amount, LC_CRED = NULL)
 }
 \arguments{
 \item{amount}{amount to be transferred}
+
+\item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
 }
 \description{
 Withdraw funds from the investor's account

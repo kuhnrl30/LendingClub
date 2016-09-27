@@ -4,7 +4,8 @@
 \alias{FolioSell}
 \title{Sell notes}
 \usage{
-FolioSell(loanId, orderId, noteId, expireDate = NULL, askingPrice)
+FolioSell(loanId, orderId, noteId, expireDate = NULL, askingPrice,
+  LC_CRED = NULL)
 }
 \arguments{
 \item{loanId}{The loan ID}
@@ -18,6 +19,8 @@ current date or up to 7 days from posting the offer. Character string.}
 
 \item{askingPrice}{Price you wish to sell your loan for. Remember to consider
 the accrued interest in your offering.}
+
+\item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
 }
 \description{
 Sell notes on the FOLIOfn secondary market

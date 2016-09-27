@@ -1,15 +1,21 @@
 Package: LendingClub
 Type: Package
-Title: Wrapper to access the Lending Club API
-Version: 0.1.0
+Date: 2016-09-25
+Title: A Lending Club API Wrapper
+Version: 0.1.2
 Author: Ryan Kuhn
-Maintainer: Ryan Kuhn, CPA <kuhnrl30@gmail.com>
+Maintainer: "Ryan Kuhn, CPA" <kuhnrl30@gmail.com>
 URL: https://github.com/kuhnrl30/LendingClub
-BugReports: https://github.com/kuhnrl30/LendingClub/issues
-Description: Functions to access Lending Club's API.
+BugReports: https://github.com/kuhnrl30/LendingClub/issues 
+Description: Functions to access Lending Club's API and assist the
+	investor manage their account. Lending Club is a peer-to-peer
+	lending service where loans are broken up into $25 notes that
+	investors buy with the expectation of earning a return on the
+	interest. You can learn more about the API here:
+	<http://www.lendingclub.com/developers/lc-api.action>.
 License: MIT + file LICENSE
 LazyData: TRUE
-BuildVignettes: FALSE
+BuildVignettes: TRUE
 Suggests: knitr
 VignetteBuilder: knitr
 RoxygenNote: 5.0.1

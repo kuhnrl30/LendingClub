@@ -4,7 +4,7 @@
 \alias{FolioBuy}
 \title{Buy notes from the secondary market}
 \usage{
-FolioBuy(loanId, orderId, noteId, bidPrice)
+FolioBuy(loanId, orderId, noteId, bidPrice, LC_CRED = NULL)
 }
 \arguments{
 \item{loanId}{Loan ID number}
@@ -14,6 +14,8 @@ FolioBuy(loanId, orderId, noteId, bidPrice)
 \item{noteId}{Note Id number}
 
 \item{bidPrice}{Notes list price.}
+
+\item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
 }
 \description{
 Buy notes from the folio secondary market.

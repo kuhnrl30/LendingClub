@@ -4,33 +4,37 @@
 \alias{AddFunds}
 \title{Add funds to account}
 \usage{
-AddFunds(amount, freq = NULL, start = NULL, end = NULL)
+AddFunds(amount, freq = "LOAD_NOW", start = NULL, end = NULL,
+  LC_CRED = NULL)
 }
 \arguments{
 \item{amount}{amount to be transferred}
 
-\item{freq}{frequency of transfers. Optional.  If a value is not
-supplied, then the transfer will be processed immediately. Defaults to NULL.}
-
-\item{start}{date formatted as YYYY/MM/DD. Defaults to NULL}
-
-\item{end}{date formatted as YYYY/MM/DD. Defaults to NULL}
-}
-\description{
-Sets up a recurring or one-time funds transfer. The investor must
-already have setup the account from which the funds are transferred.
-Transfers can one-time or recurring.
-}
-\details{
-The API accepts specific values for the frequency. The time periods
-must be one of:
+\item{freq}{frequency of transfers. Optional.  The default value
+is LOAD_NOW so if a value is not supplied the transfer will be
+processed immediately. If a value is supplied, it must me one of:
 \itemize{
-\item LOAD_NOW
+\item LOAD_NOW (default)
 \item LOAD_ONCE
 \item LOAD_WEEKLY
 \item LOAD_BIWEEKLY
 \item LOAD_ON_DAY_1_AND_15
 \item LOAD_MONTHLY
+}}
+
+\item{start}{Defaults to NULL and is not required for immediate
+transfers. For future transfers, the date must be a string formatted
+as YYYY/MM/DD.}
+
+\item{end}{Defaults to NULL and is not required for immediate
+transfers. For future transfers, the date must be a string formatted
+as YYYY/MM/DD.}
+
+\item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
 }
+\description{
+Sets up a recurring or one-time funds transfer. The investor must have
+already setup the bank account from which the funds are transferred.
+Transfers can one-time or recurring.
 }
 

@@ -4,18 +4,23 @@
 \alias{BuySecondary}
 \title{Buy a note from the secondary market}
 \usage{
-BuySecondary(loanId, orderId, noteId, bidPrice)
+BuySecondary(loanId, orderId, noteId, bidPrice, LC_CRED = NULL)
 }
 \arguments{
-\item{loanId}{Numeric identifier of the loan whose note requested for purchase}
+\item{loanId}{Numeric identifier of the loan whose note requested f
+or purchase}
 
 \item{orderId}{Numeric identifier of the order for the note}
 
 \item{noteId}{Numeric identifier of the note}
 
-\item{bidPrice}{Positive numeric value in dollars ($) and cents representing the buy price desired for the note}
+\item{bidPrice}{Positive numeric value in dollars ($) and cents r
+epresenting the buy price desired for the note}
+
+\item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
 }
 \description{
-Buy a note from the secondary market
+Buy a not from the secondary Folio market. You can get the listing
+buy using the \code{FolioListing()} function.
 }
 

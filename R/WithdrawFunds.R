@@ -2,11 +2,12 @@
 #'
 #' Withdraw funds from the investor's account
 #' @param amount amount to be transferred
+#' @inheritParams AccountSummary
 #' @export
 #'
-WithdrawFunds<- function(amount){
+WithdrawFunds<- function(amount, LC_CRED=NULL){
 
-    LC_CRED<-CheckCred()
+    LC_CRED<-CheckCred(LC_CRED)
 
     postURL<- MakeURL(LC_CRED$investorID, "funds/withdraw")
 

@@ -9,7 +9,7 @@
 \arguments{
 \item{x}{an object of class LendingClub_api}
 
-\item{...}{currently not in use}
+\item{...}{To pass additional arguments to the generic print function}
 }
 \description{
 This is a general function to print the conent from an API
