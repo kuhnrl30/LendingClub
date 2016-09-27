@@ -6,6 +6,7 @@
 #' @param query parameters to be added to and encoded into the URL
 #' @param margin logical. Passed to CleanData function
 #' @return object with raw content from the API call and the GET response
+#' @keywords internal
 
 LC_GET<- function(searchURL, auth, query=NULL, margin=T){
     r<- httr::GET(searchURL,

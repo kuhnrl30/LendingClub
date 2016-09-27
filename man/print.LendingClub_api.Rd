@@ -17,4 +17,5 @@ call. The API call returns a list of 2 elements: The first
 is the content from the call and the second element is the
 actual response.
 }
+\keyword{internal}
 

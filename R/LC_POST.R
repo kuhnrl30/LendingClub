@@ -5,6 +5,7 @@
 #' @param postURL URL passed to the Lending Club API
 #' @param params parameters passed to the API
 #' @param auth API key
+#' @keywords internal
 #'
 LC_POST<- function(postURL, params, auth ){
     r<- httr::POST(postURL,

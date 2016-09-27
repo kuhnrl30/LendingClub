@@ -7,7 +7,7 @@ htmlwidgets: false
 comments: true
 tags: [R, P2PLending]
 vignette: >
-    %\VignetteIndexEntry{LabCorp Location Data Workflow}
+    %\VignetteIndexEntry{Introduction to LendingClub}
     %\VignetteEngine{knitr::rmarkdown}
     \usepackage[utf8]{inputenc}
 ---

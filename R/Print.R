@@ -6,7 +6,7 @@
 #' actual response.
 #' @param x an object of class LendingClub_api
 #' @param ... To pass additional arguments to the generic print function
-#' @export
+#' @keywords internal
 
 print.LendingClub_api <- function(x, ...) {
     cat("<LendingClub API>\n")

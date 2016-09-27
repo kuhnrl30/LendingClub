@@ -21,4 +21,5 @@ object with raw content from the API call and the GET response
 \description{
 A wrapper for the GET function to pull the needed data
 }
+\keyword{internal}
 

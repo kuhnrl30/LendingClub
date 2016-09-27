@@ -14,4 +14,5 @@ CleanData(x, margin = T)
 \description{
 Converts the list of notes from function NotesOwned to a dataframe
 }
+\keyword{internal}
 

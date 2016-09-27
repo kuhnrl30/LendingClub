@@ -17,4 +17,5 @@ LC_POST(postURL, params, auth)
 A wrapper for POST which passes the data to the L/C server. Data
 is encoded as json.
 }
+\keyword{internal}
 

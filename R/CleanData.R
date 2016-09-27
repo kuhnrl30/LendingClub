@@ -4,6 +4,7 @@
 #'
 #' @param x list to be cleaned
 #' @param margin logical- True for summary data, False for dataframe
+#' @keywords internal
 CleanData<- function(x, margin=T){
     if(margin){
         x<-data.frame(do.call(rbind, x), stringsAsFactors = F)
