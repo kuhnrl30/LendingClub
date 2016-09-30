@@ -2,12 +2,12 @@
 % Please edit documentation in R/CancelTransfer.R
 \name{CancelTransfer}
 \alias{CancelTransfer}
-\title{Cancel a transfer}
+\title{Cancel a scheduled transfer}
 \usage{
 CancelTransfer(transferId, LC_CRED = NULL)
 }
 \arguments{
-\item{transferId}{unique ID for the scheduled transfer}
+\item{transferId}{Numeric. Unique ID for the scheduled transfer}
 
 \item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
 }

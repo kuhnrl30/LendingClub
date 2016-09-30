@@ -1,18 +1,16 @@
-#' Buy notes from the secondary market
-#'
-#' Buy notes from the folio secondary market.
-#' @param loanId Loan ID number
-#' @param orderId Order ID number
-#' @param noteId Note Id number
-#' @param bidPrice Notes list price.
-#' @inheritParams AccountSummary
-#'
+#' @rdname FolioSell
+#' @name SecondaryMarket
 #' @export
 
+FolioBuy<- function(loanId, orderId, noteId, Price= NULL, LC_CRED=NULL, ...){
 
-FolioBuy<- function(loanId, orderId, noteId, bidPrice, LC_CRED=NULL){
+    LC_CRED<-CheckCred(LC_CRED)
 
-     LC_CRED<-CheckCred(LC_CRED)
+    args<- list(...)
+
+    if(exists(args$askingPrice)){
+        Price<- args$askingRpice
+    }
 
     postURL<- MakeURL(LC_CRED$investorID, "trades/buy")
 

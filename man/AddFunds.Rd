@@ -2,15 +2,15 @@
 % Please edit documentation in R/AddFunds.R
 \name{AddFunds}
 \alias{AddFunds}
-\title{Add funds to account}
+\title{Add funds to the investor's account}
 \usage{
 AddFunds(amount, freq = "LOAD_NOW", start = NULL, end = NULL,
   LC_CRED = NULL)
 }
 \arguments{
-\item{amount}{amount to be transferred}
+\item{amount}{Numeric. Amount to be transferred}
 
-\item{freq}{frequency of transfers. Optional.  The default value
+\item{freq}{String. Frequency of transfers. Optional.  The default value
 is LOAD_NOW so if a value is not supplied the transfer will be
 processed immediately. If a value is supplied, it must me one of:
 \itemize{
@@ -22,11 +22,11 @@ processed immediately. If a value is supplied, it must me one of:
 \item LOAD_MONTHLY
 }}
 
-\item{start}{Defaults to NULL and is not required for immediate
+\item{start}{String. Defaults to NULL and is not required for immediate
 transfers. For future transfers, the date must be a string formatted
 as YYYY/MM/DD.}
 
-\item{end}{Defaults to NULL and is not required for immediate
+\item{end}{String. Defaults to NULL and is not required for immediate
 transfers. For future transfers, the date must be a string formatted
 as YYYY/MM/DD.}
 

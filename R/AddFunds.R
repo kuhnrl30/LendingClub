@@ -1,11 +1,11 @@
-#' Add funds to account
+#' Add funds to the investor's account
 #'
 #' Sets up a recurring or one-time funds transfer. The investor must have
 #' already setup the bank account from which the funds are transferred.
 #' Transfers can one-time or recurring.
 #'
-#' @param amount amount to be transferred
-#' @param freq frequency of transfers. Optional.  The default value
+#' @param amount Numeric. Amount to be transferred
+#' @param freq String. Frequency of transfers. Optional.  The default value
 #' is LOAD_NOW so if a value is not supplied the transfer will be
 #' processed immediately. If a value is supplied, it must me one of:
 #' \itemize{
@@ -17,10 +17,10 @@
 #' \item LOAD_MONTHLY
 #' }
 #'
-#' @param start  Defaults to NULL and is not required for immediate
+#' @param start  String. Defaults to NULL and is not required for immediate
 #' transfers. For future transfers, the date must be a string formatted
 #' as YYYY/MM/DD.
-#' @param end Defaults to NULL and is not required for immediate
+#' @param end String. Defaults to NULL and is not required for immediate
 #' transfers. For future transfers, the date must be a string formatted
 #' as YYYY/MM/DD.
 #' @inheritParams AccountSummary

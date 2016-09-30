@@ -7,9 +7,9 @@
 CreatePortfolio(port_name, port_desc, LC_CRED = NULL)
 }
 \arguments{
-\item{port_name}{Name of the new portfolio}
+\item{port_name}{String. Name of the new portfolio}
 
-\item{port_desc}{Portfolio description}
+\item{port_desc}{String. Portfolio description}
 
 \item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
 }

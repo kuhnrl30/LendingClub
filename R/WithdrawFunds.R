@@ -1,7 +1,7 @@
 #' Withdraw funds
 #'
 #' Withdraw funds from the investor's account
-#' @param amount amount to be transferred
+#' @param amount Amount to be transferred
 #' @inheritParams AccountSummary
 #' @export
 #'

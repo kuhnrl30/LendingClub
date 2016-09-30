@@ -3,7 +3,6 @@
 export(AccountSummary)
 export(AddFunds)
 export(AvailableCash)
-export(BuySecondary)
 export(CancelTransfer)
 export(CreatePortfolio)
 export(DetailedNotesOwned)

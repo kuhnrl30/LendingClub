@@ -1,7 +1,8 @@
-#' Return Investor's available cash
+#' Return investor's available cash
 #'
 #' Uses Lending Club's API to access the user's account and return the available
-#' cash.
+#' cash. Committed cash is excluded from the total.
+#'
 #' @inheritParams AccountSummary
 #' @export
 AvailableCash<- function(LC_CRED=NULL){

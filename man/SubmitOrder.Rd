@@ -2,22 +2,24 @@
 % Please edit documentation in R/SubmitOrder.R
 \name{SubmitOrder}
 \alias{SubmitOrder}
-\title{Order a note}
+\title{Buy a note}
 \usage{
 SubmitOrder(loanId, amount, portfolioId = NULL, LC_CRED = NULL)
 }
 \arguments{
-\item{loanId}{unique ID for loans. These can be found using the
+\item{loanId}{Unique ID for loans. These can be found using the
 ListedLoans() function.}
 
-\item{amount}{amount to be purchased}
+\item{amount}{Amount to be purchased}
 
-\item{portfolioId}{unique ID for the portfolio. It can be found
+\item{portfolioId}{Unique ID for the portfolio. It can be found
 using the PortfoliosOwned() function.}
 
 \item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
 }
 \description{
-Uses Lending Club's API to create an order to purchase a note
+Create an order to purchase a note. If the account has sufficient
+funding, the note will be purchased once the loand has passed
+through the funding stage.
 }
 

@@ -1,10 +1,6 @@
-#' Return detail on investor's loans
-#'
-#' Get a detailed listing of notes owned by the investor.
-#'
-#'
-#' @inheritParams AccountSummary
+#' @rdname NotesOwned
 #' @export
+#'
 DetailedNotesOwned<- function(LC_CRED=NULL){
     LC_CRED<-CheckCred(LC_CRED)
 

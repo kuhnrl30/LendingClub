@@ -1,11 +1,11 @@
-#' Cancel a transfer
+#' Cancel a scheduled transfer
 #'
 #' Cancel a scheduled transfer. You can get a listing of
 #' scheduled transfers by using the \code{PendingTransfers()}
 #' funciton.
 #'
 #'
-#' @param transferId unique ID for the scheduled transfer
+#' @param transferId Numeric. Unique ID for the scheduled transfer
 #' @inheritParams AccountSummary
 #' @export
 CancelTransfer<- function(transferId, LC_CRED=NULL){

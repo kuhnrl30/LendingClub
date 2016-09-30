@@ -2,7 +2,7 @@
 % Please edit documentation in R/AvailableCash.R
 \name{AvailableCash}
 \alias{AvailableCash}
-\title{Return Investor's available cash}
+\title{Return investor's available cash}
 \usage{
 AvailableCash(LC_CRED = NULL)
 }
@@ -11,6 +11,6 @@ AvailableCash(LC_CRED = NULL)
 }
 \description{
 Uses Lending Club's API to access the user's account and return the available
-cash.
+cash. Committed cash is excluded from the total.
 }
 
