@@ -2,15 +2,14 @@
 #' @name SecondaryMarket
 #' @export
 
-FolioBuy<- function(loanId, orderId, noteId, Price= NULL, LC_CRED=NULL, ...){
-
+FolioBuy<- function(loanId, orderId, noteId, Price= NULL, LC_CRED=NULL){
     LC_CRED<-CheckCred(LC_CRED)
-
-    args<- list(...)
-
-    if(exists(args$askingPrice)){
-        Price<- args$askingRpice
-    }
+#
+#     args<- list(...)
+#
+#     if(exists(args$askingPrice)){
+#         Price<- args$askingRpice
+#     }
 
     postURL<- MakeURL(LC_CRED$investorID, "trades/buy")
 
@@ -19,7 +18,7 @@ FolioBuy<- function(loanId, orderId, noteId, Price= NULL, LC_CRED=NULL, ...){
                       "loanId"= loanId,
                       "orderId"= orderId,
                       "noteId"= noteId,
-                      "bidPrice"= bidPrice,
+                      "bidPrice"= Price,
                       stringsAsFactors = F))
 
 

@@ -9,20 +9,12 @@
 #' current date or up to 7 days from posting the offer. Character string.
 #' @param Price Price you wish to sell your loan for. Remember to consider
 #' the accrued interest in your offering.
-#' @param ... These arguments are available to avert prior version breakage
 #' @inheritParams AccountSummary
 #' @export
 #'
 
 
-FolioSell<- function(loanId, orderId, noteId, expireDate= NULL, Price=NULL, LC_CRED=NULL, ...){
-
-
-    args<- list(...)
-
-    if(exists(args$askingPrice)){
-        Price<- args$askingRpice
-        }
+FolioSell<- function(loanId, orderId, noteId, expireDate= NULL, Price=NULL, LC_CRED=NULL){
 
 
     LC_CRED<-CheckCred(LC_CRED)
@@ -39,7 +31,7 @@ FolioSell<- function(loanId, orderId, noteId, expireDate= NULL, Price=NULL, LC_C
                       "loanId"=loanId,
                       "orderId"= orderId,
                       "noteId"= noteId,
-                      "askingPrice"= askingPrice,
+                      "askingPrice"= Price,
                       stringsAsFactors = F))
 
     LC_POST(postURL,params, LC_CRED$key)

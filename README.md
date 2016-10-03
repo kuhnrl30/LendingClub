@@ -1,23 +1,34 @@
 # Lending Club  
 
-## A package built to access the Lending Club API
+## A package built to access the Lending Club API  
+This package helps you make transactions and manage the funds in your Lending Club account. 
+The functions can be lumped into 3 groups: Account Management, Transferring Funds, and 
+Transacting Loans.
 
-### List of Functions  
-- AddFunds
+
+#### List of Functions  
+
+Account Management  
 - AccountSummary
 - AvailableCash
+- PortfoliosOwned
 - CreatePortfolio
 - DetailNotesOwned
-- ListedLoans
 - NotesOwned
+
+Transfer Funds
 - PendingTransfers
-- PortfoliosOwned
-- TransferFunds
+- AddFunds
 - WithdrawFunds
 - CancelTransfers
+
+Transacting Loans
+- ListedLoans
+- SubmitOrder
+- FolioListing
 - FolioSell
 - FolioBuy
-- SubmitOrder
+
 
 ## Installation
 You can install the stable version on CRAN:
@@ -25,6 +36,7 @@ You can install the stable version on CRAN:
 install.packages("LendingClub")
 library(LendingClub)
 ```
+
 Or use devtools to install the development version from Github:
 ```
 devtools::install_github("kuhnrl30/LendingClub")
@@ -44,5 +56,4 @@ AccountSummary()
 ```
 
 ## License
-
 This package is free and open source software, licensed under MIT.

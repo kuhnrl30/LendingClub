@@ -6,10 +6,10 @@
 \alias{SecondaryMarket}
 \title{Transact with the secondary market}
 \usage{
-FolioBuy(loanId, orderId, noteId, Price = NULL, LC_CRED = NULL, ...)
+FolioBuy(loanId, orderId, noteId, Price = NULL, LC_CRED = NULL)
 
 FolioSell(loanId, orderId, noteId, expireDate = NULL, Price = NULL,
-  LC_CRED = NULL, ...)
+  LC_CRED = NULL)
 }
 \arguments{
 \item{loanId}{The loan ID}
@@ -22,8 +22,6 @@ FolioSell(loanId, orderId, noteId, expireDate = NULL, Price = NULL,
 the accrued interest in your offering.}
 
 \item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
-
-\item{...}{These arguments are available to avert prior version breakage}
 
 \item{expireDate}{The date the sell offer will expire. Can be as short as the
 current date or up to 7 days from posting the offer. Character string.}

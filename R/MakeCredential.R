@@ -13,7 +13,7 @@
 #' pass the credential to the other functions as an argument.
 #'
 #' @examples
-#' LC_CRED<- MakeCredential (investorID, APIkey)
+#' LC_CRED<- MakeCredential("investorID", "APIkey")
 #'
 #' @param investorID User's ID from the Account Summary page
 #' @param APIkey User's API key from the account settings page
