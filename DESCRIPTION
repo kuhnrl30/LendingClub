@@ -2,7 +2,7 @@ Package: LendingClub
 Type: Package
 Date: 2016-09-25
 Title: A Lending Club API Wrapper
-Version: 0.1.2
+Version: 0.1.3
 Author: Ryan Kuhn
 Maintainer: Ryan Kuhn <kuhnrl30@gmail.com>
 URL: https://github.com/kuhnrl30/LendingClub
