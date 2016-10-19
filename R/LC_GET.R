@@ -20,7 +20,7 @@ LC_GET<- function(searchURL, auth, query=NULL, margin=T){
         }
 
     parsed<- jsonlite::fromJSON(httr::content(r, "text", encoding="UTF-8"),
-                                simplifyVector = FALSE)
+                                simplifyVector = TRUE)
 
     if (httr::http_error(r)) {
         stop(

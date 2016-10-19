@@ -7,14 +7,20 @@
 #' @keywords internal
 CleanData<- function(x, margin=T){
     if(margin){
-        x<-data.frame(do.call(rbind, x), stringsAsFactors = F)
-        x$Field <- row.names(x)
-        names(x)<- c("Value","Field")
-        rownames(x)<- NULL
-        x[,c(2,1)]}
+        # y<-data.frame(do.call(rbind, x), stringsAsFactors = F)
+        # y$Field <- row.names(y)
+        # names(y)<- c("Value","Field")
+        # rownames(y)<- NULL
+        # y[,c(2,1)]}
+        y<- data.frame(x)
+        z<-data.frame("Field"= names(y),
+                      "Value"=as.character(y[1,]),
+                      stringsAsFactors = F)
+        z
+        }
     else {
-        x<- t(data.frame(do.call(cbind, x[[1]]), stringsAsFactors = F))
-        rownames(x)<- NULL
-        data.frame(x)
+        y<- data.frame(do.call("cbind", x[[1]]), stringsAsFactors = F)
+        rownames(y)<- NULL
+        data.frame(y)
     }
 }
