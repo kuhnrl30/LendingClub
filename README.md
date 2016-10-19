@@ -5,6 +5,7 @@ This package helps you make transactions and manage the funds in your Lending Cl
 The functions can be lumped into 3 groups: Account Management, Transferring Funds, and 
 Transacting Loans.
 
+<img src= "https://cranlogs.r-pkg.org/badges/grand-total/lendingclub" />
 
 #### List of Functions  
 
