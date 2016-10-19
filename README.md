@@ -1,6 +1,5 @@
 # Lending Club  
 
-![](http://cranlogs-dev.r-pkg.org/badges/LendingClub)
 
 ## A package built to access the Lending Club API  
 This package helps you make transactions and manage the funds in your Lending Club account. 
