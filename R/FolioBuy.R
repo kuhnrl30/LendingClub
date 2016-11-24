@@ -4,12 +4,6 @@
 
 FolioBuy<- function(loanId, orderId, noteId, Price= NULL, LC_CRED=NULL){
     LC_CRED<-CheckCred(LC_CRED)
-#
-#     args<- list(...)
-#
-#     if(exists(args$askingPrice)){
-#         Price<- args$askingRpice
-#     }
 
     postURL<- MakeURL(LC_CRED$investorID, "trades/buy")
 

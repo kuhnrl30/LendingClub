@@ -10,6 +10,10 @@
 #' @param portfolioId Unique ID for the portfolio. It can be found
 #' using the PortfoliosOwned() function.
 #' @inheritParams AccountSummary
+#' @examples
+#' SubmitOrder(12345678, 25)
+#' SubmitOrder(12345678, 25, "myPortfolio")
+#'
 #' @export
 
 SubmitOrder<- function(loanId, amount, portfolioId=NULL, LC_CRED=NULL){
@@ -18,12 +22,16 @@ SubmitOrder<- function(loanId, amount, portfolioId=NULL, LC_CRED=NULL){
 
     postURL<- MakeURL(LC_CRED$investorID,"orders")
 
+    orders<- data.frame("loanId" = loanId,
+                        "requestedAmount" = amount)
+
+    if(!is.null(portfolioId)) {
+        orders<- as.data.frame(cbind(orders, portfolioId),
+                               stringsAsFactors=F)
+        }
 
     params<- list("aid" = LC_CRED$investorID,
-                  "loanId" = loanId,
-                  "requestedAmount" = amount,
-                  "portfolioId" = portfolioId)
-
+                 "orders"= orders)
 
     LC_POST(postURL, params, LC_CRED$key)
 }
