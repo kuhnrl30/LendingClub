@@ -22,4 +22,10 @@ Create an order to purchase a note. If the account has sufficient
 funding, the note will be purchased once the loand has passed
 through the funding stage.
 }
+\examples{
+\dontrun{
+SubmitOrder(12345678, 25)
+SubmitOrder(12345678, 25, "myPortfolio")
+}
+}
 

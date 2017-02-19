@@ -11,9 +11,10 @@
 #' using the PortfoliosOwned() function.
 #' @inheritParams AccountSummary
 #' @examples
+#' \dontrun{
 #' SubmitOrder(12345678, 25)
 #' SubmitOrder(12345678, 25, "myPortfolio")
-#'
+#'}
 #' @export
 
 SubmitOrder<- function(loanId, amount, portfolioId=NULL, LC_CRED=NULL){
