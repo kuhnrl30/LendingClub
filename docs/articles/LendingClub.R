@@ -1,11 +1,11 @@
-## ---- echo=FALSE---------------------------------------------------------
+## ------------------------------------------------------------------------
 knitr::opts_chunk$set(eval=F)
 
 ## ------------------------------------------------------------------------
 #  library(LendingClub)
 #  
 #  investorID<- Sys.getenv("id")
-#  APIkey    <- Sys.getenv("key")
+#  APIkey<- Sys.getenv("key")
 #  
 #  LC_CRED<- MakeCredential(investorID, APIkey)
 

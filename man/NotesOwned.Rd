@@ -22,4 +22,3 @@ the same variables as \code{NotesOwned()}. As the name suggests, the function
 returns additional information about the notes owned including datapoints
 on the purpose, portfolio, and the payment history.
 }
-

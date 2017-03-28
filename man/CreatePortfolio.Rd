@@ -18,4 +18,3 @@ Create a new portfolio to assign loans to. Notes can be assigned to
 a portfolio using the API when they are purhcased from the primary
 market.
 }
-

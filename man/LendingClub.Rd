@@ -24,4 +24,3 @@ the vignette:
 \author{
 Ryan Kuhn, CPA
 }
-

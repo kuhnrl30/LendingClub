@@ -18,4 +18,3 @@ is the content from the call and the second element is the
 actual response.
 }
 \keyword{internal}
-

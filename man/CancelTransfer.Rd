@@ -16,4 +16,3 @@ Cancel a scheduled transfer. You can get a listing of
 scheduled transfers by using the \code{PendingTransfers()}
 funciton.
 }
-

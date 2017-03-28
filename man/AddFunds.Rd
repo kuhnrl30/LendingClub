@@ -37,4 +37,3 @@ Sets up a recurring or one-time funds transfer. The investor must have
 already setup the bank account from which the funds are transferred.
 Transfers can one-time or recurring.
 }
-

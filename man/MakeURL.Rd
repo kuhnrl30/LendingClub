@@ -15,4 +15,3 @@ MakeURL(investorID, append)
 Assembles the search URL from the invstor ID and the type of query
 }
 \keyword{internal}
-

@@ -15,4 +15,3 @@ CleanData(x, margin = T)
 Converts the list of notes from function NotesOwned to a dataframe
 }
 \keyword{internal}
-

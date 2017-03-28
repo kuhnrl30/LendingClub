@@ -12,4 +12,3 @@ PendingTransfers(LC_CRED = NULL)
 \description{
 Uses Lending Club's API to access the user's account and return the summary
 }
-

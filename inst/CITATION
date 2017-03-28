@@ -1,11 +1,7 @@
-year <- sub("-.*", "", meta$Date)
-note <- sprintf("R package version %s", meta$Version)
-
 citHeader("To cite LendingClub in publications, please use:")
 
 bibentry(bibtype = "Manual",
          title = "LendingClub: Provides an interface to the LendingClub web API.",
-         author = person("Ryan", "Kuhn")
-         year = year,
-         note = note,
-         url = https://CRAN.R-project.org/package=LendingClub)
+         author = person("Ryan", "Kuhn"),
+         year = "2017"
+         url = "https://CRAN.R-project.org/package=LendingClub" )

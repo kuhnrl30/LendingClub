@@ -14,4 +14,3 @@ WithdrawFunds(amount, LC_CRED = NULL)
 \description{
 Withdraw funds from the investor's account
 }
-

@@ -9,4 +9,3 @@ FolioListing()
 \description{
 Returns a dataframe of loans listed on the secondary market.
 }
-

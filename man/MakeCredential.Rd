@@ -31,4 +31,3 @@ pass the credential to the other functions as an argument.
 LC_CRED<- MakeCredential("investorID", "APIkey")
 
 }
-

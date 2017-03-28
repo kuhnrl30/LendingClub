@@ -14,4 +14,3 @@ Access the user's account and return the summary data.  The data points
 include available cash, total account balance, and the number of notes in the
 portfolio.
 }
-

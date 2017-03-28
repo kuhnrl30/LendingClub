@@ -1,7 +1,10 @@
 ---
 title: "Introducing the LendingClub Package"
 author: "Ryan Kuhn"
-output: rmarkdown::html_vignette
+output: 
+  prettydoc::html_pretty:
+    theme: leonids
+    highlight: github
 layout: post
 htmlwidgets: false
 comments: true
@@ -12,7 +15,7 @@ vignette: >
     \usepackage[utf8]{inputenc}
 ---
 
-```{r}
+```{r, echo=FALSE}
 knitr::opts_chunk$set(eval=F)
 ```
 
@@ -23,7 +26,7 @@ Lending Club is a peer-to-peer lending site.  Peer-to-peer lending crowd-funds l
 ### Getting Started  
 
 #### Creating a User Credential 
-To get started, you'll need to supply the investor's account number and API key. You can find the account number from the Account Summary page. The API key is located at the bottom of the Account Settings page. HIn the example below, the account number and API key are loaded from an .Renviron file but you can use whatever process you are comfortable to pass them to the MakeCredential function. If you are going to share your code, then I recommend doing something similar to this method rather than put it directly in your code.
+To get started, you'll need to supply the investor's account number and API key. You can find the account number from the Account Summary page. The API key is located at the bottom of the Account Settings page. In the example below, the account number and API key are loaded from an .Renviron file but you can use whatever process you are comfortable to pass them to the MakeCredential function. If you are going to share your code, then I recommend doing something similar to this method rather than put it directly in your code.
 
 The MakeCredential() function uses the investorID and APIkey inputs to create an S3 object. If you save this object as <code>LC_CRED</code>, then the other functions in this package will find it in the global environment and you will not have to pass it as an argument to the other functions. 
 
@@ -31,10 +34,10 @@ The MakeCredential() function uses the investorID and APIkey inputs to create an
 library(LendingClub)
 
 investorID<- Sys.getenv("id")
-APIkey<- Sys.getenv("key")
+APIkey    <- Sys.getenv("key")
 
 LC_CRED<- MakeCredential(investorID, APIkey)
-```
+``` 
 
 #### A Few More Function Examples 
 Here are a few examples of other functions in the package. As mentioned above, all other functions in this package will look for the <code>LC_CRED</code> object before processing the respective API calls.  You can see a dataframe of the currently listed loans using the ListedLoans() function.  
@@ -43,7 +46,7 @@ Here are a few examples of other functions in the package. As mentioned above, a
 ListedLoans()
 ```
 
-Another useful function to start with is AccountSummary(). This returns key statistics such as the available cash, total number of notes owned, and all time total interest received. You don't pass any inputs to the function but it will search the global environment for the LC_CRED object. 
+Another useful function to start with is AccountSummary(). This returns key statistics such as the available cash, total number of notes owned, and all time total interest received. You don't pass any inputs to the function but it will search the global environment for the <code>LC_CRED</code> object. 
 ```{r}
 AccountSummary()
 ```

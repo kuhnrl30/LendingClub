@@ -22,4 +22,3 @@ listed loans.}
 \description{
 Uses Lending Club's API to return all current listed loans
 }
-

@@ -12,4 +12,3 @@ PortfoliosOwned(LC_CRED = NULL)
 \description{
 Provides a dataframe of all portfolios owned by the investor.
 }
-

@@ -1,37 +1,13 @@
 # Lending Club  
+<img src= "http://www.r-pkg.org/badges/version/LendingClub" />
 <img src= "https://travis-ci.org/kuhnrl30/LendingClub.svg?branch=master"/>
 <img src= "https://cranlogs.r-pkg.org/badges/grand-total/LendingClub" />
 
+
 ## A package built to access the Lending Club API  
 This package helps you make transactions and manage the funds in your Lending Club account. 
-The functions can be lumped into 3 groups: Account Management, Transferring Funds, and 
+The functions can be grouped as: Account Management, Transferring Funds, and 
 Transacting Loans.
-
-
-
-#### List of Functions  
-
-Account Management  
-- AccountSummary
-- AvailableCash
-- PortfoliosOwned
-- CreatePortfolio
-- DetailNotesOwned
-- NotesOwned
-
-Transfer Funds
-- PendingTransfers
-- AddFunds
-- WithdrawFunds
-- CancelTransfers
-
-Transacting Loans
-- ListedLoans
-- SubmitOrder
-- FolioListing
-- FolioSell
-- FolioBuy
-
 
 ## Installation
 You can install the stable version on CRAN:

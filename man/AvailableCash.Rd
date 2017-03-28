@@ -13,4 +13,3 @@ AvailableCash(LC_CRED = NULL)
 Uses Lending Club's API to access the user's account and return the available
 cash. Committed cash is excluded from the total.
 }
-
