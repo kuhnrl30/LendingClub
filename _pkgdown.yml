@@ -1,7 +1,6 @@
 template:
   params:
     bootswatch: journal
-
 reference:
 - title: Account Management
   desc: ~
@@ -32,12 +31,11 @@ reference:
   contents:
     - MakeCredential  
     - LendingClub
-  
 navbar:
   title: LendingClub
   type: default
   left:
-  - text: Intro
+  - text: Get Started
     href: articles/LendingClub.html
   - text: Functions
     href: reference/index.html
@@ -48,5 +46,7 @@ navbar:
           href: http://ryankuhn.net/LendingClubModel
         - text: LendingClubData
           href: http://ryankuhn.net/LendingClubData
+    - text: ryankuhn.net
+      href: http://ryankuhn.net
     - icon: fa-github
       href: https://github.com/kuhnrl30/LendingClub

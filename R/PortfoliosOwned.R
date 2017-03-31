@@ -1,4 +1,4 @@
-#' List investor's portfolios
+#' Listing of investor's portfolios
 #'
 #' Provides a dataframe of all portfolios owned by the investor.
 #' @inheritParams AccountSummary

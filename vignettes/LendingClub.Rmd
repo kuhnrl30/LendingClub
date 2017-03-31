@@ -1,16 +1,11 @@
 ---
-title: "Introducing the LendingClub Package"
-author: "Ryan Kuhn"
+title: "Getting Started With the LendingClub Package"
 output: 
-  prettydoc::html_pretty:
-    theme: leonids
-    highlight: github
-layout: post
-htmlwidgets: false
-comments: true
-tags: [R, P2PLending]
+  html_document:
+  html_vignette:
+theme: journal
 vignette: >
-    %\VignetteIndexEntry{Introduction to LendingClub}
+    %\VignetteIndexEntry{LendingClub Quick Start Guide}
     %\VignetteEngine{knitr::rmarkdown}
     \usepackage[utf8]{inputenc}
 ---
@@ -19,7 +14,6 @@ vignette: >
 knitr::opts_chunk$set(eval=F)
 ```
 
-### Introduction  
 Lending Club is a peer-to-peer lending site.  Peer-to-peer lending crowd-funds loans by matching borrowers with willing investors. This LendingClub library makes it easy for you to see your investor account data such as the amount of free cash or the details on which loans you own. This package is a convenience wrapper for the Lending Club API so that you get get the data into R. You can learn more about the API by reading [Lending Club's documentation](https://www.lendingclub.com/developers/lc-api.action)
 
 

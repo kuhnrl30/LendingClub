@@ -2,7 +2,7 @@
 % Please edit documentation in R/SubmitOrder.R
 \name{SubmitOrder}
 \alias{SubmitOrder}
-\title{Buy a note}
+\title{Buy a note on the primary market}
 \usage{
 SubmitOrder(loanId, amount, portfolioId = NULL, LC_CRED = NULL)
 }

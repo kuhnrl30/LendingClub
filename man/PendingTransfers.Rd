@@ -2,7 +2,7 @@
 % Please edit documentation in R/PendingTransfers.R
 \name{PendingTransfers}
 \alias{PendingTransfers}
-\title{Return Investor's Pending Transfers}
+\title{Return investor's pending transfers}
 \usage{
 PendingTransfers(LC_CRED = NULL)
 }

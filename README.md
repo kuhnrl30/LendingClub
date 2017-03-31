@@ -1,6 +1,6 @@
 # Lending Club  
-<img src= "http://www.r-pkg.org/badges/version/LendingClub" />
-<img src= "https://travis-ci.org/kuhnrl30/LendingClub.svg?branch=master"/>
+[![Build Status](https://travis-ci.org/kuhnrl30/LendingClub.svg?branch=master)](https://travis-ci.org/kuhnrl30/LendingClub)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LendingClub)](https://cran.r-project.org/package=LendingClub)
 <img src= "https://cranlogs.r-pkg.org/badges/grand-total/LendingClub" />
 
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/AccountSummary.R
 \name{AccountSummary}
 \alias{AccountSummary}
-\title{Return the Investor's Account Summary}
+\title{Return the investor's Account Summary}
 \usage{
 AccountSummary(LC_CRED = NULL)
 }

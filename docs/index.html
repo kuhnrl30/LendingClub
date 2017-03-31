@@ -15,7 +15,7 @@
 <![endif]-->
 </head>
 <body>
-    <div class="container template-home">
+    <div class="container template-vignette">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -29,7 +29,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="articles/LendingClub.html">Intro</a>
+  <a href="articles/LendingClub.html">Get Started</a>
 </li>
 <li>
   <a href="reference/index.html">Functions</a>
@@ -52,6 +52,9 @@
   </ul>
 </li>
 <li>
+  <a href="http://ryankuhn.net">ryankuhn.net</a>
+</li>
+<li>
   <a href="https://github.com/kuhnrl30/LendingClub">
     <span class="fa fa-github"></span>
      
@@ -67,43 +70,38 @@
 
       
       </header><div class="row">
-  <div class="contents col-md-9">
-    <div id="lending-club" class="section level1">
+  <div class="col-md-9">
+    
+
+    
+    
+<div class="contents">
+<div id="lending-club" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#lending-club" class="anchor"></a>Lending Club</h1></div>
-<p><img src="http://www.r-pkg.org/badges/version/LendingClub"><img src="https://travis-ci.org/kuhnrl30/LendingClub.svg?branch=master"><img src="https://cranlogs.r-pkg.org/badges/grand-total/LendingClub"></p>
-<div id="a-package-built-to-access-the-lending-club-api" class="section level2">
+<p><a href="https://travis-ci.org/kuhnrl30/LendingClub"><img src="https://travis-ci.org/kuhnrl30/LendingClub.svg?branch=master" alt="Build Status"></a> <a href="https://cran.r-project.org/package=LendingClub"><img src="http://www.r-pkg.org/badges/version/LendingClub" alt="CRAN_Status_Badge"></a> <img src="https://cranlogs.r-pkg.org/badges/grand-total/LendingClub"></p>
+<div id="access-the-lending-club-api" class="section level2">
 <h2 class="hasAnchor">
-<a href="#a-package-built-to-access-the-lending-club-api" class="anchor"></a>A package built to access the Lending Club API</h2>
-<p>This package helps you make transactions and manage the funds in your Lending Club account. The functions can be grouped as: Account Management, Transferring Funds, and Transacting Loans.</p>
-</div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the stable version on CRAN:</p>
-<pre><code>install.packages("LendingClub")
-library(LendingClub)</code></pre>
-<p>Or use devtools to install the development version from Github:</p>
-<pre><code>devtools::install_github("kuhnrl30/LendingClub")
-library(LendingClub)</code></pre>
+<a href="#access-the-lending-club-api" class="anchor"></a>Access the Lending Club API</h2>
+<p>The LendingClub package is a set of functions that enables you to work with your LendingClub account from R. The package contains tools for:</p>
+<ol style="list-style-type: decimal">
+<li>Account management such as viewing the account balance<br>
+</li>
+<li>Transfer funds in our out of the account<br>
+</li>
+<li>Transact on your account by buying or selling notes</li>
+</ol>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
 <p>To use this package, you’ll first need to create a credential from your account number and API key. This credential can be saved to the global environment and the other functions will detect it. Use the MakeCredential() function and pass it your investorID number and your API key. You can find the InvestorID on your account summary page and the API key on the Account Settings page.</p>
-<pre><code>LC_CRED&lt;- MakeCredential(investorID, APIkey)
-ListedLoans()
-AccountSummary()</code></pre>
 </div>
-<div id="license" class="section level2">
-<h2 class="hasAnchor">
-<a href="#license" class="anchor"></a>License</h2>
-<p>This package is free and open source software, licensed under MIT.</p>
 </div>
 </div>
   </div>
 
-  <div class="col-md-3" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Links</h2>
 <ul class="list-unstyled">
 <li>Download from CRAN at <br><a href="https://cran.r-project.org/package=LendingClub">https://​cran.r-project.org/​package=LendingClub</a>
@@ -120,6 +118,7 @@ AccountSummary()</code></pre>
 <li>Ryan Kuhn <br><small class="roles"> Author, maintainer </small> </li>
 </ul>
 </div>
+
 </div>
 
 

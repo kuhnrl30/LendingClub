@@ -2,7 +2,7 @@
 % Please edit documentation in R/ListedLoans.R
 \name{ListedLoans}
 \alias{ListedLoans}
-\title{Loan Listing}
+\title{Listing of all loans on the primary market}
 \usage{
 ListedLoans(showAll = TRUE, LC_CRED = NULL)
 }

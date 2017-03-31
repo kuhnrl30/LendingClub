@@ -1,4 +1,4 @@
-#' Buy a note
+#' Buy a note on the primary market
 #'
 #' Create an order to purchase a note. If the account has sufficient
 #' funding, the note will be purchased once the loand has passed

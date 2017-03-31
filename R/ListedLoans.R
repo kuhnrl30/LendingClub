@@ -1,4 +1,4 @@
-#' Loan Listing
+#' Listing of all loans on the primary market
 #'
 #' Uses Lending Club's API to return all current listed loans
 #'
