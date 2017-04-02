@@ -114,13 +114,26 @@ portfolio.</p>
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>Object of class LendingClub_api. The object has two components. The first is <code>$content</code> with a data.frame of attributes of the invenstor's account such as available cash and value of the portfolios. The attributes are arranged by rows in the first column and the values are in the second column.  The second component is the <code>$response</code> including a timestamp of when the data was retrieved.</p>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'>## Not run: ------------------------------------</span>
+<span class='co'># LC_CRED&lt;- MakeCredential(InvestorID, APIKey)</span>
+<span class='co'># AccountSummary()</span>
+<span class='co'>## ---------------------------------------------</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>
