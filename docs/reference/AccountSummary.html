@@ -25,7 +25,7 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -103,7 +103,7 @@ include available cash, total account balance, and the number of notes in the
 portfolio.</p>
     
 
-    <pre><span class='fu'>AccountSummary</span>(<span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>AccountSummary</span>(<span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -120,10 +120,10 @@ portfolio.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## Not run: ------------------------------------</span>
-<span class='co'># LC_CRED&lt;- MakeCredential(InvestorID, APIKey)</span>
-<span class='co'># AccountSummary()</span>
-<span class='co'>## ---------------------------------------------</span></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>not_run</span>({
+  <span class='no'>LC_CRED</span><span class='kw'>&lt;-</span> <span class='fu'><a href='MakeCredential.html'>MakeCredential</a></span>(<span class='no'>InvestorID</span>, <span class='no'>APIKey</span>)
+  <span class='fu'>AccountSummary</span>()
+})</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

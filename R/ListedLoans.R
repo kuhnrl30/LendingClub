@@ -6,7 +6,7 @@
 #' Use false to limit the results to those loans listed in the most recent
 #' listing period.
 #'
-#'  @return LendingClub_api object.  There are two components, the first is
+#' @return LendingClub_api object.  There are two components, the first is
 #' the content of the request, the second is the response from the API.
 #' The content can be further subdivided into a 2 element list. The first
 #' element is the date of the request and second is a dataframe of the

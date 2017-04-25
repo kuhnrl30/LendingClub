@@ -1,9 +1,11 @@
 ---
 output: html_document
 ---
-# Lending Club  
-[![Build Status](https://travis-ci.org/kuhnrl30/LendingClub.svg?branch=master)](https://travis-ci.org/kuhnrl30/LendingClub) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LendingClub)](https://cran.r-project.org/package=LendingClub) <img src= "https://cranlogs.r-pkg.org/badges/grand-total/LendingClub" />
 
+# Lending Club  
+[![Build Status](https://travis-ci.org/kuhnrl30/LendingClub.svg?branch=master)](https://travis-ci.org/kuhnrl30/LendingClub) 
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LendingClub)](https://cran.r-project.org/package=LendingClub) 
+<img src= "https://cranlogs.r-pkg.org/badges/grand-total/LendingClub" /> 
 
 ## Access the Lending Club API
 The LendingClub package is a set of functions that enables you to work with your LendingClub account from R.  The package contains tools for:  
@@ -14,8 +16,4 @@ The LendingClub package is a set of functions that enables you to work with your
 
 
 ## Usage 
-To use this package, you'll first need to create a credential from your account 
-number and API key. This credential can be saved to the global environment and 
-the other functions will detect it. Use the MakeCredential() function and pass 
-it your investorID number and your API key. You can find the InvestorID on your 
-account summary page and the API key on the Account Settings page. 
+[Read the quick start guide](articles/LendingClub.html)

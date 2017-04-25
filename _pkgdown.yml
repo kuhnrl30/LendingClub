@@ -1,4 +1,5 @@
 template:
+  ganalytics: 'UA-66230069-1'
   params:
     bootswatch: journal
 reference:

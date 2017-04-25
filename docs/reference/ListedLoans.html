@@ -25,7 +25,7 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -101,7 +101,7 @@
     <p>Uses Lending Club's API to return all current listed loans</p>
     
 
-    <pre><span class='fu'>ListedLoans</span>(<span class='kw'>showAll</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>ListedLoans</span>(<span class='kw'>showAll</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -110,12 +110,7 @@
       <th>showAll</th>
       <td><p>logical, indicate whether all loans should be retured.
 Use false to limit the results to those loans listed in the most recent
-listing period.</p>
-<p>@return LendingClub_api object.  There are two components, the first is
-the content of the request, the second is the response from the API.
-The content can be further subdivided into a 2 element list. The first
-element is the date of the request and second is a dataframe of the
-listed loans.</p></td>
+listing period.</p></td>
     </tr>
     <tr>
       <th>LC_CRED</th>
@@ -123,13 +118,23 @@ listed loans.</p></td>
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>LendingClub_api object.  There are two components, the first is
+the content of the request, the second is the response from the API.
+The content can be further subdivided into a 2 element list. The first
+element is the date of the request and second is a dataframe of the
+listed loans.</p>
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
 
   </div>
 </div>

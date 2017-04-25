@@ -9,15 +9,16 @@ ListedLoans(showAll = TRUE, LC_CRED = NULL)
 \arguments{
 \item{showAll}{logical, indicate whether all loans should be retured.
 Use false to limit the results to those loans listed in the most recent
-listing period.
+listing period.}
 
- @return LendingClub_api object.  There are two components, the first is
+\item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
+}
+\value{
+LendingClub_api object.  There are two components, the first is
 the content of the request, the second is the response from the API.
 The content can be further subdivided into a 2 element list. The first
 element is the date of the request and second is a dataframe of the
-listed loans.}
-
-\item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
+listed loans.
 }
 \description{
 Uses Lending Club's API to return all current listed loans
