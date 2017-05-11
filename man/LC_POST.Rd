@@ -4,7 +4,7 @@
 \alias{LC_POST}
 \title{Wrapper for POST}
 \usage{
-LC_POST(postURL, params, auth)
+LC_POST(postURL, params, auth, quiet = T)
 }
 \arguments{
 \item{postURL}{URL passed to the Lending Club API}

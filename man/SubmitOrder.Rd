@@ -4,7 +4,7 @@
 \alias{SubmitOrder}
 \title{Buy a note on the primary market}
 \usage{
-SubmitOrder(loanId, amount, portfolioId = NULL, LC_CRED = NULL)
+SubmitOrder(loanId, amount, portfolioId = NULL, LC_CRED = NULL, quiet = T)
 }
 \arguments{
 \item{loanId}{Unique ID for loans. These can be found using the
@@ -16,6 +16,8 @@ ListedLoans() function.}
 using the PortfoliosOwned() function.}
 
 \item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
+
+\item{quiet}{Should the response be printed to the console}
 }
 \description{
 Create an order to purchase a note. If the account has sufficient

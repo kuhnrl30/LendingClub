@@ -9,6 +9,7 @@
 #' @param amount Amount to be purchased
 #' @param portfolioId Unique ID for the portfolio. It can be found
 #' using the PortfoliosOwned() function.
+#' @param quiet Should the response be printed to the console
 #' @inheritParams AccountSummary
 #' @examples
 #' \dontrun{
@@ -17,7 +18,7 @@
 #'}
 #' @export
 
-SubmitOrder<- function(loanId, amount, portfolioId=NULL, LC_CRED=NULL){
+SubmitOrder<- function(loanId, amount, portfolioId=NULL, LC_CRED=NULL, quiet=T){
 
     LC_CRED<-CheckCred(LC_CRED)
 
@@ -34,5 +35,5 @@ SubmitOrder<- function(loanId, amount, portfolioId=NULL, LC_CRED=NULL){
     params<- list("aid" = LC_CRED$investorID,
                  "orders"= orders)
 
-    LC_POST(postURL, params, LC_CRED$key)
+    LC_POST(postURL, params, LC_CRED$key, quiet)
 }

@@ -2,7 +2,7 @@ Package: LendingClub
 Type: Package
 Date: 2017-02-20
 Title: A Lending Club API Wrapper
-Version: 1.0.2
+Version: 1.0.3
 Authors@R: person("Ryan", "Kuhn", email= "kuhnrl30@gmail.com", role= c("aut", "cre"))
 Author: Ryan Kuhn <kuhnrl30@gmail.com>
 URL: https://github.com/kuhnrl30/LendingClub
