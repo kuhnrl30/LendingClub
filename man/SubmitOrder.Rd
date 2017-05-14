@@ -28,5 +28,8 @@ through the funding stage.
 \dontrun{
 SubmitOrder(12345678, 25)
 SubmitOrder(12345678, 25, "myPortfolio")
+
+#For multiple loans in a single order
+SubmitOrder(loanId=c(123, 456, 789), amount= c(rep(25,3)))
 }
 }

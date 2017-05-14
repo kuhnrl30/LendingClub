@@ -23,11 +23,12 @@
 #' @param end String. Defaults to NULL and is not required for immediate
 #' transfers. For future transfers, the date must be a string formatted
 #' as YYYY/MM/DD.
+#' @param quiet Should the response be printed to the console
 #' @inheritParams AccountSummary
 
 #' @export
 #'
-AddFunds<- function(amount, freq= "LOAD_NOW", start=NULL, end=NULL, LC_CRED=NULL){
+AddFunds<- function(amount, freq= "LOAD_NOW", start=NULL, end=NULL, quiet=T, LC_CRED=NULL){
     # Error checking and data validation
     if(!is.numeric(amount)){
         stop("amount must be numeric")
@@ -71,5 +72,9 @@ AddFunds<- function(amount, freq= "LOAD_NOW", start=NULL, end=NULL, LC_CRED=NULL
                   "endDate"= end)
 
 
-    LC_POST(postURL,params, LC_CRED$key)
+    resp<- LC_POST(postURL,params, LC_CRED$key)
+    
+    if (!quiet) {
+        data.frame(rbind(unlist(resp)))
+        }
 }

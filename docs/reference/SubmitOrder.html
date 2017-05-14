@@ -137,6 +137,9 @@ using the PortfoliosOwned() function.</p></td>
     <pre class="examples"><div class='input'><span class='fu'>not_run</span>({
   <span class='fu'>SubmitOrder</span>(<span class='fl'>12345678</span>, <span class='fl'>25</span>)
   <span class='fu'>SubmitOrder</span>(<span class='fl'>12345678</span>, <span class='fl'>25</span>, <span class='st'>"myPortfolio"</span>)
+
+  <span class='co'>#For multiple loans in a single order</span>
+  <span class='fu'>SubmitOrder</span>(<span class='kw'>loanId</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>123</span>, <span class='fl'>456</span>, <span class='fl'>789</span>), <span class='kw'>amount</span><span class='kw'>=</span> <span class='fu'>c</span>(<span class='fu'>rep</span>(<span class='fl'>25</span>,<span class='fl'>3</span>)))
 })</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

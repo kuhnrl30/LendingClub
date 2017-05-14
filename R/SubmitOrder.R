@@ -15,6 +15,9 @@
 #' \dontrun{
 #' SubmitOrder(12345678, 25)
 #' SubmitOrder(12345678, 25, "myPortfolio")
+#' 
+#' #For multiple loans in a single order
+#' SubmitOrder(loanId=c(123, 456, 789), amount= c(rep(25,3)))
 #'}
 #' @export
 
@@ -35,5 +38,12 @@ SubmitOrder<- function(loanId, amount, portfolioId=NULL, LC_CRED=NULL, quiet=T){
     params<- list("aid" = LC_CRED$investorID,
                  "orders"= orders)
 
-    LC_POST(postURL, params, LC_CRED$key, quiet)
+    resp<- LC_POST(postURL, params, LC_CRED$key)
+    
+    
+    if (!quiet && !is.null(resp$executionStatus)) {
+        d<- resp$executionStatus
+        cbind(as.data.frame(t(sapply(d, function(x) x[1:3]))),
+              executionStatus= sapply(d, function(x) paste0(x$executionStatus, collapse=", "))) 
+    }
 }

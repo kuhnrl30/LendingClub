@@ -103,7 +103,7 @@ a portfolio using the API when they are purhcased from the primary
 market.</p>
     
 
-    <pre class="usage"><span class='fu'>CreatePortfolio</span>(<span class='no'>port_name</span>, <span class='no'>port_desc</span>, <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>CreatePortfolio</span>(<span class='no'>port_name</span>, <span class='no'>port_desc</span>, <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='no'>T</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -119,6 +119,10 @@ market.</p>
     <tr>
       <th>LC_CRED</th>
       <td><p>Credential object having class LendingClub_credential. This object can be created using the <code>MakeCredential()</code> function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".</p></td>
+    </tr>
+    <tr>
+      <th>quiet</th>
+      <td><p>Should the response be printed to the console</p></td>
     </tr>
     </table>
     

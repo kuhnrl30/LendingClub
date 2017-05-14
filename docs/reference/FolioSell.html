@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Transact with the secondary market — SecondaryMarket â€¢ LendingClub</title>
+<title>Transact with the secondary market — FolioBuy â€¢ LendingClub</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -101,10 +101,10 @@
     <p>Buy or sell notes on the FOLIOfn secondary market</p>
     
 
-    <pre class="usage"><span class='fu'>FolioBuy</span>(<span class='no'>loanId</span>, <span class='no'>orderId</span>, <span class='no'>noteId</span>, <span class='kw'>Price</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+    <pre class="usage"><span class='fu'>FolioBuy</span>(<span class='no'>loanId</span>, <span class='no'>orderId</span>, <span class='no'>noteId</span>, <span class='kw'>Price</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='no'>T</span>)
 
 <span class='fu'>FolioSell</span>(<span class='no'>loanId</span>, <span class='no'>orderId</span>, <span class='no'>noteId</span>, <span class='kw'>expireDate</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>Price</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+  <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='no'>T</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -123,12 +123,16 @@
     </tr>
     <tr>
       <th>Price</th>
-      <td><p>Price you wish to sell your loan for. Remember to consider
-the accrued interest in your offering.</p></td>
+      <td><p>Price you wish to sell your loan for. Remember to consider</p></td>
     </tr>
     <tr>
       <th>LC_CRED</th>
       <td><p>Credential object having class LendingClub_credential. This object can be created using the <code>MakeCredential()</code> function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".</p></td>
+    </tr>
+    <tr>
+      <th>quiet</th>
+      <td><p>Should the response be printed to the console
+the accrued interest in your offering.</p></td>
     </tr>
     <tr>
       <th>expireDate</th>

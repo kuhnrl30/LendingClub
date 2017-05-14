@@ -4,7 +4,7 @@
 \alias{LC_POST}
 \title{Wrapper for POST}
 \usage{
-LC_POST(postURL, params, auth, quiet = T)
+LC_POST(postURL, params, auth)
 }
 \arguments{
 \item{postURL}{URL passed to the Lending Club API}
@@ -14,7 +14,7 @@ LC_POST(postURL, params, auth, quiet = T)
 \item{auth}{API key}
 }
 \description{
-A wrapper for POST which passes the data to the L/C server. Data
+A wrapper for POST which passes the data to the LC server. Data
 is encoded as json.
 }
 \keyword{internal}

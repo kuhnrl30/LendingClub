@@ -8,13 +8,14 @@
 #' @param expireDate The date the sell offer will expire. Can be as short as the
 #' current date or up to 7 days from posting the offer. Character string.
 #' @param Price Price you wish to sell your loan for. Remember to consider
+#' @param quiet Should the response be printed to the console
 #' the accrued interest in your offering.
 #' @inheritParams AccountSummary
 #' @export
 #'
 
 
-FolioSell<- function(loanId, orderId, noteId, expireDate= NULL, Price=NULL, LC_CRED=NULL){
+FolioSell<- function(loanId, orderId, noteId, expireDate= NULL, Price=NULL, LC_CRED=NULL, quiet= T){
 
 
     LC_CRED<-CheckCred(LC_CRED)
@@ -34,6 +35,10 @@ FolioSell<- function(loanId, orderId, noteId, expireDate= NULL, Price=NULL, LC_C
                       "askingPrice"= Price,
                       stringsAsFactors = F))
 
-    LC_POST(postURL,params, LC_CRED$key)
+    resp<- LC_POST(postURL,params, LC_CRED$key)
 
+    if (!quiet) {
+        resp
+    }
+    
     }

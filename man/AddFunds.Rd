@@ -4,7 +4,7 @@
 \alias{AddFunds}
 \title{Add funds to the investor's account}
 \usage{
-AddFunds(amount, freq = "LOAD_NOW", start = NULL, end = NULL,
+AddFunds(amount, freq = "LOAD_NOW", start = NULL, end = NULL, quiet = T,
   LC_CRED = NULL)
 }
 \arguments{
@@ -29,6 +29,8 @@ as YYYY/MM/DD.}
 \item{end}{String. Defaults to NULL and is not required for immediate
 transfers. For future transfers, the date must be a string formatted
 as YYYY/MM/DD.}
+
+\item{quiet}{Should the response be printed to the console}
 
 \item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
 }

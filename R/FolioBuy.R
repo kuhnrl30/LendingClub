@@ -1,8 +1,7 @@
 #' @rdname FolioSell
-#' @name SecondaryMarket
 #' @export
 
-FolioBuy<- function(loanId, orderId, noteId, Price= NULL, LC_CRED=NULL){
+FolioBuy<- function(loanId, orderId, noteId, Price= NULL, LC_CRED=NULL, quiet=T){
     LC_CRED<-CheckCred(LC_CRED)
 
     postURL<- MakeURL(LC_CRED$investorID, "trades/buy")
@@ -16,5 +15,9 @@ FolioBuy<- function(loanId, orderId, noteId, Price= NULL, LC_CRED=NULL){
                       stringsAsFactors = F))
 
 
-    LC_POST(postURL,params, LC_CRED$key)
+    resp<- LC_POST(postURL,params, LC_CRED$key)
+    
+    if (!quiet) {
+        resp
+    }
 }
