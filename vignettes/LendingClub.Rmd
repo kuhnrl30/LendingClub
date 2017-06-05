@@ -17,7 +17,7 @@ knitr::opts_chunk$set(eval=F)
 Lending Club is a peer-to-peer lending site.  Peer-to-peer lending crowd-funds loans by matching borrowers with willing investors. This LendingClub library makes it easy for you to see your investor account data such as the amount of free cash or the details on which loans you own. This package is a convenience wrapper for the Lending Club API so that you get get the data into R. You can learn more about the API by reading [Lending Club's documentation](https://www.lendingclub.com/developers/lc-api.action)
 
 
-### Creating a User Credential 
+### Creating Your Credential 
 To get started, you'll need to supply the investor's account number and API key. You can find the account number from the Account Summary page. The API key is located at the bottom of the Account Settings page. In the example below, the account number and API key are loaded from an .Renviron file but you can use whatever process you are comfortable to pass them to the MakeCredential function. If you are going to share your code, then I recommend doing something similar to this method rather than put it directly in your code.
 
 The MakeCredential() function uses the investorID and APIkey inputs to create an S3 object. If you save this object as <code>LC_CRED</code>, then the other functions in this package will find it in the global environment and you will not have to pass it as an argument to the other functions. 
@@ -42,3 +42,30 @@ Another useful function to start with is AccountSummary(). This returns key stat
 ```{r}
 AccountSummary()
 ```
+
+
+### Example Workflow
+This package is most usefull for investors applying advanced filtering or algorithms to determine which loans to buy.  The algorithms aren't in scope for this package but it does enable the automation. The code below is an example of how you go about using the package.  This isn't investment advice and you should decide for yourself how to choose investments. I would, however,  recommend establishing a limit on how many loans you put in the order. The max is determined by the amount of available funds in your account but you could do less if you wanted. 
+
+
+
+**Sudo code:**
+```{r, eval=FALSE}
+LC_CRED<- MakeCredential(investorID, APIkey)
+
+#Establish a limt on how many loans are in the order
+notequantity<- as.numeric(AvailableCash()$content[2,2]) %/% 25
+
+loans<- ListedLoans()$content$loans
+
+# Filter, sort, or apply a model to determine where you invest.
+order<- loans %>%
+  filter(grade %in% c("A","B")) %>%
+  sort(desc(intRate)) %>%
+  select(id) %>%
+  head(notequantity) 
+
+SubmitOrder(loanId= order,
+            amount= rep(25,notequantity),
+            LC_CRED= LC_CRED)
+````

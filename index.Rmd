@@ -16,4 +16,9 @@ The LendingClub package is a set of functions that enables you to work with your
 
 
 ## Usage 
-[Read the quick start guide](articles/LendingClub.html)
+Read the [quick start guide](articles/LendingClub.html)
+
+## Want to Contribute?
+There are multiple ways you can contribute to this open source project.  Add new functions, squash some bugs, work on the website, or improving the documentation are some of the ways you can help. 
+
+Pull requests are welcome!

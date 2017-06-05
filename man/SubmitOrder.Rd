@@ -4,7 +4,8 @@
 \alias{SubmitOrder}
 \title{Buy a note on the primary market}
 \usage{
-SubmitOrder(loanId, amount, portfolioId = NULL, LC_CRED = NULL, quiet = T)
+SubmitOrder(loanId, amount = 25, portfolioId = NULL, LC_CRED = NULL,
+  quiet = T)
 }
 \arguments{
 \item{loanId}{Unique ID for loans. These can be found using the
@@ -21,7 +22,7 @@ using the PortfoliosOwned() function.}
 }
 \description{
 Create an order to purchase a note. If the account has sufficient
-funding, the note will be purchased once the loand has passed
+funding, the note will be purchased once the loan has passed
 through the funding stage.
 }
 \examples{

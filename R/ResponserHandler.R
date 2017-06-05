@@ -12,3 +12,4 @@ ResponseHandler<- function(r){
                 TRUE ~ sprintf("LendingClub API request failed")))
         }
     }
+    

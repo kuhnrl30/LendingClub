@@ -1,7 +1,7 @@
 #' Buy a note on the primary market
 #'
 #' Create an order to purchase a note. If the account has sufficient
-#' funding, the note will be purchased once the loand has passed
+#' funding, the note will be purchased once the loan has passed
 #' through the funding stage.
 #'
 #' @param loanId Unique ID for loans. These can be found using the
@@ -21,7 +21,7 @@
 #'}
 #' @export
 
-SubmitOrder<- function(loanId, amount, portfolioId=NULL, LC_CRED=NULL, quiet=T){
+SubmitOrder<- function(loanId, amount=25, portfolioId=NULL, LC_CRED=NULL, quiet=T){
 
     LC_CRED<-CheckCred(LC_CRED)
 
@@ -40,10 +40,31 @@ SubmitOrder<- function(loanId, amount, portfolioId=NULL, LC_CRED=NULL, quiet=T){
 
     resp<- LC_POST(postURL, params, LC_CRED$key)
     
-    
-    if (!quiet && !is.null(resp$executionStatus)) {
-        d<- resp$executionStatus
-        cbind(as.data.frame(t(sapply(d, function(x) x[1:3]))),
-              executionStatus= sapply(d, function(x) paste0(x$executionStatus, collapse=", "))) 
+    # resp
+    if(!quiet){
+        if(!is.null(resp$orderConfirmations)){
+            confirmation_helper(resp$orderConfirmations)
+        
+        } else if(!is.null(resp$errors)){
+            
+            error_helper(resp$errors)
+        
+        } else {TRUE}
+        }    
+}        
+
+
+
+# helper functions ---- 
+
+error_helper<- function(r){
+    lapply(r,function(x) data.frame(t(unlist(x)))) %>%
+        plyr::rbind.fill() %>%
+        select_("code","message")
     }
-}
+
+
+confirmation_helper<- function(r){
+    cbind(as.data.frame(t(sapply(r, function(x) x[1:3]))),
+          executionStatus= sapply(r, function(x) paste0(x$executionStatus, collapse=", ")))
+    }
