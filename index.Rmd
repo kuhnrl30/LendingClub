@@ -2,10 +2,9 @@
 output: html_document
 ---
 
+[![Build Status](https://travis-ci.org/kuhnrl30/LendingClub.svg?branch=master)](https://travis-ci.org/kuhnrl30/LendingClub)[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LendingClub)](https://cran.r-project.org/package=LendingClub)[![](https://cranlogs.r-pkg.org/badges/grand-total/LendingClub)](https://cranlogs.r-pkg.org/badges/grand-total/LendingClub)
+
 # Lending Club  
-[![Build Status](https://travis-ci.org/kuhnrl30/LendingClub.svg?branch=master)](https://travis-ci.org/kuhnrl30/LendingClub) 
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LendingClub)](https://cran.r-project.org/package=LendingClub) 
-<img src= "https://cranlogs.r-pkg.org/badges/grand-total/LendingClub" /> 
 
 ## Access the Lending Club API
 The LendingClub package is a set of functions that enables you to work with your LendingClub account from R.  The package contains tools for:  
