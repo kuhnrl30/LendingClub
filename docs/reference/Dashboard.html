@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Print the Output from an API call — print.LendingClub_api • LendingClub</title>
+<title>Creates an HTML dashboard — Dashboard • LendingClub</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -95,29 +95,38 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Print the Output from an API call</h1>
+    <h1>Creates an HTML dashboard</h1>
     </div>
 
     
-    <p>This is a general function to print the conent from an API
-call. The API call returns a list of 2 elements: The first
-is the content from the call and the second element is the
-actual response.</p>
+    <p>Knits a document with summary statistics needed to evaluate an account.</p>
     
 
-    <pre class="usage"><span class='co'># S3 method for LendingClub_api</span>
-<span class='fu'>print</span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>Dashboard</span>(<span class='kw'>filename</span> <span class='kw'>=</span> <span class='st'>"Dashboard.html"</span>, <span class='kw'>out_dir</span> <span class='kw'>=</span> <span class='fu'>getwd</span>(),
+  <span class='kw'>ID</span> <span class='kw'>=</span> <span class='no'>LC_CRED</span>$<span class='no'>investorID</span>, <span class='kw'>key</span> <span class='kw'>=</span> <span class='no'>LC_CRED</span>$<span class='no'>key</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>an object of class LendingClub_api</p></td>
+      <th>filename</th>
+      <td><p>Name of the file to create</p></td>
+    </tr>
+    <tr>
+      <th>out_dir</th>
+      <td><p>Directory where to save the html file</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>To pass additional arguments to the generic print function</p></td>
+      <td><p>Arguments passed on to rmarkdown::render</p></td>
+    </tr>
+    <tr>
+      <th>investorID</th>
+      <td><p>User's ID from the Account Summary page</p></td>
+    </tr>
+    <tr>
+      <th>APIkey</th>
+      <td><p>User's API key from the account settings page</p></td>
     </tr>
     </table>
     

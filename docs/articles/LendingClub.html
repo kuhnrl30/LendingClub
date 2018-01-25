@@ -108,15 +108,15 @@ LC_CRED&lt;-<span class="st"> </span><span class="kw"><a href="../reference/Make
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">LC_CRED&lt;-<span class="st"> </span><span class="kw"><a href="../reference/MakeCredential.html">MakeCredential</a></span>(investorID, APIkey)
 
 <span class="co">#Establish a limt on how many loans are in the order</span>
-notequantity&lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw"><a href="../reference/AvailableCash.html">AvailableCash</a></span>()$content[<span class="dv">2</span>,<span class="dv">2</span>]) %/%<span class="st"> </span><span class="dv">25</span>
+notequantity&lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw"><a href="../reference/AvailableCash.html">AvailableCash</a></span>()<span class="op">$</span>content[<span class="dv">2</span>,<span class="dv">2</span>]) <span class="op">%/%</span><span class="st"> </span><span class="dv">25</span>
 
-loans&lt;-<span class="st"> </span><span class="kw"><a href="../reference/ListedLoans.html">ListedLoans</a></span>()$content$loans
+loans&lt;-<span class="st"> </span><span class="kw"><a href="../reference/ListedLoans.html">ListedLoans</a></span>()<span class="op">$</span>content<span class="op">$</span>loans
 
 <span class="co"># Filter, sort, or apply a model to determine where you invest.</span>
-order&lt;-<span class="st"> </span>loans %&gt;%
-<span class="st">  </span><span class="kw">filter</span>(grade %in%<span class="st"> </span><span class="kw">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>)) %&gt;%
-<span class="st">  </span><span class="kw">sort</span>(<span class="kw">desc</span>(intRate)) %&gt;%
-<span class="st">  </span><span class="kw">select</span>(id) %&gt;%
+order&lt;-<span class="st"> </span>loans <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(grade <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">sort</span>(<span class="kw">desc</span>(intRate)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">select</span>(id) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">head</span>(notequantity) 
 
 <span class="kw"><a href="../reference/SubmitOrder.html">SubmitOrder</a></span>(<span class="dt">loanId=</span> order,

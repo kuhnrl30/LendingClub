@@ -4,3 +4,4 @@
 ^docs/*
 _pkgdown.yml
 index.Rmd
+^_pkgdown\.yml$

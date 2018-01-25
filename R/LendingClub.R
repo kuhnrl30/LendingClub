@@ -22,5 +22,8 @@
 #' @importFrom utils "read.csv"
 #' @import dplyr
 #' @import httr
-#'
+#' @seealso \itemize{
+#' \item{\url{http://ryankuhn.net/LendingClub}}
+#' \item{\url{http://github.com/kuhnrl30/LendingClub/issues} for bug reports}
+#' }
 NULL

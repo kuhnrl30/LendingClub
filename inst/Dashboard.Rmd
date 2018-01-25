@@ -1,0 +1,169 @@
+---
+title: "Lending Club Dashboard"
+date: '`r format(Sys.time(),"%B %d, %Y")`'
+output: html_document
+params:
+  investorID: NA 
+  APIkey: NA
+
+---
+
+
+```{r setup, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning = FALSE)
+library(LendingClub)
+library(dplyr)
+library(knitr)
+library(tidyr)
+library(ggplot2)
+
+
+LC_CRED<- MakeCredential(params$investorID, params$APIkey)
+holdings<- LendingClub::DetailedNotesOwned()$content
+
+summarydata<-  {
+  x<- AccountSummary()$content
+  y <- as.data.frame(t(x[,2]), stringsAsFactors = F)
+  colnames(y)<- t(x[,1])
+  y
+  }
+
+atRisk<- {
+  at_risk_status<- c("Late (16-30 days)",
+                     "Late (31-120 days)",
+                     "Charged Off")
+  x<- holdings[holdings$loanStatus %in% at_risk_status,]    
+  sum(as.numeric(x$noteAmount)- as.numeric(x$principalReceived))
+  }
+```
+
+### Account KPIs  
+
+```{r summaryTable}
+
+stats<- c("Account Total",
+          "Available Cash",
+          "Interest Received",
+          "Principal at Risk",
+          "Ratio")
+
+vals<- as.numeric(c(summarydata$accountTotal,
+                    summarydata$availableCash,
+                    summarydata$receivedInterest,
+                    atRisk,
+                    round(as.numeric(summarydata$receivedInterest)/atRisk,2)))
+
+summtable<- data.frame(stats, vals)
+
+kable(summtable, 
+      col.names= NULL,
+      align = c("l","r"), 
+      format.args = list(big.mark = ','),
+      padding = 2) 
+```
+
+### Portfolio Summary  
+
+```{r matrix}
+portfolio_matrix<- function(x) {
+  
+  col_labs<- c(
+    "Amount Invested",
+    "Discount",
+    "Charged Off",
+    "Principal Received",
+    "Net Outstanding",
+    "Interest Received",
+    "Payments Received",
+    "Wgt Int Rate")
+  
+  order<- c(1:8)
+  
+  vals<- c( 
+    sum(as.numeric(x$noteAmount)), # Amount Invested
+    sum(as.numeric(x$principalReceived) + as.numeric(x$principalPending) - as.numeric(x$noteAmount)), # Discount
+    -sum(ifelse(x$currentPaymentStatus=="ChargedOff", as.numeric(x$principalPending),0)), #Charged off
+    -sum(as.numeric(x$principalReceived)),  # Principal received
+    sum(ifelse(x$currentPaymentStatus=="ChargedOff",0, as.numeric(x$principalPending))), # net outstanding
+    sum(as.numeric(x$interestReceived)), 
+    sum(as.numeric(x$paymentsReceived)), 
+    round( sum(as.numeric(x$interestRate) * as.numeric(x$principalPending)) / sum(as.numeric(x$principalPending)), 2)
+  )
+  
+  data.frame(order, col_labs, vals)
+  
+  }
+
+
+x<-lapply(split(holdings, f= holdings$portfolioName), portfolio_matrix)
+x<- c(x, list(portfolio_matrix(holdings)))
+names(x)[length(x)]<- "Total"
+
+for (i in 1:length(x)){
+  names(x[[i]])[3] <- names(x[i])
+  }
+
+
+y<- Reduce(function(...) merge(..., by=c('col_labs','order'),  all.x=TRUE), x)
+colnames(y)[1]<- ""
+y<- y[order(y$order),]
+y$order<- NULL
+kable(y,
+  row.names= FALSE,
+  format.args = list(big.mark = ','),
+  padding = 2) 
+```
+
+### Distribution by Grade 
+
+```{r}
+h<- ggplot(holdings %>% group_by(grade) %>% summarize(counts =n()))
+h<- h + aes(x= strtrim(grade, 1), y= counts)
+h<- h + geom_bar(stat='identity')
+h<- h + theme_classic()
+h<- h + labs(x= "Grade",
+             y= "Loan Count")
+h
+
+```
+
+### Payback Ratio 
+
+```{r, fig.align='center'}
+dat<-holdings %>%
+  mutate(CFRatio= round((as.numeric(paymentsReceived) - as.numeric(noteAmount)) /as.numeric(noteAmount)*100,2)+100 +1,
+         orderDate= as.Date(orderDate))
+
+dat$simpleStatus <- case_when(dat$loanStatus == "Charged Off" ~ "Complete",
+                              dat$loanStatus == "Current" ~"Performing",
+                              dat$loanStatus == "Fully Paid" ~ "Complete",
+                              dat$loanStatus == "In Grace Period" ~ "Performing",
+                              dat$loanStatus == "In Review" ~ "Performing",
+                              dat$loanStatus == "Issued" ~ "Performing",
+                              dat$loanStatus == "Late (16-30 days)" ~ "Late",
+                              dat$loanStatus == "Late (31-120 days)" ~ "Late")
+
+ThreeYear<- as.Date(Sys.time())-(365*3)
+FiveYear<- as.Date(Sys.time()-(365*5))
+
+g<- ggplot(dat)
+g<- g + aes(x= as.Date(Sys.time())-orderDate, y= CFRatio, group= portfolioName, color= simpleStatus)
+g<- g + geom_point()
+# g<- g + scale_x_date(limits= c(ThreeYear-150, as.Date(Sys.time())+50))
+# g<- g + scale_x_date()
+g<- g + facet_wrap(~portfolioName, ncol=2)
+g<- g + theme_classic()
+g<- g + labs(x= "Age in Days",
+             y= "Payback Ratio")
+g<- g + geom_hline(yintercept = 100, linetype="dashed")
+g<- g + theme(legend.position="none",
+              panel.border  = element_rect(colour = "black", fill=NA))
+g
+```
+
+<hr>
+**Principal At Risk** includes outstanding principal of notes greater than 16 days late and notes that have been charged off. 
+
+**Wgt Int Rate** calculation is weighted by the outstanding principal. 
+
+**Payback Ratio** measures the difference between cash invested in a note and the total payments received. The payments include both interest and principal. All notes start at zero and will increase as payments are made.  A note with a ratio greater than 100 indicates that more cash was received than was initially invested.   

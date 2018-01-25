@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Print the Output from an API call — print.LendingClub_api • LendingClub</title>
+<title>Return the investor's Account Summary — AccountSummary_ • LendingClub</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -95,39 +95,47 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Print the Output from an API call</h1>
+    <h1>Return the investor's Account Summary</h1>
     </div>
 
     
-    <p>This is a general function to print the conent from an API
-call. The API call returns a list of 2 elements: The first
-is the content from the call and the second element is the
-actual response.</p>
+    <p>Access the user's account and return the summary data.  The data points
+include available cash, total account balance, and the number of notes in the
+portfolio.</p>
     
 
-    <pre class="usage"><span class='co'># S3 method for LendingClub_api</span>
-<span class='fu'>print</span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>AccountSummary_</span>(<span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>an object of class LendingClub_api</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>To pass additional arguments to the generic print function</p></td>
+      <th>LC_CRED</th>
+      <td><p>Credential object having class LendingClub_credential. This object can be created using the <code><a href='MakeCredential.html'>MakeCredential()</a></code> function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".</p></td>
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>Object of class LendingClub_api. The object has two components. The first is <code>$content</code> with a data.frame of attributes of the invenstor's account such as available cash and value of the portfolios. The attributes are arranged by rows in the first column and the values are in the second column.  The second component is the <code>$response</code> including a timestamp of when the data was retrieved.</p>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='no'>LC_CRED</span><span class='kw'>&lt;-</span> <span class='fu'><a href='MakeCredential.html'>MakeCredential</a></span>(<span class='no'>InvestorID</span>, <span class='no'>APIKey</span>)
+<span class='fu'><a href='AccountSummary.html'>AccountSummary</a></span>()
+<span class='co'># }</span><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>
