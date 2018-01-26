@@ -6,7 +6,8 @@ reference:
 - title: Account Management
   desc: ~
   contents:
-  - AccountSummary
+  - AccountSummary_
+  - Dashboard
   - AvailableCash
   - CreatePortfolio
   - NotesOwned

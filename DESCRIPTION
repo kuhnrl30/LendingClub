@@ -14,7 +14,9 @@ Description: Functions to access Lending Club's API and assist the investor mana
 License: MIT + file LICENSE
 LazyData: TRUE
 BuildVignettes: TRUE
-Suggests: knitr
+Suggests: 
+    knitr,
+    rmarkdown
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
 Imports:

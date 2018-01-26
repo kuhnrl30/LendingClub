@@ -12,11 +12,11 @@ Dashboard(filename = "Dashboard.html", out_dir = getwd(),
 
 \item{out_dir}{Directory where to save the html file}
 
+\item{ID}{User's ID from the Account Summary page}
+
+\item{key}{User's API key from the account settings page}
+
 \item{...}{Arguments passed on to rmarkdown::render}
-
-\item{investorID}{User's ID from the Account Summary page}
-
-\item{APIkey}{User's API key from the account settings page}
 }
 \description{
 Knits a document with summary statistics needed to evaluate an account.

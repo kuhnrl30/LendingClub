@@ -10,13 +10,14 @@ CleanData<- function(x, margin=T){
 
         if(margin){
         
-        
         y<- unlist(x)
         
-        z<-data.frame("Field"= names(y),
-                      "Value"= as.character(y),
-                      stringsAsFactors = F,
-                      row.names = NULL)
+        z<- as.data.frame(t(y), col.names=names(y))
+        
+        # z<-data.frame("Field"= names(y),
+        #               "Value"= as.character(y),
+        #               stringsAsFactors = F,
+        #               row.names = NULL)
         z
         }
     else {

@@ -15,7 +15,7 @@ library(LendingClub)
 library(dplyr)
 library(knitr)
 library(tidyr)
-library(ggplot2)
+suppressMessages(library(ggplot2))
 
 
 LC_CRED<- MakeCredential(params$investorID, params$APIkey)
