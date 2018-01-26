@@ -21,12 +21,7 @@ suppressMessages(library(ggplot2))
 LC_CRED<- MakeCredential(params$investorID, params$APIkey)
 holdings<- LendingClub::DetailedNotesOwned()$content
 
-summarydata<-  {
-  x<- AccountSummary()$content
-  y <- as.data.frame(t(x[,2]), stringsAsFactors = F)
-  colnames(y)<- t(x[,1])
-  y
-  }
+summarydata<-  AccountSummary_()$content
 
 atRisk<- {
   at_risk_status<- c("Late (16-30 days)",

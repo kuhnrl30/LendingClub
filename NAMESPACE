@@ -2,6 +2,7 @@
 
 S3method(print,AccountSummary)
 S3method(print,LendingClub_api)
+S3method(print,LendingClub_credential)
 export(AccountSummary)
 export(AccountSummary_)
 export(AddFunds)

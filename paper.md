@@ -10,7 +10,7 @@ authors:
 affiliations:
  - name: Independent
    index: 1
-date: 1 December 2017
+date: 1 February 2017
 bibliography: paper.bib
 ---
 

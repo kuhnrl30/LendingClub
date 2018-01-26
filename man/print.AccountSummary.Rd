@@ -12,7 +12,7 @@
 \item{...}{To pass additional arguments to the generic print function}
 }
 \description{
-This is a general function to print the conent from an API
+This is a general function to print the content from an API
 call. The API call returns a list of 2 elements: The first
 is the content from the call and the second element is the
 actual response.
