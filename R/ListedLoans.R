@@ -20,6 +20,9 @@ ListedLoans<- function(showAll=TRUE, LC_CRED=NULL){
 
     searchURL<- "https://api.lendingclub.com/api/investor/v1/loans/listing"
 
-    LC_GET(searchURL, LC_CRED$key,  query=list("showAll" = showAll), margin=NULL)
+    result<- LC_GET(searchURL, LC_CRED$key,  query=list("showAll" = showAll), margin=NULL)
 
+    class(result) <- append("ListedLoans", class(result))
+    
+    result
 }

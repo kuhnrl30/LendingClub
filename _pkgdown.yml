@@ -8,6 +8,7 @@ reference:
   contents:
   - AccountSummary_
   - Dashboard
+  - summary
   - AvailableCash
   - CreatePortfolio
   - NotesOwned

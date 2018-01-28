@@ -6,6 +6,11 @@ DetailedNotesOwned<- function(LC_CRED=NULL){
 
     searchURL<- MakeURL(LC_CRED$investorID,"detailednotes")
 
-    LC_GET(searchURL, LC_CRED$key, margin=F)
+    result<- LC_GET(searchURL, LC_CRED$key, margin=F)
+    
+    class(result)<- append("holdings", class(result))
+    class(result$content)<- append("holdings", class(result$content))
+    
+    result
 
 }

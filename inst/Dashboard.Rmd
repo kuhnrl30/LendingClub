@@ -1,6 +1,6 @@
 ---
 title: "Lending Club Dashboard"
-date: '`r format(Sys.time(),"%B %d, %Y")`'
+date: '`r format(Sys.time(),"%B %d, %Y %h:%m")`'
 output: html_document
 params:
   investorID: NA 
@@ -14,7 +14,6 @@ knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning = FALSE)
 library(LendingClub)
 library(dplyr)
 library(knitr)
-library(tidyr)
 suppressMessages(library(ggplot2))
 
 
@@ -40,7 +39,7 @@ stats<- c("Account Total",
           "Available Cash",
           "Interest Received",
           "Principal at Risk",
-          "Ratio")
+          "Interest-Risk (IR) Ratio")
 
 vals<- as.numeric(c(summarydata$accountTotal,
                     summarydata$availableCash,
@@ -60,49 +59,20 @@ kable(summtable,
 ### Portfolio Summary  
 
 ```{r matrix}
-portfolio_matrix<- function(x) {
-  
-  col_labs<- c(
-    "Amount Invested",
-    "Discount",
-    "Charged Off",
-    "Principal Received",
-    "Net Outstanding",
-    "Interest Received",
-    "Payments Received",
-    "Wgt Int Rate")
-  
-  order<- c(1:8)
-  
-  vals<- c( 
-    sum(as.numeric(x$noteAmount)), # Amount Invested
-    sum(as.numeric(x$principalReceived) + as.numeric(x$principalPending) - as.numeric(x$noteAmount)), # Discount
-    -sum(ifelse(x$currentPaymentStatus=="ChargedOff", as.numeric(x$principalPending),0)), #Charged off
-    -sum(as.numeric(x$principalReceived)),  # Principal received
-    sum(ifelse(x$currentPaymentStatus=="ChargedOff",0, as.numeric(x$principalPending))), # net outstanding
-    sum(as.numeric(x$interestReceived)), 
-    sum(as.numeric(x$paymentsReceived)), 
-    round( sum(as.numeric(x$interestRate) * as.numeric(x$principalPending)) / sum(as.numeric(x$principalPending)), 2)
-  )
-  
-  data.frame(order, col_labs, vals)
-  
-  }
 
 
-x<-lapply(split(holdings, f= holdings$portfolioName), portfolio_matrix)
-x<- c(x, list(portfolio_matrix(holdings)))
+x<-lapply(split(holdings, f= holdings$portfolioName), summary)
+x<- c(x, list( summary (holdings)))
 names(x)[length(x)]<- "Total"
 
 for (i in 1:length(x)){
-  names(x[[i]])[3] <- names(x[i])
+  names(x[[i]])[2] <- names(x[i])
   }
 
 
-y<- Reduce(function(...) merge(..., by=c('col_labs','order'),  all.x=TRUE), x)
+y<- Reduce(function(...) merge(..., by= 'col_labs',  all.x=TRUE), x)
+y<- y[c(1,4,3,8,6,5,7,9,2), ]
 colnames(y)[1]<- ""
-y<- y[order(y$order),]
-y$order<- NULL
 kable(y,
   row.names= FALSE,
   format.args = list(big.mark = ','),
