@@ -79,7 +79,7 @@
     
     
 <div class="contents">
-<p>Lending Club is a peer-to-peer lending site. Peer-to-peer lending crowd-funds loans by matching borrowers with willing investors. This LendingClub library makes it easy for you to see your investor account data such as the amount of free cash or the details on which loans you own. This package is a convenience wrapper for the Lending Club API so that you get get the data into R. You can learn more about the API by reading <a href="https://www.lendingclub.com/developers/lc-api.action">Lending Club’s documentation</a></p>
+<p>Lending Club is a peer-to-peer lending site. Peer-to-peer lending crowd-funds loans by matching borrowers with willing investors. This LendingClub library makes it easy for you to see your investor account data such as the amount of free cash or the details on which loans you own. This package is a convenience wrapper for the Lending Club API so that you get get the data into R. You can learn more about the API by reading <a href="https://www.lendingclub.com/developers/lc-api.action">Lending Club’s documentation</a>. Lending Club does not offer an API for borrower data.</p>
 <div id="creating-your-credential" class="section level3">
 <h3 class="hasAnchor">
 <a href="#creating-your-credential" class="anchor"></a>Creating Your Credential</h3>
@@ -91,36 +91,41 @@ investorID&lt;-<span class="st"> </span><span class="kw">Sys.getenv</span>(<span
 APIkey    &lt;-<span class="st"> </span><span class="kw">Sys.getenv</span>(<span class="st">"key"</span>)
 
 LC_CRED&lt;-<span class="st"> </span><span class="kw"><a href="../reference/MakeCredential.html">MakeCredential</a></span>(investorID, APIkey)</code></pre></div>
+<p>If you plan to share your code or publish to Github, you may want to save your investorID and APIkey separately so you don’t have to share them. In the example above, the variables were saved as environment variables. Alternatively, you can save them in a text file and read them in with <code>readLines()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">LC_CRED&lt;-<span class="st"> </span><span class="kw"><a href="../reference/MakeCredential.html">MakeCredential</a></span>(<span class="dt">investorID =</span> <span class="kw">readLines</span>(<span class="st">"path_to_creds.txt"</span>)[<span class="dv">1</span>],
+                         <span class="dt">APIkey =</span>  <span class="kw">readLines</span>(<span class="st">"path_to_creds.txt"</span>)[<span class="dv">2</span>])</code></pre></div>
 </div>
 <div id="a-few-more-function-examples" class="section level3">
 <h3 class="hasAnchor">
 <a href="#a-few-more-function-examples" class="anchor"></a>A Few More Function Examples</h3>
-<p>Here are a few examples of other functions in the package. As mentioned above, all other functions in this package will look for the <code>LC_CRED</code> object before processing the respective API calls. You can see a dataframe of the currently listed loans using the ListedLoans() function.</p>
+<p>Here are a few examples of other functions in the package. As mentioned above, all other functions in this package will look for the <code>LC_CRED</code> object before processing the respective API calls. You can see a data.frame of the currently listed loans using the <code><a href="../reference/ListedLoans.html">ListedLoans()</a></code> function.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/ListedLoans.html">ListedLoans</a></span>()</code></pre></div>
-<p>Another useful function to start with is AccountSummary(). This returns key statistics such as the available cash, total number of notes owned, and all time total interest received. You don’t pass any inputs to the function but it will search the global environment for the <code>LC_CRED</code> object.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/AccountSummary.html">AccountSummary</a></span>()</code></pre></div>
+<p>Another useful function to start with is AccountSummary_(). This returns key statistics such as the available cash, total number of notes owned, and all time total interest received. You don’t pass any inputs to the function but it will search the global environment for the <code>LC_CRED</code> object.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/AccountSummary_.html">AccountSummary_</a></span>()</code></pre></div>
 </div>
 <div id="example-workflow" class="section level3">
 <h3 class="hasAnchor">
 <a href="#example-workflow" class="anchor"></a>Example Workflow</h3>
-<p>This package is most usefull for investors applying advanced filtering or algorithms to determine which loans to buy. The algorithms aren’t in scope for this package but it does enable the automation. The code below is an example of how you go about using the package. This isn’t investment advice and you should decide for yourself how to choose investments. I would, however, recommend establishing a limit on how many loans you put in the order. The max is determined by the amount of available funds in your account but you could do less if you wanted.</p>
+<p>This package is most useful for investors applying advanced filtering or algorithms to determine which loans to buy. The algorithms aren’t in scope for this package but it does enable the automation. The code below is an example of how you go about using the package. You should use care when deciding how to choose investments. A best practice is to establish a limit on how many loans you put in the order. The max is determined by the amount of available funds in your account but you could do less if you wanted.</p>
 <p><strong>Sudo code:</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">LC_CRED&lt;-<span class="st"> </span><span class="kw"><a href="../reference/MakeCredential.html">MakeCredential</a></span>(investorID, APIkey)
 
-<span class="co">#Establish a limt on how many loans are in the order</span>
-notequantity&lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw"><a href="../reference/AvailableCash.html">AvailableCash</a></span>()<span class="op">$</span>content[<span class="dv">2</span>,<span class="dv">2</span>]) <span class="op">%/%</span><span class="st"> </span><span class="dv">25</span>
+<span class="co"># Establish a limt on how many loans are in the order </span>
+<span class="co"># by determing the max amount of $25 notes you can purchase.</span>
+notequantity&lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw"><a href="../reference/AvailableCash.html">AvailableCash</a></span>()<span class="op">$</span>content[<span class="dv">2</span>, <span class="dv">2</span>]) <span class="op">%/%</span><span class="st"> </span><span class="dv">25</span>
+
 
 loans&lt;-<span class="st"> </span><span class="kw"><a href="../reference/ListedLoans.html">ListedLoans</a></span>()<span class="op">$</span>content<span class="op">$</span>loans
 
-<span class="co"># Filter, sort, or apply a model to determine where you invest.</span>
+<span class="co"># Filter, sort, or apply your model to determine where to invest.</span>
 order&lt;-<span class="st"> </span>loans <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">filter</span>(grade <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(grade <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>)) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">sort</span>(<span class="kw">desc</span>(intRate)) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">select</span>(id) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">head</span>(notequantity) 
 
 <span class="kw"><a href="../reference/SubmitOrder.html">SubmitOrder</a></span>(<span class="dt">loanId=</span> order,
-            <span class="dt">amount=</span> <span class="kw">rep</span>(<span class="dv">25</span>,notequantity),
+            <span class="dt">amount=</span> <span class="kw">rep</span>(<span class="dv">25</span>, notequantity),
             <span class="dt">LC_CRED=</span> LC_CRED)</code></pre></div>
 </div>
 </div>

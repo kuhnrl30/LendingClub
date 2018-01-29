@@ -8,7 +8,7 @@ reference:
   contents:
   - AccountSummary_
   - Dashboard
-  - summary
+  - summary.holdings
   - AvailableCash
   - CreatePortfolio
   - NotesOwned

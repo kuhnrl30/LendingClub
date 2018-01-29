@@ -32,7 +32,7 @@ account summary page and the API key on the Account Settings page.
 ```
 LC_CRED<- MakeCredential(investorID, APIkey)
 ListedLoans()
-AccountSummary()
+AccountSummary_()
 ```
 
 ## License

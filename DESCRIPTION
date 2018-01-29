@@ -1,6 +1,6 @@
 Package: LendingClub
 Type: Package
-Date: 2018-01-24
+Date: 2018-01-29
 Title: A Lending Club API Wrapper
 Version: 1.0.4
 Authors@R: person("Ryan","Kuhn",email="kuhnrl30@gmail.com", role=c("aut", "cre"), comment=c(ORCID='0000-0001-6827-3492'))

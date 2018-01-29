@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>License • LendingClub</title>
+<title>Prepare a dashboard of key metrics — summary.holdings • LendingClub</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -20,9 +20,9 @@
 
 
 <!-- pkgdown -->
-<link href="pkgdown.css" rel="stylesheet">
-<script src="jquery.sticky-kit.min.js"></script>
-<script src="pkgdown.js"></script>
+<link href="../pkgdown.css" rel="stylesheet">
+<script src="../jquery.sticky-kit.min.js"></script>
+<script src="../pkgdown.js"></script>
   
   
 <!-- mathjax -->
@@ -37,7 +37,7 @@
   </head>
 
   <body>
-    <div class="container template-license">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -47,15 +47,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">LendingClub</a>
+      <a class="navbar-brand" href="../index.html">LendingClub</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="articles/LendingClub.html">Get Started</a>
+  <a href="../articles/LendingClub.html">Get Started</a>
 </li>
 <li>
-  <a href="reference/index.html">Functions</a>
+  <a href="../reference/index.html">Functions</a>
 </li>
       </ul>
       
@@ -93,19 +93,54 @@
       </header>
 
       <div class="row">
-  <div class="contents col-md-12">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>License</h1>
+    <h1>Prepare a dashboard of key metrics</h1>
     </div>
 
-<pre>YEAR: 2016-2018
-COPYRIGHT HOLDER: Ryan Kuhn
-</pre>
+    
+    <p>Creating a summary of matrics an investor would find useful in evaluating their 
+account.</p>
+    
+
+    <pre class="usage"><span class='co'># S3 method for holdings</span>
+<span class='fu'>summary</span>(<span class='no'>object</span>, <span class='no'>...</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>object</th>
+      <td><p>data.frame of loans from DetailedNotesOwned()</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>currently not used</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>At Risk Ratio calculates the percentage of the loans with principal 16 or more days late.</p>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='fu'>summary</span>( <span class='fu'><a href='NotesOwned.html'>DetailedNotesOwned</a></span>( <span class='no'>LC_CRED</span> ))
+<span class='co'># }</span></pre>
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#details">Details</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
-
 </div>
-
 
       <footer>
       <div class="copyright">

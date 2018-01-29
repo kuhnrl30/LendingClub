@@ -1,7 +1,7 @@
 The MIT License (MIT)
 =====================
 
-Copyright © 2017 Ryan Kuhn
+Copyright © 2016-2018 Ryan Kuhn
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation

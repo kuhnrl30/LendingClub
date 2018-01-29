@@ -14,7 +14,7 @@ vignette: >
 knitr::opts_chunk$set(eval=F)
 ```
 
-Lending Club is a peer-to-peer lending site.  Peer-to-peer lending crowd-funds loans by matching borrowers with willing investors. This LendingClub library makes it easy for you to see your investor account data such as the amount of free cash or the details on which loans you own. This package is a convenience wrapper for the Lending Club API so that you get get the data into R. You can learn more about the API by reading [Lending Club's documentation](https://www.lendingclub.com/developers/lc-api.action)
+Lending Club is a peer-to-peer lending site.  Peer-to-peer lending crowd-funds loans by matching borrowers with willing investors. This LendingClub library makes it easy for you to see your investor account data such as the amount of free cash or the details on which loans you own. This package is a convenience wrapper for the Lending Club API so that you get get the data into R. You can learn more about the API by reading [Lending Club's documentation](https://www.lendingclub.com/developers/lc-api.action).  Lending Club does not offer an API for borrower data.
 
 
 ### Creating Your Credential 
@@ -31,8 +31,15 @@ APIkey    <- Sys.getenv("key")
 LC_CRED<- MakeCredential(investorID, APIkey)
 ``` 
 
+If you plan to share your code or publish to Github, you may want to save your investorID and APIkey separately so you don't have to share them.  In the example above, the variables were saved as environment variables.  Alternatively, you can save them in a text file and read them in with <code>readLines()</code>. 
+
+```{r}
+LC_CRED<- MakeCredential(investorID = readLines("path_to_creds.txt")[1],
+                         APIkey =  readLines("path_to_creds.txt")[2])
+```
+
 ### A Few More Function Examples 
-Here are a few examples of other functions in the package. As mentioned above, all other functions in this package will look for the <code>LC_CRED</code> object before processing the respective API calls.  You can see a dataframe of the currently listed loans using the ListedLoans() function.  
+Here are a few examples of other functions in the package. As mentioned above, all other functions in this package will look for the <code>LC_CRED</code> object before processing the respective API calls.  You can see a data.frame of the currently listed loans using the <code>ListedLoans()</code> function.  
 
 ```{r}
 ListedLoans()
@@ -45,7 +52,7 @@ AccountSummary_()
 
 
 ### Example Workflow
-This package is most usefull for investors applying advanced filtering or algorithms to determine which loans to buy.  The algorithms aren't in scope for this package but it does enable the automation. The code below is an example of how you go about using the package.  This isn't investment advice and you should decide for yourself how to choose investments. I would, however,  recommend establishing a limit on how many loans you put in the order. The max is determined by the amount of available funds in your account but you could do less if you wanted. 
+This package is most useful for investors applying advanced filtering or algorithms to determine which loans to buy.  The algorithms aren't in scope for this package but it does enable the automation. The code below is an example of how you go about using the package.  You should use care when deciding how to choose investments. A best practice is to establish a limit on how many loans you put in the order. The max is determined by the amount of available funds in your account but you could do less if you wanted. 
 
 
 
