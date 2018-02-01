@@ -10,6 +10,6 @@ AvailableCash(LC_CRED = NULL)
 \item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
 }
 \description{
-Uses Lending Club's API to access the user's account and return the available
-cash. Committed cash is excluded from the total.
+Retrieves the available cash in the user's account. Cash 
+commited to open buy orders is excluded from the total.
 }

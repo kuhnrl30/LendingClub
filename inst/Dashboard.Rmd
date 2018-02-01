@@ -1,6 +1,6 @@
 ---
 title: "Lending Club Dashboard"
-date: '`r format(Sys.time(),"%B %d, %Y %h:%m")`'
+date: '`r format(Sys.time(),"%B %d, %Y %H:%m")`'
 output: html_document
 params:
   investorID: NA 

@@ -16,7 +16,9 @@ LazyData: TRUE
 BuildVignettes: TRUE
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat,
+    covr
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
 Imports:

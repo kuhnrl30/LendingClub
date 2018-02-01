@@ -2,3 +2,5 @@
 .Rhistory
 .RData
 .Ruserdata
+^*.\.docx$
+^Dashboard_files/*

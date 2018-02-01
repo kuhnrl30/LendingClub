@@ -10,3 +10,6 @@ index.Rmd
 ^paper\.bib
 inst/Dashboard\.html
 ^Dashboard\.html
+^NEWS\.md$   
+^sticker/*
+^codecov\.yml$

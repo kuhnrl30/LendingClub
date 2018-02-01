@@ -1,7 +1,7 @@
 #' Return investor's available cash
 #'
-#' Uses Lending Club's API to access the user's account and return the available
-#' cash. Committed cash is excluded from the total.
+#' Retrieves the available cash in the user's account. Cash 
+#' commited to open buy orders is excluded from the total.
 #'
 #' @inheritParams AccountSummary
 #' @export

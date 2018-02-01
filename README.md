@@ -2,7 +2,8 @@
 [![Build Status](https://travis-ci.org/kuhnrl30/LendingClub.svg?branch=master)](https://travis-ci.org/kuhnrl30/LendingClub)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LendingClub)](https://cran.r-project.org/package=LendingClub)
 <img src= "https://cranlogs.r-pkg.org/badges/grand-total/LendingClub" />
-
+[![DOI](https://zenodo.org/badge/65163868.svg)](https://zenodo.org/badge/latestdoi/65163868)
+![Coverage status](https://codecov.io/gh/kuhnrl30/lendingclub/branch/master/graph/badge.svg)](https://codecov.io/github/kuhnrl30/lendingclub?branch=master)
 
 ## A package built to access the Lending Club API  
 This package helps you make transactions and manage the funds in your Lending Club account. 

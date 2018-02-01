@@ -5,6 +5,7 @@
 #'
 FolioListing<- function(){
     message("This may take a while...")
+    .Deprecated("SecondaryListings")
     tmp<- tempfile()
     download.file(url= "https://resources.lendingclub.com/SecondaryMarketAllNotes.csv",
                   destfile= tmp)

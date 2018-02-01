@@ -15,7 +15,7 @@ Object of class LendingClub_api. The object has two components. The first is \co
 \description{
 Access the user's account and return the summary data.  The data points
 include available cash, total account balance, and the number of notes in the
-portfolio.
+account  @aliases.
 }
 \examples{
 \dontrun{
