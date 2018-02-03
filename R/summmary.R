@@ -11,6 +11,13 @@
 #' @examples 
 #' \dontrun{
 #' summary( DetailedNotesOwned( LC_CRED ))
+#' 
+#' # split notes a variable and  run summary for each subset
+#' holdings<- DetailedNotesOwned(LC_CRED)$content
+#' x<- lapply(split(holdings, f= a$portfolioName), summary)
+#' y<- Reduce(function(...) merge(..., by= 'col_labs',  all.x=TRUE), x)
+#' names(y)[-1]<- names(x)
+#' y
 #' }
 
 
@@ -37,9 +44,9 @@ summary.holdings<- function(object, ...) {
     vals<- c( 
         sum(as.numeric(object$noteAmount)), # Amount Invested
         sum(as.numeric(object$principalReceived) + as.numeric(object$principalPending) - as.numeric(object$noteAmount)), # Discount
-        -sum(ifelse(object$currentPaymentStatus=="ChargedOff", as.numeric(object$principalPending),0)), #Charged off
+        -sum(as.numeric(object[object$loanStatus=="Charged Off","principalPending"]), na.rm=T), #Charged off
         -sum(as.numeric(object$principalReceived)),  # Principal received
-        sum(ifelse(object$currentPaymentStatus=="ChargedOff",0, as.numeric(object$principalPending))), # net outstanding
+        sum(as.numeric(object[!object$loanStatus=="Charged Off","principalPending"]), na.rm=T), # net outstanding
         sum(as.numeric(object$interestReceived)), 
         sum(as.numeric(object$paymentsReceived)), 
         round( sum(as.numeric(object$interestRate) * as.numeric(object$principalPending)) / sum(as.numeric(object$principalPending)), 2),
