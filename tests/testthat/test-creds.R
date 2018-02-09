@@ -27,6 +27,5 @@ test_that("Lending Club Credential",
 
 test_that("Make Credential", {
           expect_s3_class( MakeCredential("x","y"), "LendingClub_credential")
-          # expect_output( CheckCred("a"), "a")
           expect_error( CheckCred(), "Please create the credential object.*")
           })

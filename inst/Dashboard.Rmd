@@ -129,6 +129,6 @@ g
 <hr>
 **Principal At Risk** includes outstanding principal of notes greater than 16 days late and notes that have been charged off. 
 
-**Wgt Int Rate** calculation is weighted by the outstanding principal. 
+**Wgt Int Rate** calculation weighted by the outstanding principal. 
 
-**Payback Ratio** measures the difference between cash invested in a note and the total payments received. The payments include both interest and principal. All notes start at zero and will increase as payments are made.  A note with a ratio greater than 100 indicates that more cash was received than was initially invested.   
+**Payback Ratio** measures the difference between cash invested in a note and the total payments received. The payments include both interest and principal. All notes start at zero and will increase as payments are made.  A note with a ratio greater than 100 indicates that more cash was received than was initially invested. Notes will start at the bottom left of the chart and trend towards the upper right corner as they mature.   

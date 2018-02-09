@@ -24,7 +24,7 @@ summary( DetailedNotesOwned( LC_CRED ))
 
 # split notes a variable and  run summary for each subset
 holdings<- DetailedNotesOwned(LC_CRED)$content
-x<- lapply(split(holdings, f= a$portfolioName), summary)
+x<- lapply(split(holdings, f= holdings$portfolioName), summary)
 y<- Reduce(function(...) merge(..., by= 'col_labs',  all.x=TRUE), x)
 names(y)[-1]<- names(x)
 y

@@ -2,7 +2,11 @@
 output: html_document
 ---
 
-[![Build Status](https://travis-ci.org/kuhnrl30/LendingClub.svg?branch=master)](https://travis-ci.org/kuhnrl30/LendingClub)[![Coverage status](https://codecov.io/gh/kuhnrl30/lendingclub/branch/master/graph/badge.svg)](https://codecov.io/github/kuhnrl30/lendingclub?branch=master)[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LendingClub)](https://cran.r-project.org/package=LendingClub)[![](https://cranlogs.r-pkg.org/badges/grand-total/LendingClub)](https://cranlogs.r-pkg.org/badges/grand-total/LendingClub)[![DOI](https://zenodo.org/badge/65163868.svg)](https://zenodo.org/badge/latestdoi/65163868)
+[![Build Status](https://travis-ci.org/kuhnrl30/LendingClub.svg?branch=master)](https://travis-ci.org/kuhnrl30/LendingClub)
+[![Coverage status](https://codecov.io/gh/kuhnrl30/lendingclub/branch/master/graph/badge.svg)](https://codecov.io/github/kuhnrl30/lendingclub?branch=master)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LendingClub)](https://cran.r-project.org/package=LendingClub)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/LendingClub)](https://cranlogs.r-pkg.org/badges/grand-total/LendingClub)
+[![DOI](https://zenodo.org/badge/65163868.svg)](https://zenodo.org/badge/latestdoi/65163868)
 
 # Lending Club  
 
