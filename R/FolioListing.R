@@ -4,6 +4,10 @@
 #' @export
 #'
 FolioListing<- function(){
+    
+    .Deprecated("SecondaryListing")
+    
+    
     message("This may take a while...")
     .Deprecated("SecondaryListings")
     tmp<- tempfile()

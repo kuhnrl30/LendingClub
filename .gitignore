@@ -4,3 +4,4 @@
 .Ruserdata
 ^*.\.docx$
 ^Dashboard_files/*
+^Dashboard\.html
