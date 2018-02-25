@@ -12,7 +12,7 @@
 \item{...}{currently not used}
 }
 \description{
-Creating a summary of matrics an investor would find useful in evaluating their 
+Creating a summary of matrics an investor would find useful in evaluating their
 account.
 }
 \details{
@@ -22,7 +22,7 @@ At Risk Ratio calculates the percentage of the loans with principal 16 or more d
 \dontrun{
 summary( DetailedNotesOwned( LC_CRED ))
 
-# split notes a variable and  run summary for each subset
+# split notes on a variable and  run summary for each subset
 holdings<- DetailedNotesOwned(LC_CRED)$content
 x<- lapply(split(holdings, f= holdings$portfolioName), summary)
 y<- Reduce(function(...) merge(..., by= 'col_labs',  all.x=TRUE), x)

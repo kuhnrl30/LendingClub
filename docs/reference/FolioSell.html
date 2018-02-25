@@ -102,21 +102,22 @@
     <p>Buy or sell notes on the FOLIOfn secondary market</p>
     
 
-    <pre class="usage"><span class='fu'>FolioBuy</span>(<span class='no'>loanId</span>, <span class='no'>orderId</span>, <span class='no'>noteId</span>, <span class='kw'>Price</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='no'>T</span>)
+    <pre class="usage"><span class='fu'>FolioBuy</span>(<span class='kw'>loanId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>orderId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>noteId</span>, <span class='kw'>Price</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='no'>T</span>)
 
-<span class='fu'>FolioSell</span>(<span class='no'>loanId</span>, <span class='no'>orderId</span>, <span class='no'>noteId</span>, <span class='kw'>expireDate</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>Price</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='no'>T</span>)</pre>
+<span class='fu'>FolioSell</span>(<span class='kw'>loanId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>orderId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>noteId</span>, <span class='kw'>expireDate</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>Price</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='no'>T</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>loanId</th>
-      <td><p>The loan ID</p></td>
+      <td><p><strong><em>Deprecated</em></strong>.  As of Jan 2018, the folio API was revised and the loan ID is no longer required.</p></td>
     </tr>
     <tr>
       <th>orderId</th>
-      <td><p>The loan's order ID</p></td>
+      <td><p><strong><em>Deprecated</em></strong>.  As of Jan 2018, the folio API was revised and the order ID is no longer required.#' @inheritParams AccountSummary</p></td>
     </tr>
     <tr>
       <th>noteId</th>
@@ -127,12 +128,8 @@
       <td><p>Price you wish to sell your loan for. Remember to consider</p></td>
     </tr>
     <tr>
-      <th>LC_CRED</th>
-      <td><p>Credential object having class LendingClub_credential. This object can be created using the <code><a href='MakeCredential.html'>MakeCredential()</a></code> function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".</p></td>
-    </tr>
-    <tr>
       <th>quiet</th>
-      <td><p>Should the response be printed to the console
+      <td><p>Should the API response be printed to the console
 the accrued interest in your offering.</p></td>
     </tr>
     <tr>

@@ -2,10 +2,21 @@
 % Please edit documentation in R/FolioListing.R
 \name{FolioListing}
 \alias{FolioListing}
-\title{Loans listed on Folio marketplace}
+\title{Notes listed on Folio marketplace}
 \usage{
-FolioListing()
+FolioListing(updatedSince = NULL, LC_CRED = NULL)
+}
+\arguments{
+\item{updatedSince}{filter listings to include only notes that were modified/created within the last X minutes.}
 }
 \description{
-Returns a dataframe of loans listed on the secondary market.
+Returns a dataframe of notes listed on the secondary market.
+}
+\details{
+This function can return the complete listing of notes on the secondary market or just
+those that have been recently updated.  The complete listing of loans may take a significant
+amount of time to download depending on the users internet connection speed.
+
+Notes listed on the market automatically expire in 7 days.  The seller may reset the expiration
+date by changing the price on the note.
 }

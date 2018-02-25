@@ -81,7 +81,7 @@ kable(y,
 
 ### Distribution by Grade 
 
-```{r}
+```{r, fig.align='center', fig.height=3}
 h<- ggplot(holdings %>% group_by(grade) %>% summarize(counts =n()))
 h<- h + aes(x= strtrim(grade, 1), y= counts)
 h<- h + geom_bar(stat='identity')
@@ -112,15 +112,15 @@ ThreeYear<- as.Date(Sys.time())-(365*3)
 FiveYear<- as.Date(Sys.time()-(365*5))
 
 g<- ggplot(dat)
-g<- g + aes(x= as.Date(Sys.time())-orderDate, y= CFRatio, group= portfolioName, color= simpleStatus)
+g<- g + aes(y= as.Date(Sys.time())-orderDate, x= CFRatio, group= portfolioName, color= simpleStatus)
 g<- g + geom_point()
 # g<- g + scale_x_date(limits= c(ThreeYear-150, as.Date(Sys.time())+50))
-# g<- g + scale_x_date()
+g<- g + scale_y_continuous()
 g<- g + facet_wrap(~portfolioName, ncol=2)
 g<- g + theme_classic()
-g<- g + labs(x= "Age in Days",
-             y= "Payback Ratio")
-g<- g + geom_hline(yintercept = 100, linetype="dashed")
+g<- g + labs(y= "Age in Days",
+             x= "Payback Ratio")
+g<- g + geom_vline(xintercept = 100, linetype="dashed")
 g<- g + theme(legend.position="none",
               panel.border  = element_rect(colour = "black", fill=NA))
 g
@@ -129,6 +129,10 @@ g
 <hr>
 **Principal At Risk** includes outstanding principal of notes greater than 16 days late and notes that have been charged off. 
 
-**Wgt Int Rate** calculation weighted by the outstanding principal. 
+**At Risk Ratio** is the principal at risk as a percentage of the note amount. This is a measure of portfolio health indicating how much of the invesmet is at risk for defaulting or has already done so. 
+
+**Interest-Risk (IR) Ratio** is the ratio of interest payments received to the principal at risk in the portfolio
+
+**Wgt Int Rate** interest rate weighted by the outstanding principal. 
 
 **Payback Ratio** measures the difference between cash invested in a note and the total payments received. The payments include both interest and principal. All notes start at zero and will increase as payments are made.  A note with a ratio greater than 100 indicates that more cash was received than was initially invested. Notes will start at the bottom left of the chart and trend towards the upper right corner as they mature.   

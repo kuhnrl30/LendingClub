@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Loans listed on Folio marketplace — FolioListing • LendingClub</title>
+<title>Notes listed on Folio marketplace — FolioListing • LendingClub</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -95,21 +95,41 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Loans listed on Folio marketplace</h1>
+    <h1>Notes listed on Folio marketplace</h1>
     </div>
 
     
-    <p>Returns a dataframe of loans listed on the secondary market.</p>
+    <p>Returns a dataframe of notes listed on the secondary market.</p>
     
 
-    <pre class="usage"><span class='fu'>FolioListing</span>()</pre>
-        
+    <pre class="usage"><span class='fu'>FolioListing</span>(<span class='kw'>updatedSince</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>updatedSince</th>
+      <td><p>filter listings to include only notes that were modified/created within the last X minutes.</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>This function can return the complete listing of notes on the secondary market or just
+those that have been recently updated.  The complete listing of loans may take a significant
+amount of time to download depending on the users internet connection speed.</p>
+<p>Notes listed on the market automatically expire in 7 days.  The seller may reset the expiration
+date by changing the price on the note.</p>
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-                </ul>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#details">Details</a></li>
+          </ul>
 
   </div>
 </div>

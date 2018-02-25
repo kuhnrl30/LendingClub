@@ -23,3 +23,6 @@ LC_CRED<- MakeCredential(InvestorID, APIKey)
 AccountSummary()}
 
 }
+\seealso{
+\code{\link{LendingClub-deprecated}}
+}

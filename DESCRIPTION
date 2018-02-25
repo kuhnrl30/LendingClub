@@ -20,6 +20,7 @@ Suggests:
     testthat,
     covr
 VignetteBuilder: knitr
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1
 Imports:
 	dplyr,

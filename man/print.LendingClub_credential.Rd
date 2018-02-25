@@ -12,6 +12,6 @@
 \item{...}{To pass additional arguments to the generic print function}
 }
 \description{
-This function prints the content from the MakeCredential 
+This function prints the content from the MakeCredential
 call.
 }

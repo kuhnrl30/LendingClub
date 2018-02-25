@@ -5,23 +5,22 @@
 \alias{FolioSell}
 \title{Transact with the secondary market}
 \usage{
-FolioBuy(loanId, orderId, noteId, Price = NULL, LC_CRED = NULL, quiet = T)
-
-FolioSell(loanId, orderId, noteId, expireDate = NULL, Price = NULL,
+FolioBuy(loanId = NULL, orderId = NULL, noteId, Price = NULL,
   LC_CRED = NULL, quiet = T)
+
+FolioSell(loanId = NULL, orderId = NULL, noteId, expireDate = NULL,
+  Price = NULL, LC_CRED = NULL, quiet = T)
 }
 \arguments{
-\item{loanId}{The loan ID}
+\item{loanId}{\strong{\emph{Deprecated}}.  As of Jan 2018, the folio API was revised and the loan ID is no longer required.}
 
-\item{orderId}{The loan's order ID}
+\item{orderId}{\strong{\emph{Deprecated}}.  As of Jan 2018, the folio API was revised and the order ID is no longer required.#' @inheritParams AccountSummary}
 
 \item{noteId}{The loan's note ID}
 
 \item{Price}{Price you wish to sell your loan for. Remember to consider}
 
-\item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
-
-\item{quiet}{Should the response be printed to the console
+\item{quiet}{Should the API response be printed to the console
 the accrued interest in your offering.}
 
 \item{expireDate}{The date the sell offer will expire. Can be as short as the

@@ -15,7 +15,7 @@ MakeCredential(investorID, APIkey)
 }
 \description{
 Creates the credential needed to access the other functions in this
- package.
+package.
 }
 \details{
 This is the first step to accessing the API. Pass the function

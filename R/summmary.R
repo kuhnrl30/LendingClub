@@ -12,7 +12,7 @@
 #' \dontrun{
 #' summary( DetailedNotesOwned( LC_CRED ))
 #' 
-#' # split notes a variable and  run summary for each subset
+#' # split notes on a variable and  run summary for each subset
 #' holdings<- DetailedNotesOwned(LC_CRED)$content
 #' x<- lapply(split(holdings, f= holdings$portfolioName), summary)
 #' y<- Reduce(function(...) merge(..., by= 'col_labs',  all.x=TRUE), x)
