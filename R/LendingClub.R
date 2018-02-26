@@ -20,6 +20,8 @@
 #' @importFrom jsonlite "fromJSON"
 #' @importFrom utils "download.file"
 #' @importFrom utils "read.csv"
+#' @importFrom utils "install.packages"
+#' @importFrom utils "installed.packages"
 #' @import dplyr
 #' @import httr
 #' @seealso \itemize{
