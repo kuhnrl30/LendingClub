@@ -6,7 +6,7 @@ skip_on_cran()
 test_that("Lending Club Credential",{
     
     
-    LC_CRED<- MakeCredential(investorID= as.character(Sys.getenv("investorId", names=T)), 
+    LC_CRED<- MakeCredential(investorID= as.character(Sys.getenv("investorId", "", names=T)), 
                              APIkey= Sys.getenv("APIkey", "", names=T))
     
     # Account Summary ----
