@@ -1,22 +1,38 @@
 library(LendingClub)
 context("Account Management")
 
-skip_on_cran()
+# skip_on_cran()
 
-test_that("Account Summary", {
+test_that("AccountSummary_", {
     
     LC_CRED<- MakeCredential(
         investorID= as.character(Sys.getenv("investorId", "", names=F)), 
         APIkey= Sys.getenv("APIkey", "", names=F))
     
+    LC_CRED_ERR<- MakeCredential(
+        investorID= "123",
+        APIkey= "456")
+    
     acctsum<- AccountSummary_(LC_CRED)
     expect_s3_class(acctsum, "AccountSummary")
     expect_type(acctsum$content, "list")
     expect_error(AccountSummary_(LC_CRED="abc"))
-    expect_warning(AccountSummary(LC_CRED))
+    expect_error(AccountSummary_(LC_CRED_ERR))
     })
  
-test_that("Available Cash", {
+test_that("AccountSummary",{
+    LC_CRED<- MakeCredential(
+        investorID= as.character(Sys.getenv("investorId", "", names=F)), 
+        APIkey= Sys.getenv("APIkey", "", names=F))
+    
+
+    
+    expect_warning(acctsum<-AccountSummary(LC_CRED))
+    expect_s3_class(acctsum, "LendingClub_api")   
+})
+
+
+test_that("AvailableCash", {
     
     LC_CRED<- MakeCredential(
         investorID= as.character(Sys.getenv("investorId", "", names=F)), 
@@ -40,6 +56,22 @@ test_that("Notes owned", {
     d_notes<- DetailedNotesOwned(LC_CRED)
     expect_s3_class(d_notes,"holdings")
     expect_is(d_notes$content, "data.frame")
+    expect_is(summary(d_notes), "data.frame")
     })
 
 
+test_that("PortfoliosOwned", {
+    
+    LC_CRED<- MakeCredential(
+        investorID= as.character(Sys.getenv("investorId", "", names=F)), 
+        APIkey= Sys.getenv("APIkey", "", names=F))
+    
+    ports<- PortfoliosOwned(LC_CRED)
+    expect_type(ports$content,"list")
+    expect_s3_class(ports, "LendingClub_api")
+})
+
+
+test_that("CreatePortfolio", {
+    expect_error(CreatePortfolio("abc", LC_CRED="abc"), "Please create the credential object .*") 
+})

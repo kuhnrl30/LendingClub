@@ -20,7 +20,12 @@
 FolioOrders<- function(includeDetails=TRUE, orderType, status=NULL, LC_CRED=NULL){
     
     # check inputs
-    if (!is.null(status)) {
+    if (!(is.logical(includeDetails))) stop("includeDetails is not logical")
+    
+    if (is.null(orderType)) stop("orderType not specified")
+    if (!(orderType %in% c("BUY", "SELL"))) stop("orderType should be one of 'BUY' or 'SELL'")
+    
+    if (length(status)>0) {
         if (!(status %in% c("IN_LISTING",
                             "SETTLED",	
                             "CANCELED_BY_SELLER",
@@ -33,8 +38,7 @@ FolioOrders<- function(includeDetails=TRUE, orderType, status=NULL, LC_CRED=NULL
             stop("status type is not valid")
         }}
         
-    if (!(is.logical(includeDetails))) stop("includeDetails is not logical")
-    if (!(orderType %in% c("BUY", "SELL"))) stop("orderType should be one of 'BUY' or 'SELL'")
+    
     
     LC_CRED<-CheckCred(LC_CRED)
     

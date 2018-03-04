@@ -11,6 +11,9 @@ FolioListing(updatedSince = NULL, LC_CRED = NULL)
 
 \item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
 }
+\value{
+A data.frame.  If the entire current listings are returned, the data frame will have 22 columns.  If a subset of the listings are returned, via the updatedSince argument, then the returned data frame will have 21 columns.
+}
 \description{
 Returns a dataframe of notes listed on the secondary market.
 }

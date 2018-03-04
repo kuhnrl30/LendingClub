@@ -11,6 +11,8 @@
 #' 
 #' Notes listed on the market automatically expire in 7 days.  The seller may reset the expiration 
 #' date by changing the price on the note. 
+#' 
+#' @return A data.frame.  If the entire current listings are returned, the data frame will have 22 columns.  If a subset of the listings are returned, via the updatedSince argument, then the returned data frame will have 21 columns. 
 FolioListing<- function(updatedSince=NULL, LC_CRED=NULL){
     
     # if not time provided then pull complete listings
@@ -33,10 +35,11 @@ FolioListing<- function(updatedSince=NULL, LC_CRED=NULL){
                       httr::add_headers("Authorization"= LC_CRED[[2]],
                                         "Accept" = " text/csv"))
         
-        parsed<- httr::content(r,
+        
+        parsed<- suppressWarnings(httr::content(r,
                                as="parsed",
                                encoding ='UTF-8',
-                               col_types= "iinncnnniciiTTccinnic")
+                               col_types= "iinncnnniciiTTccinnic"))
         
         structure(
             list(content = parsed,

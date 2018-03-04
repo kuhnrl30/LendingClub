@@ -7,3 +7,17 @@ test_that("Add Funds", {
           expect_error(AddFunds(25, "Foo"), "freq value does not match acceptable values")
           expect_error(AddFunds(25, "LOAD_WEEKLY", start="1234"), "start is not a valid .*")
     })
+
+test_that("WithdrawFunds", {
+    expect_error(WithdrawFunds(5, LC_CRED="abc"), "Please create the credential object.*")
+    expect_error(WithdrawFunds(-2, LC_CRED="abc"),"Enter positive .*")
+})
+
+
+test_that("PendingTransfer", {
+    expect_error(WithdrawFunds(5, LC_CRED="abc"), "Please create the credential object.*")
+})
+
+test_that("CancelTransfers", {
+    expect_error(CancelTransfer(5, LC_CRED="abc"), "Please create the credential object.*")
+})

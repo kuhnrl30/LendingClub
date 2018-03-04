@@ -7,6 +7,8 @@
 #'
 WithdrawFunds<- function(amount, LC_CRED=NULL){
 
+    if (amount<=0) stop("Enter positive amount to withdraw")
+    
     LC_CRED<-CheckCred(LC_CRED)
 
     postURL<- MakeURL(LC_CRED$investorID, "funds/withdraw")
