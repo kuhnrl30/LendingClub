@@ -3,34 +3,43 @@ context("Account Management")
 
 skip_on_cran()
 
-test_that("Lending Club Credential",{
+test_that("Account Summary", {
     
+    LC_CRED<- MakeCredential(
+        investorID= as.character(Sys.getenv("investorId", "", names=F)), 
+        APIkey= Sys.getenv("APIkey", "", names=F))
     
-    LC_CRED<- MakeCredential(investorID= as.character(Sys.getenv("investorId", "", names=T)), 
-                             APIkey= Sys.getenv("APIkey", "", names=T))
-    
-    # Account Summary ----
-    acctsum<- AccountSummary_()
+    acctsum<- AccountSummary_(LC_CRED)
     expect_s3_class(acctsum, "AccountSummary")
     expect_type(acctsum$content, "list")
     expect_error(AccountSummary_(LC_CRED="abc"))
-    expect_warning(AccountSummary())
+    expect_warning(AccountSummary(LC_CRED))
+    })
+ 
+test_that("Available Cash", {
     
-    # Available Cash ----
-    availcash<- AvailableCash()
+    LC_CRED<- MakeCredential(
+        investorID= as.character(Sys.getenv("investorId", "", names=F)), 
+        APIkey= Sys.getenv("APIkey", "", names=F))
+    
+    availcash<- AvailableCash(LC_CRED)
     expect_type(availcash,"list")
     expect_s3_class(availcash, "LendingClub_api")
+    })
+ 
+test_that("Notes owned", {
     
-    # Notes owned ----
-    notes<- NotesOwned()
+    LC_CRED<- MakeCredential(
+        investorID= as.character(Sys.getenv("investorId", "", names=F)), 
+        APIkey= Sys.getenv("APIkey", "", names=F))
+    
+    notes<- NotesOwned(LC_CRED)
     expect_is(notes$content, "data.frame")
     
     # Detailed notes owned
-    d_notes<- DetailedNotesOwned()
+    d_notes<- DetailedNotesOwned(LC_CRED)
     expect_s3_class(d_notes,"holdings")
     expect_is(d_notes$content, "data.frame")
-    
-}
-)
+    })
 
 
