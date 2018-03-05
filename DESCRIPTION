@@ -27,4 +27,5 @@ Imports:
 	plyr,
 	httr,
 	jsonlite,
-	utils
+	utils,
+	readr
