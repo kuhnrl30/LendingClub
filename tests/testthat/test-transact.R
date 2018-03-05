@@ -56,3 +56,14 @@ test_that("FolioBuy", {
             FolioBuy(loanId = "abc", orderId = "def", noteId = 1234, LC_CRED), 
             "The loanId variable"))
 })
+
+test_that("FolioSell", {
+    LC_CRED<- MakeCredential(
+        investorID= as.character(Sys.getenv("investorId", "", names=F)), 
+        APIkey= Sys.getenv("APIkey", "", names=F))
+    
+    expect_error(
+        expect_warning(
+            FolioSell(loanId = "abc", orderId = "def", noteId = 1234, LC_CRED), 
+            "The loanId variable"))
+})

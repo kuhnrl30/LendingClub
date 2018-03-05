@@ -75,3 +75,14 @@ test_that("PortfoliosOwned", {
 test_that("CreatePortfolio", {
     expect_error(CreatePortfolio("abc", LC_CRED="abc"), "Please create the credential object .*") 
 })
+
+test_that("PendingTransfers", {
+    LC_CRED<- MakeCredential(
+        investorID= as.character(Sys.getenv("investorId", "", names=F)), 
+        APIkey= Sys.getenv("APIkey", "", names=F))
+    
+    expect_error(PendingTransfers(LC_CRED="abc"), "Please create the credential object .*")
+    xfer<- PendingTransfers(LC_CRED)
+    expect_is(xfer$content, "data.frame")
+    expect_s3_class(xfer, "LendingClub_api")
+})
