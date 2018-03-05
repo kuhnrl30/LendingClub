@@ -22,7 +22,7 @@
 #' @importFrom utils "read.csv"
 #' @importFrom utils "install.packages"
 #' @importFrom utils "installed.packages"
-#' @importv readr
+#' @import readr
 #' @import dplyr
 #' @import httr
 #' @seealso \itemize{
