@@ -1,7 +1,7 @@
 #' Return investor's pending transfers
 #'
 #' Uses Lending Club's API to access the user's account and return the summary
-#' @inheritParams AccountSummary
+#' @inheritParams lc_AccountSummary
 #' @export
 PendingTransfers<- function(LC_CRED=NULL){
 

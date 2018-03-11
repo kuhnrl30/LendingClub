@@ -2,7 +2,7 @@
 #'
 #' Returns a dataframe of notes listed on the secondary market.
 #' @param updatedSince filter listings to include only notes that were modified/created within the last X minutes.
-#' @inheritParams AccountSummary_
+#' @inheritParams lc_AccountSummary
 #' @export
 #'
 #' @details This function can return the complete listing of notes on the secondary market or just 

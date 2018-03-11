@@ -47,7 +47,7 @@ ListedLoans()
 
 Another useful function to start with is AccountSummary_(). This returns key statistics such as the available cash, total number of notes owned, and all time total interest received. You don't pass any inputs to the function but it will search the global environment for the <code>LC_CRED</code> object. 
 ```{r}
-AccountSummary_()
+lc_AccountSummary()
 ```
 
 

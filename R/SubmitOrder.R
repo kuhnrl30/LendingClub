@@ -10,7 +10,7 @@
 #' @param portfolioId Unique ID for the portfolio. It can be found
 #' using the PortfoliosOwned() function.
 #' @param quiet Should the response be printed to the console
-#' @inheritParams AccountSummary
+#' @inheritParams lc_AccountSummary
 #' @examples
 #' \dontrun{
 #' SubmitOrder(12345678, 25)

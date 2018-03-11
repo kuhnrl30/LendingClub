@@ -2,7 +2,7 @@
 #'
 #' Withdraw funds from the investor's account
 #' @param amount Amount to be transferred
-#' @inheritParams AccountSummary
+#' @inheritParams lc_AccountSummary
 #' @export
 #'
 WithdrawFunds<- function(amount, LC_CRED=NULL){

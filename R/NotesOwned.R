@@ -10,7 +10,7 @@
 
 #' @name NotesOwned
 #' @export
-#' @inheritParams AccountSummary
+#' @inheritParams lc_AccountSummary
 #'
 #'
 #'

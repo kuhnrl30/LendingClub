@@ -1,7 +1,7 @@
 #' Listing of investor's portfolios
 #'
 #' Provides a dataframe of all portfolios owned by the investor.
-#' @inheritParams AccountSummary
+#' @inheritParams lc_AccountSummary
 #' @export
 PortfoliosOwned<- function(LC_CRED=NULL){
 

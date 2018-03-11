@@ -2,7 +2,7 @@
 #'
 #' Buy or sell notes on the FOLIOfn secondary market
 #' @md
-#' @inheritParams AccountSummary_
+#' @inheritParams lc_AccountSummary
 #' @param noteId The loan's note ID
 #' @param expireDate The date the sell offer will expire. Can be as short as the
 #' current date or up to 7 days from posting the offer. Character string.

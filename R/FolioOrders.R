@@ -2,7 +2,7 @@
 #'
 #' View either buy or sell orders placed in the current month
 #' @md
-#' @inheritParams AccountSummary
+#' @inheritParams lc_AccountSummary
 #' @param includeDetails Include note level details
 #' @param orderType Return 'buy' or 'sell' orders
 #' @param status Used to filter results. Can be NULL or one of 9 possible status:

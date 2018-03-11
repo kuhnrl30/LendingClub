@@ -3,9 +3,9 @@
 #' Retrieves the available cash in the user's account. Cash 
 #' commited to open buy orders is excluded from the total.
 #'
-#' @inheritParams AccountSummary
+#' @inheritParams lc_AccountSummary
 #' @export
-AvailableCash<- function(LC_CRED=NULL){
+lc_AvailableCash<- function(LC_CRED=NULL){
 
     LC_CRED<-CheckCred(LC_CRED)
 

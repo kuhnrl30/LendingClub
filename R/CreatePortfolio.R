@@ -7,7 +7,7 @@
 #' @param port_name String. Name of the new portfolio
 #' @param port_desc String. Portfolio description
 #' @param quiet Should the response be printed to the console
-#' @inheritParams AccountSummary
+#' @inheritParams lc_AccountSummary
 #' @export
 CreatePortfolio<- function(port_name, port_desc, LC_CRED=NULL, quiet=T){
 
