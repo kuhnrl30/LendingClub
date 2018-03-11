@@ -12,7 +12,7 @@ params:
 ```{r setup, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning = FALSE)
 library(LendingClub)
-library(dplyr)
+suppressPackageStartupMessages(library(dplyr))
 library(knitr)
 suppressMessages(library(ggplot2))
 
