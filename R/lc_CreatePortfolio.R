@@ -9,7 +9,7 @@
 #' @param quiet Should the response be printed to the console
 #' @inheritParams lc_AccountSummary
 #' @export
-CreatePortfolio<- function(port_name, port_desc, LC_CRED=NULL, quiet=T){
+lc_CreatePortfolio<- function(port_name, port_desc, LC_CRED=NULL, quiet=T){
 
     LC_CRED<-CheckCred(LC_CRED)
 

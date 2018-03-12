@@ -6,14 +6,22 @@
 #' - \code{ \link{AccountSummary}} is now \code{ \link{lc_AccountSummary}}
 #' - \code{ AccountSummary_} is now \code{ \link{lc_AccountSummary}}
 #' - \code{ AddFunds} is now \code{\link{lc_AddFunds}}
-#' - \code{ AvailableCash} is not \code{\link{lc_AvailableCash}}
+#' - \code{ AvailableCash} is now \code{\link{lc_AvailableCash}}
+#' - \code{ CreatePortolio} is now \code{\link{lc_CreatePortfolio}}
+#' - \code{ MakeCredential} is now \code{\link{lc_MakeCredential}}
+#' - \code{ Dashboard} is now \code{\link{lc_Dashboard}}
+#' - \code{ DetailedNotesOwned} is now \code{\link{lc_DetailedNotesOwned}}
+#' - \code{ NotesOwned } is now \code{\link{lc_NotesOwned}}
 #' 
 #' @name LendingClub-deprecated
 #' @rdname LendingClub-deprecated
 #' @param ... Parameters to be passed to the modern versions of the function
 #' @docType package
-#' @export AccountSummary_ AddFunds AvailableCash CancelTransfer
-#' @aliases AccountSummary_ AddFunds AvailableCash CancelTransfer
+#' @export AccountSummary_ AddFunds AvailableCash CancelTransfer CreatePortfolio MakeCredential
+#' @export Dashboard DetailedNotesOwned NotesOwned PendingTransfers
+#' @aliases AccountSummary_ AddFunds AvailableCash CancelTransfer CreatePortfolio MakeCredential
+#' @aliases Dashboard DetailedNotesOwned NotesOwned PendingTransfers
+
 AccountSummary_<- function(...){
     .Deprecated("lc_AccountSummary", package="LendingClub")
     lc_AccountSummary(...)
@@ -30,7 +38,37 @@ AvailableCash<- function(...){
     }
 
 CancelTransfer<- function(...){
-    
     .Deprecated("lc_CancelTransfer", package="LendingClub")
     lc_CancelTransfer(...)
     }
+
+CreatePortfolio<- function(...){
+    .Deprecated("lc_CreatePortfolio", package="LendingClub")
+    lc_CreatePortfolio(...)
+    }
+
+MakeCredential<- function(...){
+    .Deprecated("lc_MakeCredential", package="LendingClub")
+    lc_MakeCredential(...)
+    }
+
+Dashboard<- function(...){
+    .Deprecated("lc_Dashboard", package="LendingClub")
+    lc_Dashboard(...)
+    }
+
+DetailedNotesOwned<- function(...){
+    .Deprecated("lc_DetailedNotesOwned", package="LendingClub")
+    lc_DetailedNotesOwned(...)
+    }
+
+NotesOwned<- function(...){
+    .Deprecated("lc_NotesOwned", package="LendingClub")
+    lc_NotesOwned(...)
+    }
+
+PendingTransfers<- function(...){
+    .Deprecated("lc_PendingTransfers", package="LendingClub")
+    lc_PendingTransfers(...)
+    }
+

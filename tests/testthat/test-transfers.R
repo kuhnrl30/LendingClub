@@ -1,11 +1,11 @@
 library(LendingClub)
 context("Transfers")
 
-test_that("Add Funds", {
-          expect_error(AddFunds(25, "LOAD_WEEKLY"),"start required for future transfers")
-          expect_error(AddFunds("A","LOAD_ONCE"), "amount must be numeric")
-          expect_error(AddFunds(25, "Foo"), "freq value does not match acceptable values")
-          expect_error(AddFunds(25, "LOAD_WEEKLY", start="1234"), "start is not a valid .*")
+test_that("lc_Add Funds", {
+          expect_error(lc_AddFunds(25, "LOAD_WEEKLY"),"start required for future transfers")
+          expect_error(lc_AddFunds("A","LOAD_ONCE"), "amount must be numeric")
+          expect_error(lc_AddFunds(25, "Foo"), "freq value does not match acceptable values")
+          expect_error(lc_AddFunds(25, "LOAD_WEEKLY", start="1234"), "start is not a valid .*")
     })
 
 test_that("WithdrawFunds", {
@@ -19,5 +19,5 @@ test_that("PendingTransfer", {
 })
 
 test_that("CancelTransfers", {
-    expect_error(CancelTransfer(5, LC_CRED="abc"), "Please create the credential object.*")
+    expect_error(lc_CancelTransfer(5, LC_CRED="abc"), "Please create the credential object.*")
 })

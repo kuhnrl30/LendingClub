@@ -5,7 +5,7 @@ context("Transactions")
 
 test_that("Listed Loans",{
     
-    LC_CRED<- MakeCredential(
+    LC_CRED<- lc_MakeCredential(
         investorID= as.character(Sys.getenv("investorId", "", names=F)), 
         APIkey= Sys.getenv("APIkey", "", names=F))
     
@@ -17,7 +17,7 @@ test_that("Listed Loans",{
 
 test_that("FolioListing",{
     
-    LC_CRED<- MakeCredential(
+    LC_CRED<- lc_MakeCredential(
         investorID= as.character(Sys.getenv("investorId", "", names=F)), 
         APIkey= Sys.getenv("APIkey", "", names=F))
     
@@ -47,7 +47,7 @@ test_that("FolioOrders", {
 })
 
 test_that("FolioBuy", {
-    LC_CRED<- MakeCredential(
+    LC_CRED<- lc_MakeCredential(
         investorID= as.character(Sys.getenv("investorId", "", names=F)), 
         APIkey= Sys.getenv("APIkey", "", names=F))
     
@@ -58,7 +58,7 @@ test_that("FolioBuy", {
 })
 
 test_that("FolioSell", {
-    LC_CRED<- MakeCredential(
+    LC_CRED<- lc_MakeCredential(
         investorID= as.character(Sys.getenv("investorId", "", names=F)), 
         APIkey= Sys.getenv("APIkey", "", names=F))
     

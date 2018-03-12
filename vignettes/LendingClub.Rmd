@@ -18,9 +18,9 @@ Lending Club is a peer-to-peer lending site.  Peer-to-peer lending crowd-funds l
 
 
 ### Creating Your Credential 
-To get started, you'll need to supply the investor's account number and API key. You can find the account number from the Account Summary page. The API key is located at the bottom of the Account Settings page. In the example below, the account number and API key are loaded from an .Renviron file but you can use whatever process you are comfortable to pass them to the MakeCredential function. If you are going to share your code, then I recommend doing something similar to this method rather than put it directly in your code.
+To get started, you'll need to supply the investor's account number and API key. You can find the account number from the Account Summary page. The API key is located at the bottom of the Account Settings page. In the example below, the account number and API key are loaded from an .Renviron file but you can use whatever process you are comfortable to pass them to the lc_MakeCredential function. If you are going to share your code, then I recommend doing something similar to this method rather than put it directly in your code.
 
-The MakeCredential() function uses the investorID and APIkey inputs to create an S3 object. If you save this object as <code>LC_CRED</code>, then the other functions in this package will find it in the global environment and you will not have to pass it as an argument to the other functions. 
+The lc_MakeCredential() function uses the investorID and APIkey inputs to create an S3 object. If you save this object as <code>LC_CRED</code>, then the other functions in this package will find it in the global environment and you will not have to pass it as an argument to the other functions. 
 
 ```{r}
 library(LendingClub)
@@ -28,14 +28,14 @@ library(LendingClub)
 investorID<- Sys.getenv("id")
 APIkey    <- Sys.getenv("key")
 
-LC_CRED<- MakeCredential(investorID, APIkey)
+LC_CRED<- lc_MakeCredential(investorID, APIkey)
 ``` 
 
 If you plan to share your code or publish to Github, you may want to save your investorID and APIkey separately so you don't have to share them.  In the example above, the variables were saved as environment variables.  Alternatively, you can save them in a text file and read them in with <code>readLines()</code>. 
 
 ```{r}
-LC_CRED<- MakeCredential(investorID = readLines("path_to_creds.txt")[1],
-                         APIkey =  readLines("path_to_creds.txt")[2])
+LC_CRED<- lc_MakeCredential(investorID = readLines("path_to_creds.txt")[1],
+                            APIkey =  readLines("path_to_creds.txt")[2])
 ```
 
 ### A Few More Function Examples 
@@ -58,11 +58,11 @@ This package is most useful for investors applying advanced filtering or algorit
 
 **Sudo code:**
 ```{r, eval=FALSE}
-LC_CRED<- MakeCredential(investorID, APIkey)
+LC_CRED<- lc_MakeCredential(investorID, APIkey)
 
 # Establish a limt on how many loans are in the order 
 # by determing the max amount of $25 notes you can purchase.
-notequantity<- as.numeric(AvailableCash()$content[2, 2]) %/% 25
+notequantity<- as.numeric(lc_AvailableCash()$content[2, 2]) %/% 25
 
 
 loans<- ListedLoans()$content$loans

@@ -3,7 +3,7 @@
 #' Uses Lending Club's API to access the user's account and return the summary
 #' @inheritParams lc_AccountSummary
 #' @export
-PendingTransfers<- function(LC_CRED=NULL){
+lc_PendingTransfers<- function(LC_CRED=NULL){
 
     LC_CRED<-CheckCred(LC_CRED)
 

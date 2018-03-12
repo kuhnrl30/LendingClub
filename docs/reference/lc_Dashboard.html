@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Transact with the secondary market — FolioBuy • LendingClub</title>
+<title>Creates an HTML dashboard — lc_Dashboard • LendingClub</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -95,51 +95,38 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Transact with the secondary market</h1>
+    <h1>Creates an HTML dashboard</h1>
     </div>
 
     
-    <p>Buy or sell notes on the FOLIOfn secondary market</p>
+    <p>Knits a document with summary statistics needed to evaluate an account.</p>
     
 
-    <pre class="usage"><span class='fu'>FolioBuy</span>(<span class='kw'>loanId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>orderId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>noteId</span>, <span class='kw'>Price</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='no'>T</span>)
-
-<span class='fu'>FolioSell</span>(<span class='kw'>loanId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>orderId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>noteId</span>, <span class='kw'>expireDate</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>Price</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='no'>T</span>)</pre>
+    <pre class="usage"><span class='fu'>lc_Dashboard</span>(<span class='kw'>filename</span> <span class='kw'>=</span> <span class='st'>"Dashboard.html"</span>, <span class='kw'>out_dir</span> <span class='kw'>=</span> <span class='fu'>getwd</span>(),
+  <span class='kw'>ID</span> <span class='kw'>=</span> <span class='no'>LC_CRED</span>$<span class='no'>investorID</span>, <span class='kw'>key</span> <span class='kw'>=</span> <span class='no'>LC_CRED</span>$<span class='no'>key</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>loanId</th>
-      <td><p><strong><em>Deprecated</em></strong>.  As of Jan 2018, the folio API was revised and the loan ID is no longer required.</p></td>
+      <th>filename</th>
+      <td><p>Name of the file to create</p></td>
     </tr>
     <tr>
-      <th>orderId</th>
-      <td><p><strong><em>Deprecated</em></strong>.  As of Jan 2018, the folio API was revised and the order ID is no longer required.#' @inheritParams AccountSummary</p></td>
+      <th>out_dir</th>
+      <td><p>Directory where to save the html file</p></td>
     </tr>
     <tr>
-      <th>noteId</th>
-      <td><p>The loan's note ID</p></td>
+      <th>ID</th>
+      <td><p>User's ID from the Account Summary page</p></td>
     </tr>
     <tr>
-      <th>Price</th>
-      <td><p>Price you wish to sell your loan for. Remember to consider</p></td>
+      <th>key</th>
+      <td><p>User's API key from the account settings page</p></td>
     </tr>
     <tr>
-      <th>LC_CRED</th>
-      <td><p>Credential object having class LendingClub_credential. This object can be created using the <code><a href='LendingClub-deprecated.html'>MakeCredential()</a></code> function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".</p></td>
-    </tr>
-    <tr>
-      <th>quiet</th>
-      <td><p>Should the API response be printed to the console
-the accrued interest in your offering.</p></td>
-    </tr>
-    <tr>
-      <th>expireDate</th>
-      <td><p>The date the sell offer will expire. Can be as short as the
-current date or up to 7 days from posting the offer. Character string.</p></td>
+      <th>...</th>
+      <td><p>Arguments passed on to rmarkdown::render</p></td>
     </tr>
     </table>
     

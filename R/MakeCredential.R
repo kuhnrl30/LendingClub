@@ -19,7 +19,7 @@
 #' @param APIkey User's API key from the account settings page
 #' @param ... See the details section for more information.
 #' @export
-MakeCredential<- function(investorID, APIkey){
+lc_MakeCredential<- function(investorID, APIkey){
 
     # Create the credential
     structure(

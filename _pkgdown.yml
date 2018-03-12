@@ -6,20 +6,20 @@ reference:
 - title: Account Management
   desc: ~
   contents:
-  - AccountSummary_
-  - Dashboard
+  - lc_AccountSummary
+  - lc_Dashboard
   - summary.holdings
-  - AvailableCash
-  - CreatePortfolio
-  - NotesOwned
-  - DetailedNotesOwned
+  - lc_AvailableCash
+  - lc_CreatePortfolio
+  - lc_NotesOwned
+  - lc_DetailedNotesOwned
   - PortfoliosOwned
 - title: Transfer Funds
   desc: ~
   contents:
-  - AddFunds
-  - CancelTransfer
-  - PendingTransfers
+  - lc_AddFunds
+  - lc_CancelTransfer
+  - lc_PendingTransfers
   - WithdrawFunds
 - title: Transacting with Loans
   desc: ~
@@ -29,10 +29,11 @@ reference:
   - FolioListing
   - FolioBuy
   - FolioSell
+  - FolioOrders
 - title: Helpers
   desc: ~
   contents:
-    - MakeCredential  
+    - lc_MakeCredential  
     - LendingClub
 navbar:
   title: LendingClub

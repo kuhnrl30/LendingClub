@@ -7,6 +7,8 @@
 \alias{AddFunds}
 \alias{AvailableCash}
 \alias{CancelTransfer}
+\alias{CreatePortfolio}
+\alias{MakeCredential}
 \alias{LendingClub-deprecated-package}
 \title{Deprecated functions in the \pkg{LendingClub} package.}
 \usage{
@@ -23,6 +25,11 @@ be removed (defunct) in later versions.
 \item \code{ \link{AccountSummary}} is now \code{ \link{lc_AccountSummary}}
 \item \code{ AccountSummary_} is now \code{ \link{lc_AccountSummary}}
 \item \code{ AddFunds} is now \code{\link{lc_AddFunds}}
-\item \code{ AvailableCash} is not \code{\link{lc_AvailableCash}}
+\item \code{ AvailableCash} is now \code{\link{lc_AvailableCash}}
+\item \code{ CreatePortolio} is now \code{\link{lc_CreatePortfolio}}
+\item \code{ MakeCredential} is now \code{\link{lc_MakeCredential}}
+\item \code{ Dashboard} is now \code{\link{lc_Dashboard}}
+\item \code{ DetailedNotesOwned} is now \code{\link{lc_DetailedNotesOwned}}
+\item \code{ NotesOwned } is now \code{\link{lc_NotesOwned}}
 }
 }

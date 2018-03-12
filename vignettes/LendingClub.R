@@ -7,20 +7,24 @@ knitr::opts_chunk$set(eval=F)
 #  investorID<- Sys.getenv("id")
 #  APIkey    <- Sys.getenv("key")
 #  
-#  LC_CRED<- MakeCredential(investorID, APIkey)
+#  LC_CRED<- lc_MakeCredential(investorID, APIkey)
+
+## ------------------------------------------------------------------------
+#  LC_CRED<- lc_MakeCredential(investorID = readLines("path_to_creds.txt")[1],
+#                              APIkey =  readLines("path_to_creds.txt")[2])
 
 ## ------------------------------------------------------------------------
 #  ListedLoans()
 
 ## ------------------------------------------------------------------------
-#  AccountSummary_()
+#  lc_AccountSummary()
 
 ## ---- eval=FALSE---------------------------------------------------------
-#  LC_CRED<- MakeCredential(investorID, APIkey)
+#  LC_CRED<- lc_MakeCredential(investorID, APIkey)
 #  
 #  # Establish a limt on how many loans are in the order
 #  # by determing the max amount of $25 notes you can purchase.
-#  notequantity<- as.numeric(AvailableCash()$content[2, 2]) %/% 25
+#  notequantity<- as.numeric(lc_AvailableCash()$content[2, 2]) %/% 25
 #  
 #  
 #  loans<- ListedLoans()$content$loans

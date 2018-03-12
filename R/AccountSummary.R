@@ -10,7 +10,7 @@
 #' @seealso \code{\link{LendingClub-deprecated}}
 #' @examples
 #' \dontrun{
-#' LC_CRED<- MakeCredential(InvestorID, APIKey)
+#' LC_CRED<- lc_MakeCredential(InvestorID, APIKey)
 #' AccountSummary()}
 #' 
 #' @export
