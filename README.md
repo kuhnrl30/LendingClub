@@ -27,14 +27,14 @@ library(LendingClub)
 ## Usage 
 To use this package, you'll first need to create a credential from your account 
 number and API key. This credential can be saved to the global environment and 
-the other functions will automatically detect it. Use the MakeCredential() function and pass 
+the other functions will automatically detect it. Use the lc_MakeCredential() function and pass 
 it your investorID number and your API key. You can find the InvestorID on your 
 account summary page and the API key on the Account Settings page. 
 
 ```
-LC_CRED<- MakeCredential(investorID, APIkey)
-ListedLoans()
-AccountSummary_()
+LC_CRED<- lc_MakeCredential(investorID, APIkey)
+lc_ListedLoans()
+lc_AccountSummary()
 ```
 
 ## Credits

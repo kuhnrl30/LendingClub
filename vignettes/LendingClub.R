@@ -14,7 +14,7 @@ knitr::opts_chunk$set(eval=F)
 #                              APIkey =  readLines("path_to_creds.txt")[2])
 
 ## ------------------------------------------------------------------------
-#  ListedLoans()
+#  lc_ListedLoans()
 
 ## ------------------------------------------------------------------------
 #  lc_AccountSummary()
@@ -27,7 +27,7 @@ knitr::opts_chunk$set(eval=F)
 #  notequantity<- as.numeric(lc_AvailableCash()$content[2, 2]) %/% 25
 #  
 #  
-#  loans<- ListedLoans()$content$loans
+#  loans<- lc_ListedLoans()$content$loans
 #  
 #  # Filter, sort, or apply your model to determine where to invest.
 #  order<- loans %>%
@@ -36,7 +36,7 @@ knitr::opts_chunk$set(eval=F)
 #    select(id) %>%
 #    head(notequantity)
 #  
-#  SubmitOrder(loanId= order,
-#              amount= rep(25, notequantity),
-#              LC_CRED= LC_CRED)
+#  lc_SubmitOrder(loanId= order,
+#                 amount= rep(25, notequantity),
+#                 LC_CRED= LC_CRED)
 

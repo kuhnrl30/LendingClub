@@ -3,7 +3,7 @@
 #' Provides a dataframe of all portfolios owned by the investor.
 #' @inheritParams lc_AccountSummary
 #' @export
-PortfoliosOwned<- function(LC_CRED=NULL){
+lc_PortfoliosOwned<- function(LC_CRED=NULL){
 
     LC_CRED<-CheckCred(LC_CRED)
 

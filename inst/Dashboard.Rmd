@@ -17,8 +17,8 @@ library(knitr)
 suppressMessages(library(ggplot2))
 
 
-LC_CRED<- MakeCredential(params$investorID, params$APIkey)
-holdings<- LendingClub::DetailedNotesOwned()$content
+LC_CRED<- lc_MakeCredential(params$investorID, params$APIkey)
+holdings<- LendingClub::lc_DetailedNotesOwned()$content
 
 summarydata<-  lc_AccountSummary()$content
 

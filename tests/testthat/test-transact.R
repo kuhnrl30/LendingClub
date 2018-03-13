@@ -3,13 +3,13 @@ context("Transactions")
 
 # skip_on_cran()
 
-test_that("Listed Loans",{
+test_that("lc_ListedLoans",{
     
     LC_CRED<- lc_MakeCredential(
         investorID= as.character(Sys.getenv("investorId", "", names=F)), 
         APIkey= Sys.getenv("APIkey", "", names=F))
     
-    listed<- ListedLoans(showAll=T, LC_CRED)
+    listed<- lc_ListedLoans(showAll=T, LC_CRED)
     expect_s3_class(listed, "ListedLoans")
     expect_is(listed$content, "list")
 })
@@ -27,8 +27,8 @@ test_that("FolioListing",{
     expect_is(listed$content, "data.frame")
 })
 
-test_that("SubmitOrder", {
-    expect_error(SubmitOrder(123,456, LC_CRED="abc"), "Please create the credential object .*")
+test_that("lc_SubmitOrder", {
+    expect_error(lc_SubmitOrder(123,456, LC_CRED="abc"), "Please create the credential object .*")
     
     
 })

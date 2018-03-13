@@ -14,7 +14,7 @@ print.LendingClub_api <- function(x, ...) {
     cat("<LendingClub API>\n")
     print(x$content,...)
     invisible(x)
-    }
+}
 
 #' Print the output from an API call
 #'
@@ -32,7 +32,7 @@ print.AccountSummary <- function(x, ...) {
         d<- x$content[1, i]
         e<- colnames(x$content)[i]
         cat(paste0(e, ":", strrep(" ", 50-nchar(e)- nchar(d)), d, "\n"))
-        }
+    }
     invisible(x)
 }
 

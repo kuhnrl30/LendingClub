@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Cancel a scheduled transfer — lc_CancelTransfer • LendingClub</title>
+<title>Withdraw funds — lc_WithdrawFunds • LendingClub</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -95,23 +95,21 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Cancel a scheduled transfer</h1>
+    <h1>Withdraw funds</h1>
     </div>
 
     
-    <p>Cancel a scheduled transfer. You can get a listing of
-scheduled transfers by using the <code><a href='LendingClub-deprecated.html'>PendingTransfers()</a></code>
-funciton.</p>
+    <p>Withdraw funds from the investor's account</p>
     
 
-    <pre class="usage"><span class='fu'>lc_CancelTransfer</span>(<span class='no'>transferId</span>, <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>lc_WithdrawFunds</span>(<span class='no'>amount</span>, <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>transferId</th>
-      <td><p>Numeric. Unique ID for the scheduled transfer</p></td>
+      <th>amount</th>
+      <td><p>Amount to be transferred</p></td>
     </tr>
     <tr>
       <th>LC_CRED</th>

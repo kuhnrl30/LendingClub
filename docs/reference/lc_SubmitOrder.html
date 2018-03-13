@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Cancel a scheduled transfer — lc_CancelTransfer • LendingClub</title>
+<title>Buy a note on the primary market — lc_SubmitOrder • LendingClub</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -95,37 +95,62 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Cancel a scheduled transfer</h1>
+    <h1>Buy a note on the primary market</h1>
     </div>
 
     
-    <p>Cancel a scheduled transfer. You can get a listing of
-scheduled transfers by using the <code><a href='LendingClub-deprecated.html'>PendingTransfers()</a></code>
-funciton.</p>
+    <p>Create an order to purchase a note. If the account has sufficient
+funding, the note will be purchased once the loan has passed
+through the funding stage.</p>
     
 
-    <pre class="usage"><span class='fu'>lc_CancelTransfer</span>(<span class='no'>transferId</span>, <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>lc_SubmitOrder</span>(<span class='no'>loanId</span>, <span class='kw'>amount</span> <span class='kw'>=</span> <span class='fl'>25</span>, <span class='kw'>portfolioId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='no'>T</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>transferId</th>
-      <td><p>Numeric. Unique ID for the scheduled transfer</p></td>
+      <th>loanId</th>
+      <td><p>Unique ID for loans. These can be found using the
+ListedLoans() function.</p></td>
+    </tr>
+    <tr>
+      <th>amount</th>
+      <td><p>Amount to be purchased</p></td>
+    </tr>
+    <tr>
+      <th>portfolioId</th>
+      <td><p>Unique ID for the portfolio. It can be found
+using the PortfoliosOwned() function.</p></td>
     </tr>
     <tr>
       <th>LC_CRED</th>
       <td><p>Credential object having class LendingClub_credential. This object can be created using the <code><a href='LendingClub-deprecated.html'>MakeCredential()</a></code> function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".</p></td>
     </tr>
+    <tr>
+      <th>quiet</th>
+      <td><p>Should the response be printed to the console</p></td>
+    </tr>
     </table>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='fu'><a href='LendingClub-deprecated.html'>SubmitOrder</a></span>(<span class='fl'>12345678</span>, <span class='fl'>25</span>)
+<span class='fu'><a href='LendingClub-deprecated.html'>SubmitOrder</a></span>(<span class='fl'>12345678</span>, <span class='fl'>25</span>, <span class='st'>"myPortfolio"</span>)
+
+<span class='co'>#For multiple loans in a single order</span>
+<span class='fu'><a href='LendingClub-deprecated.html'>SubmitOrder</a></span>(<span class='kw'>loanId</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>123</span>, <span class='fl'>456</span>, <span class='fl'>789</span>), <span class='kw'>amount</span><span class='kw'>=</span> <span class='fu'>c</span>(<span class='fu'>rep</span>(<span class='fl'>25</span>,<span class='fl'>3</span>)))
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+            
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

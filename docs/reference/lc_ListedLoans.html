@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Cancel a scheduled transfer — lc_CancelTransfer • LendingClub</title>
+<title>Listing of all loans on the primary market — lc_ListedLoans • LendingClub</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -95,23 +95,23 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Cancel a scheduled transfer</h1>
+    <h1>Listing of all loans on the primary market</h1>
     </div>
 
     
-    <p>Cancel a scheduled transfer. You can get a listing of
-scheduled transfers by using the <code><a href='LendingClub-deprecated.html'>PendingTransfers()</a></code>
-funciton.</p>
+    <p>Uses Lending Club's API to return all current listed loans</p>
     
 
-    <pre class="usage"><span class='fu'>lc_CancelTransfer</span>(<span class='no'>transferId</span>, <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>lc_ListedLoans</span>(<span class='kw'>showAll</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>transferId</th>
-      <td><p>Numeric. Unique ID for the scheduled transfer</p></td>
+      <th>showAll</th>
+      <td><p>logical, indicate whether all loans should be retured.
+Use false to limit the results to those loans listed in the most recent
+listing period.</p></td>
     </tr>
     <tr>
       <th>LC_CRED</th>
@@ -119,13 +119,23 @@ funciton.</p>
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>LendingClub_api object.  There are two components, the first is
+the content of the request, the second is the response from the API.
+The content can be further subdivided into a 2 element list. The first
+element is the date of the request and second is a dataframe of the
+listed loans.</p>
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
 
   </div>
 </div>

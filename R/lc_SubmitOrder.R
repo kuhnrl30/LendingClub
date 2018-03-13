@@ -21,7 +21,7 @@
 #'}
 #' @export
 
-SubmitOrder<- function(loanId, amount=25, portfolioId=NULL, LC_CRED=NULL, quiet=T){
+lc_SubmitOrder<- function(loanId, amount=25, portfolioId=NULL, LC_CRED=NULL, quiet=T){
 
     LC_CRED<-CheckCred(LC_CRED)
 

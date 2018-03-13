@@ -60,13 +60,13 @@ test_that("Notes owned", {
     })
 
 
-test_that("PortfoliosOwned", {
+test_that("lc_PortfoliosOwned", {
     
     LC_CRED<- lc_MakeCredential(
         investorID= as.character(Sys.getenv("investorId", "", names=F)), 
         APIkey= Sys.getenv("APIkey", "", names=F))
     
-    ports<- PortfoliosOwned(LC_CRED)
+    ports<- lc_PortfoliosOwned(LC_CRED)
     expect_type(ports$content,"list")
     expect_s3_class(ports, "LendingClub_api")
 })

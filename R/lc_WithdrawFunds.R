@@ -5,7 +5,7 @@
 #' @inheritParams lc_AccountSummary
 #' @export
 #'
-WithdrawFunds<- function(amount, LC_CRED=NULL){
+lc_WithdrawFunds<- function(amount, LC_CRED=NULL){
 
     if (amount<=0) stop("Enter positive amount to withdraw")
     

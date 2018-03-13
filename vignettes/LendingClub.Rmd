@@ -39,13 +39,13 @@ LC_CRED<- lc_MakeCredential(investorID = readLines("path_to_creds.txt")[1],
 ```
 
 ### A Few More Function Examples 
-Here are a few examples of other functions in the package. As mentioned above, all other functions in this package will look for the <code>LC_CRED</code> object before processing the respective API calls.  You can see a data.frame of the currently listed loans using the <code>ListedLoans()</code> function.  
+Here are a few examples of other functions in the package. As mentioned above, all other functions in this package will look for the <code>LC_CRED</code> object before processing the respective API calls.  You can see a data.frame of the currently listed loans using the <code>lc_ListedLoans()</code> function.  
 
 ```{r}
-ListedLoans()
+lc_ListedLoans()
 ```
 
-Another useful function to start with is AccountSummary_(). This returns key statistics such as the available cash, total number of notes owned, and all time total interest received. You don't pass any inputs to the function but it will search the global environment for the <code>LC_CRED</code> object. 
+Another useful function to start with is lc_AccountSummary(). This returns key statistics such as the available cash, total number of notes owned, and all time total interest received. You don't pass any inputs to the function but it will search the global environment for the <code>LC_CRED</code> object. 
 ```{r}
 lc_AccountSummary()
 ```
@@ -65,7 +65,7 @@ LC_CRED<- lc_MakeCredential(investorID, APIkey)
 notequantity<- as.numeric(lc_AvailableCash()$content[2, 2]) %/% 25
 
 
-loans<- ListedLoans()$content$loans
+loans<- lc_ListedLoans()$content$loans
 
 # Filter, sort, or apply your model to determine where to invest.
 order<- loans %>%
@@ -74,7 +74,7 @@ order<- loans %>%
   select(id) %>%
   head(notequantity) 
 
-SubmitOrder(loanId= order,
-            amount= rep(25, notequantity),
-            LC_CRED= LC_CRED)
+lc_SubmitOrder(loanId= order,
+               amount= rep(25, notequantity),
+               LC_CRED= LC_CRED)
 ````

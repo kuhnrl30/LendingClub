@@ -9,13 +9,13 @@ test_that("lc_Add Funds", {
     })
 
 test_that("WithdrawFunds", {
-    expect_error(WithdrawFunds(5, LC_CRED="abc"), "Please create the credential object.*")
-    expect_error(WithdrawFunds(-2, LC_CRED="abc"),"Enter positive .*")
+    expect_error(lc_WithdrawFunds(5, LC_CRED="abc"), "Please create the credential object.*")
+    expect_error(lc_WithdrawFunds(-2, LC_CRED="abc"),"Enter positive .*")
 })
 
 
 test_that("PendingTransfer", {
-    expect_error(WithdrawFunds(5, LC_CRED="abc"), "Please create the credential object.*")
+    expect_error(lc_WithdrawFunds(5, LC_CRED="abc"), "Please create the credential object.*")
 })
 
 test_that("CancelTransfers", {

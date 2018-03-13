@@ -137,9 +137,9 @@ LC_CRED&lt;- lc_MakeCredential(investorID, APIkey)</code></pre>
 </div>
 <div id="a-few-more-function-examples" class="section level3">
 <h3>A Few More Function Examples</h3>
-<p>Here are a few examples of other functions in the package. As mentioned above, all other functions in this package will look for the <code>LC_CRED</code> object before processing the respective API calls. You can see a data.frame of the currently listed loans using the <code>ListedLoans()</code> function.</p>
-<pre class="r"><code>ListedLoans()</code></pre>
-<p>Another useful function to start with is AccountSummary_(). This returns key statistics such as the available cash, total number of notes owned, and all time total interest received. You don’t pass any inputs to the function but it will search the global environment for the <code>LC_CRED</code> object.</p>
+<p>Here are a few examples of other functions in the package. As mentioned above, all other functions in this package will look for the <code>LC_CRED</code> object before processing the respective API calls. You can see a data.frame of the currently listed loans using the <code>lc_ListedLoans()</code> function.</p>
+<pre class="r"><code>lc_ListedLoans()</code></pre>
+<p>Another useful function to start with is lc_AccountSummary(). This returns key statistics such as the available cash, total number of notes owned, and all time total interest received. You don’t pass any inputs to the function but it will search the global environment for the <code>LC_CRED</code> object.</p>
 <pre class="r"><code>lc_AccountSummary()</code></pre>
 </div>
 <div id="example-workflow" class="section level3">
@@ -153,7 +153,7 @@ LC_CRED&lt;- lc_MakeCredential(investorID, APIkey)</code></pre>
 notequantity&lt;- as.numeric(lc_AvailableCash()$content[2, 2]) %/% 25
 
 
-loans&lt;- ListedLoans()$content$loans
+loans&lt;- lc_ListedLoans()$content$loans
 
 # Filter, sort, or apply your model to determine where to invest.
 order&lt;- loans %&gt;%
@@ -162,9 +162,9 @@ order&lt;- loans %&gt;%
   select(id) %&gt;%
   head(notequantity) 
 
-SubmitOrder(loanId= order,
-            amount= rep(25, notequantity),
-            LC_CRED= LC_CRED)</code></pre>
+lc_SubmitOrder(loanId= order,
+               amount= rep(25, notequantity),
+               LC_CRED= LC_CRED)</code></pre>
 </div>
 
 

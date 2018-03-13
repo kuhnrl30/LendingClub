@@ -13,19 +13,19 @@ reference:
   - lc_CreatePortfolio
   - lc_NotesOwned
   - lc_DetailedNotesOwned
-  - PortfoliosOwned
+  - lc_PortfoliosOwned
 - title: Transfer Funds
   desc: ~
   contents:
   - lc_AddFunds
   - lc_CancelTransfer
   - lc_PendingTransfers
-  - WithdrawFunds
+  - lc_WithdrawFunds
 - title: Transacting with Loans
   desc: ~
   contents:
-  - ListedLoans
-  - SubmitOrder
+  - lc_ListedLoans
+  - lc_SubmitOrder
   - FolioListing
   - FolioBuy
   - FolioSell
@@ -34,7 +34,10 @@ reference:
   desc: ~
   contents:
     - lc_MakeCredential  
-    - LendingClub
+    - print.LendingClub_api
+    - print.LendingClub_credential
+    - print.AccountSummary
+    - LendingClub-deprecated
 navbar:
   title: LendingClub
   type: default
