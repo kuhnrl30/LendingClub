@@ -39,7 +39,7 @@ FolioListing<- function(updatedSince=NULL, LC_CRED=NULL){
         parsed<- suppressWarnings(httr::content(r,
                                as="parsed",
                                encoding ='UTF-8',
-                               col_types= "iinncnnniciiTTccinnic"))
+                               col_types= "iiddcdddiciiTTlciddic"))
         
         structure(
             list(content = parsed,
