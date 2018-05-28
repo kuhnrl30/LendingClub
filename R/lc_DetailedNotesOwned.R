@@ -1,4 +1,4 @@
-#' @rdname NotesOwned
+#' @rdname lc_NotesOwned
 #' @export
 #'
 lc_DetailedNotesOwned<- function(LC_CRED=NULL){

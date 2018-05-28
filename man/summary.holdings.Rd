@@ -20,10 +20,10 @@ At Risk Ratio calculates the percentage of the loans with principal 16 or more d
 }
 \examples{
 \dontrun{
-summary( DetailedNotesOwned( LC_CRED ))
+summary( lc_DetailedNotesOwned( LC_CRED ))
 
 # split notes on a variable and  run summary for each subset
-holdings<- DetailedNotesOwned(LC_CRED)$content
+holdings<- lc_DetailedNotesOwned(LC_CRED)$content
 x<- lapply(split(holdings, f= holdings$portfolioName), summary)
 y<- Reduce(function(...) merge(..., by= 'col_labs',  all.x=TRUE), x)
 names(y)[-1]<- names(x)

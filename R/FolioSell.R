@@ -5,7 +5,7 @@
 #' @inheritParams lc_AccountSummary
 #' @param noteId The loan's note ID
 #' @param expireDate The date the sell offer will expire. Can be as short as the
-#' current date or up to 7 days from posting the offer. Character string.
+#' current date or up to 7 days from posting the offer. Character string of the format "YYYY-MM-DD".
 #' @param Price Price you wish to sell your loan for. Remember to consider
 #' @param quiet Should the API response be printed to the console
 #' the accrued interest in your offering.
@@ -25,7 +25,7 @@ FolioSell<- function(loanId= NULL, orderId= NULL, noteId, expireDate= NULL, Pric
     LC_CRED<-CheckCred(LC_CRED)
 
     if(is.null(expireDate)){
-        expireDate<- as.character(format(as.Date(Sys.time())+5,"%m/%d/%Y"))
+        expireDate<- as.character(format(as.Date(Sys.time())+5,"%Y-%m-%d"))
         }
 
     postURL<- paste0("https://api.lendingclub.com/api/investor/v1/secondarymarket/accounts/",

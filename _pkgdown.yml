@@ -42,10 +42,12 @@ navbar:
   title: LendingClub
   type: default
   left:
-  - text: Get Started
+  - text: Quick Start
     href: articles/LendingClub.html
   - text: Functions
     href: reference/index.html
+  - text: News
+    href: news/index.html
   right:
     - text: Related Packages
       menu:

@@ -28,6 +28,6 @@ read the credential from the global environment.  Else, you may
 pass the credential to the other functions as an argument.
 }
 \examples{
-LC_CRED<- MakeCredential("investorID", "APIkey")
+LC_CRED<- lc_MakeCredential("investorID", "APIkey")
 
 }

@@ -32,7 +32,7 @@ as YYYY/MM/DD.}
 
 \item{quiet}{Should the response be printed to the console}
 
-\item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
+\item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{lc_MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
 }
 \description{
 Sets up a recurring or one-time funds transfer. The investor must have

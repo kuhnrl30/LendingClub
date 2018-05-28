@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Prepare a dashboard of key metrics — summary.holdings • LendingClub</title>
+<title>Listing of investor's loans — lc_DetailedNotesOwned • LendingClub</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,10 +28,10 @@
 
 
 
-<meta property="og:title" content="Prepare a dashboard of key metrics — summary.holdings" />
+<meta property="og:title" content="Listing of investor's loans — lc_DetailedNotesOwned" />
 
-<meta property="og:description" content="Creating a summary of matrics an investor would find useful in evaluating their
-account." />
+<meta property="og:description" content="Access the user's account and return a dataframe of the investor's notes
+owned." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -113,50 +113,39 @@ account." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Prepare a dashboard of key metrics</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kuhnrl30/LendingClub/blob/master/R/summmary.R'><code>R/summmary.R</code></a></small>
-    <div class="hidden name"><code>summary.holdings.Rd</code></div>
+    <h1>Listing of investor's loans</h1>
+    <small class="dont-index">Source: <a href='https://github.com/kuhnrl30/LendingClub/blob/master/R/lc_DetailedNotesOwned.R'><code>R/lc_DetailedNotesOwned.R</code></a>, <a href='https://github.com/kuhnrl30/LendingClub/blob/master/R/lc_NotesOwned.R'><code>R/lc_NotesOwned.R</code></a></small>
+    <div class="hidden name"><code>lc_NotesOwned.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Creating a summary of matrics an investor would find useful in evaluating their
-account.</p>
+    <p>Access the user's account and return a dataframe of the investor's notes
+owned.</p>
     
     </div>
 
-    <pre class="usage"><span class='co'># S3 method for holdings</span>
-<span class='fu'>summary</span>(<span class='no'>object</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>lc_DetailedNotesOwned</span>(<span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+
+<span class='fu'>lc_NotesOwned</span>(<span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>object</th>
-      <td><p>data.frame of loans from DetailedNotesOwned()</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>currently not used</p></td>
+      <th>LC_CRED</th>
+      <td><p>Credential object having class LendingClub_credential. This object can be created using the <code><a href='lc_MakeCredential.html'>lc_MakeCredential()</a></code> function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>At Risk Ratio calculates the percentage of the loans with principal 16 or more days late.</p>
+    <p>The <code>lc_DetailedNotesOwned)</code> function returns nearly
+the same variables as <code>lc_NotesOwned()</code>. As the name suggests, the function
+returns additional information about the notes owned including datapoints
+on the purpose, portfolio, and the payment history.</p>
     
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>summary</span>( <span class='fu'><a href='lc_NotesOwned.html'>lc_DetailedNotesOwned</a></span>( <span class='no'>LC_CRED</span> ))
-
-<span class='co'># split notes on a variable and  run summary for each subset</span>
-<span class='no'>holdings</span><span class='kw'>&lt;-</span> <span class='fu'><a href='lc_NotesOwned.html'>lc_DetailedNotesOwned</a></span>(<span class='no'>LC_CRED</span>)$<span class='no'>content</span>
-<span class='no'>x</span><span class='kw'>&lt;-</span> <span class='fu'>lapply</span>(<span class='fu'>split</span>(<span class='no'>holdings</span>, <span class='kw'>f</span><span class='kw'>=</span> <span class='no'>holdings</span>$<span class='no'>portfolioName</span>), <span class='no'>summary</span>)
-<span class='no'>y</span><span class='kw'>&lt;-</span> <span class='fu'>Reduce</span>(<span class='kw'>function</span>(<span class='no'>...</span>) <span class='fu'>merge</span>(<span class='no'>...</span>, <span class='kw'>by</span><span class='kw'>=</span> <span class='st'>'col_labs'</span>,  <span class='kw'>all.x</span><span class='kw'>=</span><span class='fl'>TRUE</span>), <span class='no'>x</span>)
-<span class='fu'>names</span>(<span class='no'>y</span>)[-<span class='fl'>1</span>]<span class='kw'>&lt;-</span> <span class='fu'>names</span>(<span class='no'>x</span>)
-<span class='no'>y</span>
-<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -164,9 +153,7 @@ account.</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#details">Details</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+          </ul>
 
   </div>
 </div>

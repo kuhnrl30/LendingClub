@@ -136,3 +136,5 @@ g
 **Wgt Int Rate** interest rate weighted by the outstanding principal. 
 
 **Payback Ratio** measures the difference between cash invested in a note and the total payments received. The payments include both interest and principal. All notes start at zero and will increase as payments are made.  A note with a ratio greater than 100 indicates that more cash was received than was initially invested. Notes will start at the bottom left of the chart and trend towards the upper right corner as they mature.   
+
+#### [Lending Club](http://www.lendingclub.com)

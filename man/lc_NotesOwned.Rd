@@ -2,7 +2,6 @@
 % Please edit documentation in R/lc_DetailedNotesOwned.R, R/lc_NotesOwned.R
 \name{lc_DetailedNotesOwned}
 \alias{lc_DetailedNotesOwned}
-\alias{NotesOwned}
 \alias{lc_NotesOwned}
 \title{Listing of investor's loans}
 \usage{
@@ -11,15 +10,15 @@ lc_DetailedNotesOwned(LC_CRED = NULL)
 lc_NotesOwned(LC_CRED = NULL)
 }
 \arguments{
-\item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
+\item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{lc_MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
 }
 \description{
 Access the user's account and return a dataframe of the investor's notes
 owned.
 }
 \details{
-The \code{DetailedNotesOwned)} function returns nearly
-the same variables as \code{NotesOwned()}. As the name suggests, the function
+The \code{lc_DetailedNotesOwned)} function returns nearly
+the same variables as \code{lc_NotesOwned()}. As the name suggests, the function
 returns additional information about the notes owned including datapoints
 on the purpose, portfolio, and the payment history.
 }

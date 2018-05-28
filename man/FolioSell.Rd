@@ -20,13 +20,13 @@ FolioSell(loanId = NULL, orderId = NULL, noteId, expireDate = NULL,
 
 \item{Price}{Price you wish to sell your loan for. Remember to consider}
 
-\item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
+\item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{lc_MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
 
 \item{quiet}{Should the API response be printed to the console
 the accrued interest in your offering.}
 
 \item{expireDate}{The date the sell offer will expire. Can be as short as the
-current date or up to 7 days from posting the offer. Character string.}
+current date or up to 7 days from posting the offer. Character string of the format "YYYY-MM-DD".}
 }
 \description{
 Buy or sell notes on the FOLIOfn secondary market

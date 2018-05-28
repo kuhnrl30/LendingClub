@@ -3,12 +3,12 @@
 #' Access the user's account and return a dataframe of the investor's notes
 #' owned.
 #'
-#' The \code{DetailedNotesOwned)} function returns nearly
-#' the same variables as \code{NotesOwned()}. As the name suggests, the function
+#' The \code{lc_DetailedNotesOwned)} function returns nearly
+#' the same variables as \code{lc_NotesOwned()}. As the name suggests, the function
 #' returns additional information about the notes owned including datapoints
 #' on the purpose, portfolio, and the payment history.
 
-#' @name NotesOwned
+#' @name lc_NotesOwned
 #' @export
 #' @inheritParams lc_AccountSummary
 #'

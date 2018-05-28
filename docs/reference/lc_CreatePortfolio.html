@@ -18,13 +18,24 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
+<meta property="og:title" content="Create a new portfolio — lc_CreatePortfolio" />
+
+<meta property="og:description" content="Create a new portfolio to assign loans to. Notes can be assigned to
+a portfolio using the API when they are purhcased from the primary
+market." />
+<meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -47,15 +58,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">LendingClub</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">LendingClub</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">2.0.0</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../articles/LendingClub.html">Get Started</a>
+  <a href="../articles/LendingClub.html">Quick Start</a>
 </li>
 <li>
   <a href="../reference/index.html">Functions</a>
+</li>
+<li>
+  <a href="../news/index.html">News</a>
 </li>
       </ul>
       
@@ -85,6 +103,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -92,21 +111,25 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Create a new portfolio</h1>
+    <small class="dont-index">Source: <a href='https://github.com/kuhnrl30/LendingClub/blob/master/R/lc_CreatePortfolio.R'><code>R/lc_CreatePortfolio.R</code></a></small>
+    <div class="hidden name"><code>lc_CreatePortfolio.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Create a new portfolio to assign loans to. Notes can be assigned to
 a portfolio using the API when they are purhcased from the primary
 market.</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>lc_CreatePortfolio</span>(<span class='no'>port_name</span>, <span class='no'>port_desc</span>, <span class='kw'>LC_CRED</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='no'>T</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -119,7 +142,7 @@ market.</p>
     </tr>
     <tr>
       <th>LC_CRED</th>
-      <td><p>Credential object having class LendingClub_credential. This object can be created using the <code><a href='LendingClub-deprecated.html'>MakeCredential()</a></code> function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".</p></td>
+      <td><p>Credential object having class LendingClub_credential. This object can be created using the <code><a href='lc_MakeCredential.html'>lc_MakeCredential()</a></code> function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".</p></td>
     </tr>
     <tr>
       <th>quiet</th>
@@ -144,11 +167,14 @@ market.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

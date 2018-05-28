@@ -7,7 +7,7 @@
 lc_PortfoliosOwned(LC_CRED = NULL)
 }
 \arguments{
-\item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
+\item{LC_CRED}{Credential object having class LendingClub_credential. This object can be created using the \code{lc_MakeCredential()} function. You can pass the object directly as an argument to the function or alternatively, it can be read from the global environment if it was stored as "LC_CRED".}
 }
 \description{
 Provides a dataframe of all portfolios owned by the investor.

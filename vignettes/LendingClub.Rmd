@@ -14,7 +14,7 @@ vignette: >
 knitr::opts_chunk$set(eval=F)
 ```
 
-Lending Club is a peer-to-peer lending site.  Peer-to-peer lending crowd-funds loans by matching borrowers with willing investors. This LendingClub library makes it easy for you to see your investor account data such as the amount of free cash or the details on which loans you own. This package is a convenience wrapper for the Lending Club API so that you get get the data into R. You can learn more about the API by reading [Lending Club's documentation](https://www.lendingclub.com/developers/lc-api.action).  Lending Club does not offer an API for borrower data.
+Lending Club is a marketplacelending site.  Marketplace lending crowd-funds loans by matching borrowers with willing investors. This LendingClub library makes it easy for you to see your investor account data such as the amount of free cash or the details on which loans you own. This package is a convenience wrapper for the Lending Club API so that you get get the data into R. You can learn more about the API by reading [Lending Club's documentation](https://www.lendingclub.com/developers/lc-api.action).  Lending Club does not offer an API for borrower data.
 
 
 ### Creating Your Credential 

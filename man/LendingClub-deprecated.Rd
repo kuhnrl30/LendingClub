@@ -40,6 +40,6 @@ be removed (defunct) in later versions.
 \code{ MakeCredential } \tab \code{\link{lc_MakeCredential}} \cr
 \code{ NotesOwned }\tab  \code{\link{lc_NotesOwned}} \cr
 \code{ ListedLoans } \tab \code{\link{lc_ListedLoans}} \cr
-#' \code{ SubmitOrder } \tab \code{\link{lc_SubmitOrder}} \cr
+\code{ SubmitOrder } \tab \code{\link{lc_SubmitOrder}} \cr
 }
 }

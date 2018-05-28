@@ -6,10 +6,12 @@
 [![DOI](https://zenodo.org/badge/65163868.svg)](https://zenodo.org/badge/latestdoi/65163868)
 
 
-## A package built to access the Lending Club API  
-This package helps you make transactions and manage the funds in your Lending Club account. 
-The functions can be grouped as: Account Management, Transferring Funds, and 
-Transacting Loans.
+## Access the Lending Club API
+The LendingClub package is a set of functions that enables you to work with your LendingClub account from R.  The package contains tools for:  
+
+1. Account management such as viewing the account balance  
+2. Transfer funds in our out of the account  
+2. Transact on your account by buying or selling notes  
 
 ## Installation
 You can install the stable version on CRAN:
@@ -25,17 +27,7 @@ library(LendingClub)
 ```
 
 ## Usage 
-To use this package, you'll first need to create a credential from your account 
-number and API key. This credential can be saved to the global environment and 
-the other functions will automatically detect it. Use the lc_MakeCredential() function and pass 
-it your investorID number and your API key. You can find the InvestorID on your 
-account summary page and the API key on the Account Settings page. 
-
-```
-LC_CRED<- lc_MakeCredential(investorID, APIkey)
-lc_ListedLoans()
-lc_AccountSummary()
-```
+Read the [quick start guide](articles/LendingClub.html)
 
 ## Credits
 This packages is powered by:
@@ -46,3 +38,9 @@ This packages is powered by:
 
 ## License
 This package is free and open source software, licensed under MIT.
+
+
+## Want to Contribute?
+There are multiple ways you can contribute to this open source project.  Add new functions, squash some bugs, work on the website, or improving the documentation are some of the ways you can help. 
+
+Pull requests are welcome!
