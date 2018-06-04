@@ -15,7 +15,7 @@
 #' # split notes on a variable and  run summary for each subset
 #' holdings<- lc_DetailedNotesOwned(LC_CRED)$content
 #' x<- lapply(split(holdings, f= holdings$portfolioName), summary)
-#' y<- Reduce(function(...) merge(..., by= 'col_labs',  all.x=TRUE), x)
+#' y<- Reduce(function(...) merge(..., by= 'col_labs',  all.x= TRUE), x)
 #' names(y)[-1]<- names(x)
 #' y
 #' }
