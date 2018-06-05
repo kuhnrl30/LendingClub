@@ -5,6 +5,8 @@ context("Account Management")
 
 test_that("lc_AccountSummary", {
     
+    skip_on_cran()
+    
     LC_CRED<- lc_MakeCredential(
         investorID= as.character(Sys.getenv("investorId", "", names=F)), 
         APIkey= Sys.getenv("APIkey", "", names=F))
@@ -21,6 +23,9 @@ test_that("lc_AccountSummary", {
     })
  
 test_that("lc_AccountSummary",{
+    
+    skip_on_cran()
+    
     LC_CRED<- lc_MakeCredential(
         investorID= as.character(Sys.getenv("investorId", "", names=F)), 
         APIkey= Sys.getenv("APIkey", "", names=F))
@@ -34,6 +39,8 @@ test_that("lc_AccountSummary",{
 
 test_that("lc_AvailableCash", {
     
+    skip_on_cran()
+    
     LC_CRED<- lc_MakeCredential(
         investorID= as.character(Sys.getenv("investorId", "", names=F)), 
         APIkey= Sys.getenv("APIkey", "", names=F))
@@ -44,6 +51,8 @@ test_that("lc_AvailableCash", {
     })
  
 test_that("Notes owned", {
+    
+    skip_on_cran()
     
     LC_CRED<- lc_MakeCredential(
         investorID= as.character(Sys.getenv("investorId", "", names=F)), 
@@ -62,6 +71,8 @@ test_that("Notes owned", {
 
 test_that("lc_PortfoliosOwned", {
     
+    skip_on_cran()
+    
     LC_CRED<- lc_MakeCredential(
         investorID= as.character(Sys.getenv("investorId", "", names=F)), 
         APIkey= Sys.getenv("APIkey", "", names=F))
@@ -73,10 +84,16 @@ test_that("lc_PortfoliosOwned", {
 
 
 test_that("lc_CreatePortfolio", {
+    
+    skip_on_cran()
+    
     expect_error(lc_CreatePortfolio("abc", LC_CRED="abc"), "Please create the credential object .*") 
 })
 
 test_that("lc_PendingTransfers", {
+    
+    skip_on_cran()
+    
     LC_CRED<- lc_MakeCredential(
         investorID= as.character(Sys.getenv("investorId", "", names=F)), 
         APIkey= Sys.getenv("APIkey", "", names=F))

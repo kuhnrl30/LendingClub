@@ -5,6 +5,8 @@ context("Transactions")
 
 test_that("lc_ListedLoans",{
     
+    skip_on_cran()
+    
     LC_CRED<- lc_MakeCredential(
         investorID= as.character(Sys.getenv("investorId", "", names=F)), 
         APIkey= Sys.getenv("APIkey", "", names=F))
@@ -17,6 +19,8 @@ test_that("lc_ListedLoans",{
 
 test_that("FolioListing",{
     
+    skip_on_cran()
+    
     LC_CRED<- lc_MakeCredential(
         investorID= as.character(Sys.getenv("investorId", "", names=F)), 
         APIkey= Sys.getenv("APIkey", "", names=F))
@@ -28,6 +32,9 @@ test_that("FolioListing",{
 })
 
 test_that("lc_SubmitOrder", {
+    
+    skip_on_cran()
+    
     expect_error(lc_SubmitOrder(123,456, LC_CRED="abc"), "Please create the credential object .*")
     
     
@@ -35,6 +42,9 @@ test_that("lc_SubmitOrder", {
 
 
 test_that("FolioOrders", {
+    
+    skip_on_cran()
+    
     expect_error(FolioOrders("abc", orderType = "SELL", status = NULL, LC_CRED), "includeDetails is not logical")
     expect_error(FolioOrders(T, orderType= NULL, status = NULL, LC_CRED), "orderType not spec.*")
     expect_error(FolioOrders(T, orderType= "fail", status = NULL, LC_CRED), "orderType should be .*")
@@ -47,6 +57,9 @@ test_that("FolioOrders", {
 })
 
 test_that("FolioBuy", {
+    
+    skip_on_cran()
+    
     LC_CRED<- lc_MakeCredential(
         investorID= as.character(Sys.getenv("investorId", "", names=F)), 
         APIkey= Sys.getenv("APIkey", "", names=F))
@@ -58,6 +71,9 @@ test_that("FolioBuy", {
 })
 
 test_that("FolioSell", {
+    
+    skip_on_cran()
+    
     LC_CRED<- lc_MakeCredential(
         investorID= as.character(Sys.getenv("investorId", "", names=F)), 
         APIkey= Sys.getenv("APIkey", "", names=F))
