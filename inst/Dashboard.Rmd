@@ -56,6 +56,9 @@ kable(summtable,
       padding = 2) 
 ```
 
+
+  
+
 ### Portfolio Summary  
 
 ```{r matrix}
@@ -79,27 +82,34 @@ kable(y,
   padding = 2) 
 ```
 
-### Distribution by Grade 
+### Principal Distribution by Grade 
 
 ```{r, fig.align='center', fig.height=3}
-h<- ggplot(holdings %>% group_by(grade) %>% summarize(counts =n()))
-h<- h + aes(x= strtrim(grade, 1), y= counts)
-h<- h + geom_bar(stat='identity')
+
+h<- ggplot(holdings %>% 
+               filter(currentPaymentStatus != "ChargedOff") %>%
+               mutate(majGrade = strtrim(grade, 1)) %>%
+               group_by(majGrade) %>% 
+               summarize(total = round(sum(as.numeric(principalPending))),0))
+h<- h + aes(x= majGrade, y= total, label=total)
+h<- h + geom_col()
 h<- h + theme_classic()
 h<- h + labs(x= "Grade",
-             y= "Loan Count")
+             y= "Outstanding Principal")
+h<- h + geom_text(vjust=0, nudge_y=.7, size=3.5)
 h
-
 ```
 
-### Payback Ratio 
+###Payback Ratio {.tabset}
+
+#### Chart
 
 ```{r, fig.align='center'}
 dat<-holdings %>%
   mutate(CFRatio= round((as.numeric(paymentsReceived) - as.numeric(noteAmount)) /as.numeric(noteAmount)*100,2)+100 +1,
          orderDate= as.Date(orderDate))
 
-dat$simpleStatus <- case_when(dat$loanStatus == "Charged Off" ~ "Complete",
+dat$simpleStatus <- case_when(dat$loanStatus == "Charged Off" ~ "Dead",
                               dat$loanStatus == "Current" ~"Performing",
                               dat$loanStatus == "Fully Paid" ~ "Complete",
                               dat$loanStatus == "In Grace Period" ~ "Performing",
@@ -111,10 +121,18 @@ dat$simpleStatus <- case_when(dat$loanStatus == "Charged Off" ~ "Complete",
 ThreeYear<- as.Date(Sys.time())-(365*3)
 FiveYear<- as.Date(Sys.time()-(365*5))
 
+status_colors<-c("Performing"="#377eb8", #blue
+                 "Late"= "#e41a1c", #red
+                 "Dead"="#707070", #gray
+                 "Complete"= "#4daf4a") #gree
+
 g<- ggplot(dat)
-g<- g + aes(x= as.Date(Sys.time())-orderDate, y= CFRatio, group= portfolioName, color= simpleStatus)
-g<- g + geom_point()
-# g<- g + scale_x_date(limits= c(ThreeYear-150, as.Date(Sys.time())+50))
+g<- g + aes(x= as.Date(Sys.time())-orderDate, 
+            y= CFRatio, 
+            group= portfolioName,
+            fill= simpleStatus)
+g<- g + geom_point(aes(colour=simpleStatus), size=1)
+g<- g + scale_colour_manual(values=status_colors)
 g<- g + scale_x_continuous()
 g<- g + facet_wrap(~portfolioName, ncol=2)
 g<- g + theme_classic()
@@ -125,6 +143,31 @@ g<- g + theme(legend.position="none",
               panel.border  = element_rect(colour = "black", fill=NA))
 g
 ```
+
+#### Late Notes
+
+```{r}
+LateNotes<- dat %>%
+    filter(simpleStatus=="Late") %>%
+    mutate(LastPayment= as.Date(lastPaymentDate),
+           DaysLate=as.Date(Sys.time())- LastPayment) %>%
+    select(portfolioName, grade, purpose, CFRatio, principalPending, LastPayment, DaysLate)
+
+
+kable(LateNotes, 
+      col.names= c("Portfolio",
+                   "Grade",
+                   "Purpose",
+                   "Payback Ratio",
+                   "Outstanding Principal",
+                   "Last Payment",
+                   "Days Since Payment"),
+      align = c("l","l","l","r","r","l","l"), 
+      format.args = list(big.mark = ','),
+      padding = 2) 
+```
+
+## 
 
 <hr>
 **Principal At Risk** includes outstanding principal of notes greater than 16 days late and notes that have been charged off. 
