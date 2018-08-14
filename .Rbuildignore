@@ -14,3 +14,4 @@ inst/Dashboard\.html
 ^sticker/*
 ^.*\.docx
 Dashboard_files/*
+^cran-comments\.md$
