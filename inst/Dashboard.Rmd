@@ -172,12 +172,14 @@ kable(LateNotes,
 <hr>
 **Principal At Risk** includes outstanding principal of notes greater than 16 days late and notes that have been charged off. 
 
-**At Risk Ratio** is the Principal at Risk as a percentage of the note amount. This is a measure of portfolio health indicating how much of the invesmet is at risk for defaulting or has already done so. 
+**At Risk Ratio** is the Principal at Risk as a percentage of the note amount. This is a measure of portfolio health indicating how much of the investment is at risk for defaulting or has already done so. 
 
-**Interest-Risk (IR) Ratio** is the ratio of interest payments received to the principal at risk in the portfolio
+**Interest-Risk (IR) Ratio** is the ratio of interest payments received to the principal at risk in the portfolio.
 
 **Wgt Int Rate** interest rate weighted by the outstanding principal. 
 
 **Payback Ratio** measures the difference between cash invested in a note and the total payments received. The payments include both interest and principal. All notes start at zero and will increase as payments are made.  A note with a ratio greater than 100 indicates that more cash was received than was initially invested. Notes will start at the bottom left of the chart and trend towards the upper right corner as they mature.   
 
-#### [Lending Club](http://www.lendingclub.com)
+<a href="http://www.lendingclub.com/" target="_blank"><h3>Lending Club</h3></a>
+
+

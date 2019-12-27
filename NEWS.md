@@ -1,3 +1,7 @@
+# LendingClub 2.0.1
+
+* Minor spelling corrections
+
 # LendingClub 2.0.0
 
 * Changed the overall API to include the lc_ prefix.  This will improve the user experience with better code completion. Original functions are deprecated but have not been removed. 
