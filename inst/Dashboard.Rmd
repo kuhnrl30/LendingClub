@@ -176,9 +176,7 @@ kable(LateNotes,
 <hr>
 **Principal At Risk** includes the outstanding principal of notes greater than 15 days late. 
 
-**Risk Ratio** is the percentage of the Net Outstanding principal at risk of defaulting (>15 days late).  Does not include notes already defaulted.
-
-**At Risk Ratio** is the Principal at Risk + Charged Off as a percentage of the outstanding note amount. This is a measure of portfolio health indicating how much of the investment is at risk for defaulting or has already done so. 
+**At Risk Ratio** is the Principal at Risk as a percentage of the outstanding principal amount.  
 
 **Wgt Int Rate** interest rate weighted by the outstanding principal. 
 
