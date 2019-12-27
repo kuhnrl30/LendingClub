@@ -18,14 +18,14 @@ suppressMessages(library(ggplot2))
 
 
 LC_CRED<- lc_MakeCredential(params$investorID, params$APIkey)
+
 holdings<- LendingClub::lc_DetailedNotesOwned()$content
 
 summarydata<-  lc_AccountSummary()$content
 
 atRisk<- {
   at_risk_status<- c("Late (16-30 days)",
-                     "Late (31-120 days)",
-                     "Charged Off")
+                     "Late (31-120 days)")
   x<- holdings[holdings$loanStatus %in% at_risk_status,]    
   sum(as.numeric(x$noteAmount)- as.numeric(x$principalReceived))
   }
@@ -37,15 +37,17 @@ atRisk<- {
 
 stats<- c("Account Total",
           "Available Cash",
-          "Interest Received",
+          "All Time Interest Received",
           "Principal at Risk",
-          "Interest-Risk (IR) Ratio")
+          "At Risk Ratio")
 
 vals<- as.numeric(c(summarydata$accountTotal,
                     summarydata$availableCash,
                     summarydata$receivedInterest,
                     atRisk,
-                    round(as.numeric(summarydata$receivedInterest)/atRisk,2)))
+                    round(as.numeric(
+                        atRisk / (summarydata$outstandingPrincipal+ summarydata$infundingBalance)*100),2)
+                    ))
 
 summtable<- data.frame(stats, vals)
 
@@ -74,19 +76,16 @@ for (i in 1:length(x)){
 
 
 y<- Reduce(function(...) merge(..., by= 'col_labs',  all.x=TRUE), x)
-y<- y[c(1,4,3,8,6,5,7,9,2), ]
 colnames(y)[1]<- ""
-kable(y,
+
+z<- y[c(1,4,3,8,6,5,7,9,2), ]
+kable(z,
   row.names= FALSE,
   format.args = list(big.mark = ','),
   padding = 2) 
 ```
 
-### Unrealized Gains
-```{r}
-z<- y[c(1,2,7,5),]
 
-```
 ### Principal Distribution by Grade 
 
 ```{r, fig.align='center', fig.height=3}
@@ -175,11 +174,11 @@ kable(LateNotes,
 ## 
 
 <hr>
-**Principal At Risk** includes outstanding principal of notes greater than 16 days late and notes that have been charged off. 
+**Principal At Risk** includes the outstanding principal of notes greater than 15 days late. 
 
-**At Risk Ratio** is the Principal at Risk as a percentage of the note amount. This is a measure of portfolio health indicating how much of the invesmet is at risk for defaulting or has already done so. 
+**Risk Ratio** is the percentage of the Net Outstanding principal at risk of defaulting (>15 days late).  Does not include notes already defaulted.
 
-**Interest-Risk (IR) Ratio** is the ratio of interest payments received to the principal at risk in the portfolio
+**At Risk Ratio** is the Principal at Risk + Charged Off as a percentage of the outstanding note amount. This is a measure of portfolio health indicating how much of the investment is at risk for defaulting or has already done so. 
 
 **Wgt Int Rate** interest rate weighted by the outstanding principal. 
 
