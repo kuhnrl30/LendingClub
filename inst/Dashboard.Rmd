@@ -18,14 +18,14 @@ suppressMessages(library(ggplot2))
 
 
 LC_CRED<- lc_MakeCredential(params$investorID, params$APIkey)
+
 holdings<- LendingClub::lc_DetailedNotesOwned()$content
 
 summarydata<-  lc_AccountSummary()$content
 
 atRisk<- {
   at_risk_status<- c("Late (16-30 days)",
-                     "Late (31-120 days)",
-                     "Charged Off")
+                     "Late (31-120 days)")
   x<- holdings[holdings$loanStatus %in% at_risk_status,]    
   sum(as.numeric(x$noteAmount)- as.numeric(x$principalReceived))
   }
@@ -37,15 +37,17 @@ atRisk<- {
 
 stats<- c("Account Total",
           "Available Cash",
-          "Interest Received",
+          "All Time Interest Received",
           "Principal at Risk",
-          "Interest-Risk (IR) Ratio")
+          "At Risk Ratio")
 
 vals<- as.numeric(c(summarydata$accountTotal,
                     summarydata$availableCash,
                     summarydata$receivedInterest,
                     atRisk,
-                    round(as.numeric(summarydata$receivedInterest)/atRisk,2)))
+                    round(as.numeric(
+                        atRisk / (summarydata$outstandingPrincipal+ summarydata$infundingBalance)*100),2)
+                    ))
 
 summtable<- data.frame(stats, vals)
 
@@ -74,13 +76,15 @@ for (i in 1:length(x)){
 
 
 y<- Reduce(function(...) merge(..., by= 'col_labs',  all.x=TRUE), x)
-y<- y[c(1,4,3,8,6,5,7,9,2), ]
 colnames(y)[1]<- ""
-kable(y,
+
+z<- y[c(1,4,3,8,6,5,7,9,2), ]
+kable(z,
   row.names= FALSE,
   format.args = list(big.mark = ','),
   padding = 2) 
 ```
+
 
 ### Principal Distribution by Grade 
 
@@ -170,16 +174,12 @@ kable(LateNotes,
 ## 
 
 <hr>
-**Principal At Risk** includes outstanding principal of notes greater than 16 days late and notes that have been charged off. 
+**Principal At Risk** includes the outstanding principal of notes greater than 15 days late. 
 
-**At Risk Ratio** is the Principal at Risk as a percentage of the note amount. This is a measure of portfolio health indicating how much of the investment is at risk for defaulting or has already done so. 
-
-**Interest-Risk (IR) Ratio** is the ratio of interest payments received to the principal at risk in the portfolio.
+**At Risk Ratio** is the Principal at Risk as a percentage of the outstanding principal amount.  
 
 **Wgt Int Rate** interest rate weighted by the outstanding principal. 
 
 **Payback Ratio** measures the difference between cash invested in a note and the total payments received. The payments include both interest and principal. All notes start at zero and will increase as payments are made.  A note with a ratio greater than 100 indicates that more cash was received than was initially invested. Notes will start at the bottom left of the chart and trend towards the upper right corner as they mature.   
 
-<a href="http://www.lendingclub.com/" target="_blank"><h3>Lending Club</h3></a>
-
-
+<h3><a href="http://www.lendingclub.com" target="_blank">LendingClub</a></h3>
