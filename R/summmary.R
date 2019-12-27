@@ -3,7 +3,7 @@
 #' Creating a summary of matrics an investor would find useful in evaluating their 
 #' account.   
 #' 
-#' At Risk Ratio calculates the percentage of the loans with principal 16 or more days late. 
+#' At Risk Ratio calculates the percentage of outstanding principal greater thand 15 days late. 
 #' 
 #' @param object data.frame of loans from DetailedNotesOwned()
 #' @param ... currently not used
@@ -39,18 +39,23 @@ summary.holdings<- function(object, ...) {
         "At Risk Ratio")
     
     at_risk_status<- c("Late (16-30 days)",
-                       "Late (31-120 days)",
-                       "Charged Off")
+                       "Late (31-120 days)")
+    
+    outstanding_at_risk<- sum(as.numeric(object$noteAmount[object$loanStatus %in% at_risk_status])) - 
+        sum(as.numeric(object$principalReceived[object$loanStatus %in% at_risk_status])) 
+    
+    outstanding_total<- sum(as.numeric(object[!object$loanStatus=="Charged Off","principalPending"]), na.rm=T)  #net outstanding
+    
     vals<- c( 
         sum(as.numeric(object$noteAmount)), # Amount Invested
         sum(as.numeric(object$principalReceived) + as.numeric(object$principalPending) - as.numeric(object$noteAmount)), # Discount
         -sum(as.numeric(object[object$loanStatus=="Charged Off","principalPending"]), na.rm=T), #Charged off
         -sum(as.numeric(object$principalReceived)),  # Principal received
-        sum(as.numeric(object[!object$loanStatus=="Charged Off","principalPending"]), na.rm=T), # net outstanding
+        outstanding_total, # net outstanding
         sum(as.numeric(object$interestReceived)), 
         sum(as.numeric(object$paymentsReceived)), 
         round( sum(as.numeric(object$interestRate) * as.numeric(object$principalPending)) / sum(as.numeric(object$principalPending)), 2),
-        round(sum(as.numeric(object$noteAmount[object$loanStatus %in% at_risk_status]))  / sum(as.numeric(object$noteAmount)-as.numeric(object$principalReceived))*100,2)
+        round(outstanding_at_risk  / outstanding_total *100,2)
     )
     
     data.frame(col_labs, vals)

@@ -16,7 +16,7 @@ Creating a summary of matrics an investor would find useful in evaluating their
 account.
 }
 \details{
-At Risk Ratio calculates the percentage of the loans with principal 16 or more days late.
+At Risk Ratio calculates the percentage of outstanding principal greater thand 15 days late.
 }
 \examples{
 \dontrun{
